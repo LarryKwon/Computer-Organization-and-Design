@@ -1,0 +1,16 @@
+C:/Users/W24876/Desktop/modelsim_project/lab0/hello_world_Tb.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/lab0/hello_world_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module counter
+-- Compiling module hello_world_tb
+
+Top level modules:
+	hello_world_tb
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/lab0/hello_world.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/lab0/hello_world.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}}

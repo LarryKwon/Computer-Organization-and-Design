@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+vALU
+Z0 !s110 1638790889
+!i10b 1
+!s100 gJ9Umed71M]lMHUS5?GP00
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IeHBlP52R]gR0`0>kCAbf92
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/W24876/Desktop/modelsim_project/Lab1
+w1638790886
+8alu.v
+Falu.v
+!i122 21
+L0 3 45
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1638790889.000000
+!s107 alu.v|C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v|
+Z6 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+n@a@l@u
+vALU_TB
+R0
+!i10b 1
+!s100 d1eb>CDdl:`o:Tl`@FWLo2
+R1
+I^6e06OXC=];Z[?67=0^E53
+R2
+R3
+w1535718583
+8C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v
+FC:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v
+!i122 21
+L0 26 236
+R4
+r1
+!s85 0
+31
+R5
+Z9 !s107 alu.v|C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v|
+R6
+!i113 1
+R7
+R8
+n@a@l@u_@t@b

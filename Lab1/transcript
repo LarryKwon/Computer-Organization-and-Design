@@ -1,0 +1,1243 @@
+# Compile of alu.v failed with 2 errors.
+# Compile of ALU_TB.v failed with 2 errors.
+# 2 compiles, 2 failed with 4 errors.
+# Compile of alu.v failed with 2 errors.
+# Compile of ALU_TB.v failed with 2 errors.
+# 2 compiles, 2 failed with 4 errors.
+# Compile of alu.v failed with 4 errors.
+# Compile of ALU_TB.v failed with 7 errors.
+# 2 compiles, 2 failed with 11 errors.
+# Compile of alu.v failed with 4 errors.
+# Compile of ALU_TB.v failed with 7 errors.
+# 2 compiles, 2 failed with 11 errors.
+# Compile of alu.v failed with 4 errors.
+# Compile of ALU_TB.v failed with 7 errors.
+# 2 compiles, 2 failed with 11 errors.
+# Compile of alu.v failed with 3 errors.
+# Compile of ALU_TB.v failed with 6 errors.
+# 2 compiles, 2 failed with 9 errors.
+# Compile of alu.v failed with 2 errors.
+# Compile of ALU_TB.v failed with 2 errors.
+# 2 compiles, 2 failed with 4 errors.
+# Compile of alu.v failed with 20 errors.
+# Compile of ALU_TB.v failed with 20 errors.
+# 2 compiles, 2 failed with 40 errors.
+# Compile of alu.v failed with 3 errors.
+# Compile of ALU_TB.v failed with 3 errors.
+# 2 compiles, 2 failed with 6 errors.
+# Compile of alu.v failed with 3 errors.
+# Compile of ALU_TB.v failed with 3 errors.
+# 2 compiles, 2 failed with 6 errors.
+# Compile of alu.v was successful.
+# Compile of ALU_TB.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_TB
+# vsim -gui work.ALU_TB 
+# Start time: 20:03:22 on Dec 06,2021
+# Loading work.ALU_TB
+# Loading work.ALU
+run -all
+# TEST             Add-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Add-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = z (Ans : 0)
+# TEST             Add-3 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Add-4 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Add-5 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Add-6 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Add-7 :
+# FAILED
+# A = 1000000000000000, B = 1000000000000000, C = 0 (Ans : 0), Cout = z (Ans : 1)
+# TEST             Add-8 :
+# FAILED
+# A = 1111111111111111, B = 1, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Add-9 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 1111111111111110 (Ans : 1111111111111110), Cout = z (Ans : 0)
+# TEST             Sub-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Sub-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = z (Ans : 0)
+# TEST             Sub-3 :
+# FAILED
+# A = 0, B = 1, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST             Sub-4 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Sub-5 :
+# FAILED
+# A = 11, B = 10, C = 1 (Ans : 1), Cout = z (Ans : 0)
+# TEST             Sub-6 :
+# FAILED
+# A = 0, B = 10, C = 1111111111111110 (Ans : 1111111111111110), Cout = z (Ans : 0)
+# TEST             Sub-7 :
+# FAILED
+# A = 0, B = 1111111111111111, C = 1 (Ans : 1), Cout = z (Ans : 0)
+# TEST             And-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = z (Ans : 0)
+# TEST             And-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST              Or-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = z (Ans : 0)
+# TEST              Or-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST            Nand-1 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST            Nand-2 :
+# FAILED
+# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = z (Ans : 0)
+# TEST             Nor-1 :
+# FAILED
+# A = 101010101010101, B = 1101110111011101, C = 10001000100010 (Ans : 10001000100010), Cout = z (Ans : 0)
+# TEST             Nor-2 :
+# FAILED
+# A = 1000100010001000, B = 1000100010001, C = 110011001100110 (Ans : 110011001100110), Cout = z (Ans : 0)
+# TEST             Xor-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = z (Ans : 0)
+# TEST             Xor-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST            Xnor-1 :
+# FAILED
+# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = z (Ans : 0)
+# TEST            Xnor-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST              Id-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST              Id-2 :
+# FAILED
+# A = 1101111010101101, B = 0, C = 1101111010101101 (Ans : 1101111010101101), Cout = z (Ans : 0)
+# TEST              Id-3 :
+# FAILED
+# A = 1011111011101111, B = 0, C = 1011111011101111 (Ans : 1011111011101111), Cout = z (Ans : 0)
+# TEST             Not-1 :
+# FAILED
+# A = 0, B = 0, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST             Not-2 :
+# FAILED
+# A = 1, B = 0, C = 1111111111111110 (Ans : 1111111111111110), Cout = z (Ans : 0)
+# TEST             Not-3 :
+# FAILED
+# A = 1100101011111110, B = 0, C = 11010100000001 (Ans : 11010100000001), Cout = z (Ans : 0)
+# TEST             Lrs-1 :
+# FAILED
+# A = 1010, B = 0, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Lrs-2 :
+# FAILED
+# A = 1, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Lrs-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 111111111111101 (Ans : 111111111111101), Cout = z (Ans : 0)
+# TEST             Lrs-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 111111111111111 (Ans : 111111111111111), Cout = z (Ans : 0)
+# TEST             Ars-1 :
+# FAILED
+# A = 1010, B = 0, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Ars-2 :
+# FAILED
+# A = 1, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Ars-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 111111111111101 (Ans : 1111111111111101), Cout = z (Ans : 0)
+# TEST             Ars-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST              Rr-1 :
+# FAILED
+# A = 1010, B = 0, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST              Rr-2 :
+# FAILED
+# A = 1011, B = 0, C = 1000000000000101 (Ans : 1000000000000101), Cout = z (Ans : 0)
+# TEST             Lls-1 :
+# FAILED
+# A = 1010, B = 0, C = 10100 (Ans : 10100), Cout = z (Ans : 0)
+# TEST             Lls-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 1110000000000000 (Ans : 1110000000000000), Cout = z (Ans : 0)
+# TEST             Als-1 :
+# FAILED
+# A = 1010, B = 0, C = 10100 (Ans : 10100), Cout = z (Ans : 0)
+# TEST             Als-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 1110000000000000 (Ans : 1110000000000000), Cout = z (Ans : 0)
+# TEST              Rl-1 :
+# FAILED
+# A = 111000000000000, B = 0, C = 1110000000000000 (Ans : 1110000000000000), Cout = z (Ans : 0)
+# TEST              Rl-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 1110000000000001 (Ans : 1110000000000001), Cout = z (Ans : 0)
+# Passed = 0, Failed = 50
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
+#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
+# 1
+# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
+quit -sim
+# End time: 20:05:46 on Dec 06,2021, Elapsed time: 0:02:24
+# Errors: 0, Warnings: 15
+# Compile of alu.v was successful.
+# Compile of ALU_TB.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_TB
+# vsim -gui work.ALU_TB 
+# Start time: 20:08:26 on Dec 06,2021
+# Loading work.ALU_TB
+# Loading work.ALU
+run
+# TEST             Add-1 :
+run
+run -continue
+run -continue
+run -all
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Add-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = z (Ans : 0)
+# TEST             Add-3 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Add-4 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Add-5 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Add-6 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Add-7 :
+# FAILED
+# A = 1000000000000000, B = 1000000000000000, C = 0 (Ans : 0), Cout = z (Ans : 1)
+# TEST             Add-8 :
+# FAILED
+# A = 1111111111111111, B = 1, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Add-9 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 1111111111111110 (Ans : 1111111111111110), Cout = z (Ans : 0)
+# TEST             Sub-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Sub-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = z (Ans : 0)
+# TEST             Sub-3 :
+# FAILED
+# A = 0, B = 1, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST             Sub-4 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Sub-5 :
+# FAILED
+# A = 11, B = 10, C = 1 (Ans : 1), Cout = z (Ans : 0)
+# TEST             Sub-6 :
+# FAILED
+# A = 0, B = 10, C = 1111111111111110 (Ans : 1111111111111110), Cout = z (Ans : 0)
+# TEST             Sub-7 :
+# FAILED
+# A = 0, B = 1111111111111111, C = 1 (Ans : 1), Cout = z (Ans : 0)
+# TEST             And-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = z (Ans : 0)
+# TEST             And-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST              Or-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = z (Ans : 0)
+# TEST              Or-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST            Nand-1 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST            Nand-2 :
+# FAILED
+# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = z (Ans : 0)
+# TEST             Nor-1 :
+# FAILED
+# A = 101010101010101, B = 1101110111011101, C = 10001000100010 (Ans : 10001000100010), Cout = z (Ans : 0)
+# TEST             Nor-2 :
+# FAILED
+# A = 1000100010001000, B = 1000100010001, C = 110011001100110 (Ans : 110011001100110), Cout = z (Ans : 0)
+# TEST             Xor-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = z (Ans : 0)
+# TEST             Xor-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST            Xnor-1 :
+# FAILED
+# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = z (Ans : 0)
+# TEST            Xnor-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST              Id-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST              Id-2 :
+# FAILED
+# A = 1101111010101101, B = 0, C = 1101111010101101 (Ans : 1101111010101101), Cout = z (Ans : 0)
+# TEST              Id-3 :
+# FAILED
+# A = 1011111011101111, B = 0, C = 1011111011101111 (Ans : 1011111011101111), Cout = z (Ans : 0)
+# TEST             Not-1 :
+# FAILED
+# A = 0, B = 0, C = 1111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST             Not-2 :
+# FAILED
+# A = 1, B = 0, C = 1111111111111110 (Ans : 1111111111111110), Cout = z (Ans : 0)
+# TEST             Not-3 :
+# FAILED
+# A = 1100101011111110, B = 0, C = 11010100000001 (Ans : 11010100000001), Cout = z (Ans : 0)
+# TEST             Lrs-1 :
+# FAILED
+# A = 1010, B = 0, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Lrs-2 :
+# FAILED
+# A = 1, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Lrs-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 111111111111101 (Ans : 111111111111101), Cout = z (Ans : 0)
+# TEST             Lrs-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 111111111111111 (Ans : 111111111111111), Cout = z (Ans : 0)
+# TEST             Ars-1 :
+# FAILED
+# A = 1010, B = 0, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST             Ars-2 :
+# FAILED
+# A = 1, B = 0, C = 0 (Ans : 0), Cout = z (Ans : 0)
+# TEST             Ars-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 111111111111101 (Ans : 1111111111111101), Cout = z (Ans : 0)
+# TEST             Ars-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 111111111111111 (Ans : 1111111111111111), Cout = z (Ans : 0)
+# TEST              Rr-1 :
+# FAILED
+# A = 1010, B = 0, C = 101 (Ans : 101), Cout = z (Ans : 0)
+# TEST              Rr-2 :
+# FAILED
+# A = 1011, B = 0, C = 1000000000000101 (Ans : 1000000000000101), Cout = z (Ans : 0)
+# TEST             Lls-1 :
+# FAILED
+# A = 1010, B = 0, C = 10100 (Ans : 10100), Cout = z (Ans : 0)
+# TEST             Lls-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 1110000000000000 (Ans : 1110000000000000), Cout = z (Ans : 0)
+# TEST             Als-1 :
+# FAILED
+# A = 1010, B = 0, C = 10100 (Ans : 10100), Cout = z (Ans : 0)
+# TEST             Als-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 1110000000000000 (Ans : 1110000000000000), Cout = z (Ans : 0)
+# TEST              Rl-1 :
+# FAILED
+# A = 111000000000000, B = 0, C = 1110000000000000 (Ans : 1110000000000000), Cout = z (Ans : 0)
+# TEST              Rl-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 1110000000000001 (Ans : 1110000000000001), Cout = z (Ans : 0)
+# Passed = 0, Failed = 50
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
+#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
+# 1
+# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
+run
+# Break key hit
+run -continue
+run -continue
+run -continue
+quit -sim
+# End time: 20:11:58 on Dec 06,2021, Elapsed time: 0:03:32
+# Errors: 0, Warnings: 2
+# Compile of alu.v failed with 1 errors.
+# Compile of ALU_TB.v failed with 4 errors.
+# 2 compiles, 2 failed with 5 errors.
+# Compile of alu.v was successful.
+# Compile of ALU_TB.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_TB
+# vsim -gui work.ALU_TB 
+# Start time: 20:13:18 on Dec 06,2021
+# Loading work.ALU_TB
+# Loading work.ALU
+run -all
+# TEST             Add-1 :
+# PASSED
+# TEST             Add-2 :
+# PASSED
+# TEST             Add-3 :
+# PASSED
+# TEST             Add-4 :
+# PASSED
+# TEST             Add-5 :
+# PASSED
+# TEST             Add-6 :
+# PASSED
+# TEST             Add-7 :
+# PASSED
+# TEST             Add-8 :
+# PASSED
+# TEST             Add-9 :
+# PASSED
+# TEST             Sub-1 :
+# PASSED
+# TEST             Sub-2 :
+# PASSED
+# TEST             Sub-3 :
+# PASSED
+# TEST             Sub-4 :
+# PASSED
+# TEST             Sub-5 :
+# PASSED
+# TEST             Sub-6 :
+# PASSED
+# TEST             Sub-7 :
+# PASSED
+# TEST             And-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = 1 (Ans : 0)
+# TEST             And-2 :
+# PASSED
+# TEST              Or-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = 1 (Ans : 0)
+# TEST              Or-2 :
+# PASSED
+# TEST            Nand-1 :
+# PASSED
+# TEST            Nand-2 :
+# FAILED
+# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = 1 (Ans : 0)
+# TEST             Nor-1 :
+# PASSED
+# TEST             Nor-2 :
+# PASSED
+# TEST             Xor-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = 1 (Ans : 0)
+# TEST             Xor-2 :
+# PASSED
+# TEST            Xnor-1 :
+# FAILED
+# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = 1 (Ans : 0)
+# TEST            Xnor-2 :
+# PASSED
+# TEST              Id-1 :
+# PASSED
+# TEST              Id-2 :
+# PASSED
+# TEST              Id-3 :
+# PASSED
+# TEST             Not-1 :
+# PASSED
+# TEST             Not-2 :
+# PASSED
+# TEST             Not-3 :
+# PASSED
+# TEST             Lrs-1 :
+# PASSED
+# TEST             Lrs-2 :
+# PASSED
+# TEST             Lrs-3 :
+# PASSED
+# TEST             Lrs-4 :
+# PASSED
+# TEST             Ars-1 :
+# PASSED
+# TEST             Ars-2 :
+# PASSED
+# TEST             Ars-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 111111111111101 (Ans : 1111111111111101), Cout = 0 (Ans : 0)
+# TEST             Ars-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 111111111111111 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST              Rr-1 :
+# PASSED
+# TEST              Rr-2 :
+# PASSED
+# TEST             Lls-1 :
+# PASSED
+# TEST             Lls-2 :
+# PASSED
+# TEST             Als-1 :
+# PASSED
+# TEST             Als-2 :
+# PASSED
+# TEST              Rl-1 :
+# PASSED
+# TEST              Rl-2 :
+# PASSED
+# Passed = 43, Failed = 7
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
+#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
+# 1
+# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
+quit -sim
+# End time: 20:15:50 on Dec 06,2021, Elapsed time: 0:02:32
+# Errors: 0, Warnings: 3
+# Compile of alu.v failed with 2 errors.
+# Compile of ALU_TB.v failed with 2 errors.
+# 2 compiles, 2 failed with 4 errors.
+# Compile of alu.v was successful with warnings.
+# Compile of ALU_TB.v was successful with warnings.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_TB
+# vsim -gui work.ALU_TB 
+# Start time: 20:22:47 on Dec 06,2021
+# Loading work.ALU_TB
+# Loading work.ALU
+run -all
+# TEST             Add-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Add-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             Add-3 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-4 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-5 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-6 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-7 :
+# FAILED
+# A = 1000000000000000, B = 1000000000000000, C = 0 (Ans : 0), Cout = x (Ans : 1)
+# TEST             Add-8 :
+# FAILED
+# A = 1111111111111111, B = 1, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Add-9 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 1111111111111110 (Ans : 1111111111111110), Cout = x (Ans : 0)
+# TEST             Sub-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Sub-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             Sub-3 :
+# FAILED
+# A = 0, B = 1, C = 1111111111111111 (Ans : 1111111111111111), Cout = x (Ans : 0)
+# TEST             Sub-4 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Sub-5 :
+# FAILED
+# A = 11, B = 10, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             Sub-6 :
+# FAILED
+# A = 0, B = 10, C = 1111111111111110 (Ans : 1111111111111110), Cout = x (Ans : 0)
+# TEST             Sub-7 :
+# FAILED
+# A = 0, B = 1111111111111111, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             And-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 0 (Ans : 101010101010101), Cout = 0 (Ans : 0)
+# TEST             And-2 :
+# PASSED
+# TEST              Or-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 0 (Ans : 111011101110111), Cout = 0 (Ans : 0)
+# TEST              Or-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST            Nand-1 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST            Nand-2 :
+# FAILED
+# A = 110011001100110, B = 101010101010101, C = 0 (Ans : 1011101110111011), Cout = 0 (Ans : 0)
+# TEST             Nor-1 :
+# FAILED
+# A = 101010101010101, B = 1101110111011101, C = 0 (Ans : 10001000100010), Cout = 0 (Ans : 0)
+# TEST             Nor-2 :
+# FAILED
+# A = 1000100010001000, B = 1000100010001, C = 0 (Ans : 110011001100110), Cout = 0 (Ans : 0)
+# TEST             Xor-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 0 (Ans : 10001000100010), Cout = 0 (Ans : 0)
+# TEST             Xor-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST            Xnor-1 :
+# FAILED
+# A = 111011101110111, B = 1000100010001, C = 0 (Ans : 1001100110011001), Cout = 0 (Ans : 0)
+# TEST            Xnor-2 :
+# PASSED
+# TEST              Id-1 :
+# PASSED
+# TEST              Id-2 :
+# FAILED
+# A = 1101111010101101, B = 0, C = 0 (Ans : 1101111010101101), Cout = 0 (Ans : 0)
+# TEST              Id-3 :
+# FAILED
+# A = 1011111011101111, B = 0, C = 0 (Ans : 1011111011101111), Cout = 0 (Ans : 0)
+# TEST             Not-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST             Not-2 :
+# FAILED
+# A = 1, B = 0, C = 0 (Ans : 1111111111111110), Cout = 0 (Ans : 0)
+# TEST             Not-3 :
+# FAILED
+# A = 1100101011111110, B = 0, C = 0 (Ans : 11010100000001), Cout = 0 (Ans : 0)
+# TEST             Lrs-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 101), Cout = 0 (Ans : 0)
+# TEST             Lrs-2 :
+# PASSED
+# TEST             Lrs-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 0 (Ans : 111111111111101), Cout = 0 (Ans : 0)
+# TEST             Lrs-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 0 (Ans : 111111111111111), Cout = 0 (Ans : 0)
+# TEST             Ars-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 101), Cout = 0 (Ans : 0)
+# TEST             Ars-2 :
+# PASSED
+# TEST             Ars-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 0 (Ans : 1111111111111101), Cout = 0 (Ans : 0)
+# TEST             Ars-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST              Rr-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 101), Cout = 0 (Ans : 0)
+# TEST              Rr-2 :
+# FAILED
+# A = 1011, B = 0, C = 0 (Ans : 1000000000000101), Cout = 0 (Ans : 0)
+# TEST             Lls-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 10100), Cout = 0 (Ans : 0)
+# TEST             Lls-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 0 (Ans : 1110000000000000), Cout = 0 (Ans : 0)
+# TEST             Als-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 10100), Cout = 0 (Ans : 0)
+# TEST             Als-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 0 (Ans : 1110000000000000), Cout = 0 (Ans : 0)
+# TEST              Rl-1 :
+# FAILED
+# A = 111000000000000, B = 0, C = 0 (Ans : 1110000000000000), Cout = 0 (Ans : 0)
+# TEST              Rl-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 0 (Ans : 1110000000000001), Cout = 0 (Ans : 0)
+# Passed = 5, Failed = 45
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
+#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
+# 1
+# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
+quit -sim
+# End time: 20:23:11 on Dec 06,2021, Elapsed time: 0:00:24
+# Errors: 0, Warnings: 3
+# Compile of alu.v was successful with warnings.
+# Compile of ALU_TB.v was successful with warnings.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_TB
+# vsim -gui work.ALU_TB 
+# Start time: 20:24:06 on Dec 06,2021
+# Loading work.ALU_TB
+# Loading work.ALU
+run -all
+# TEST             Add-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Add-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             Add-3 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-4 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-5 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-6 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-7 :
+# FAILED
+# A = 1000000000000000, B = 1000000000000000, C = 0 (Ans : 0), Cout = x (Ans : 1)
+# TEST             Add-8 :
+# FAILED
+# A = 1111111111111111, B = 1, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Add-9 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 1111111111111110 (Ans : 1111111111111110), Cout = x (Ans : 0)
+# TEST             Sub-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Sub-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             Sub-3 :
+# FAILED
+# A = 0, B = 1, C = 1111111111111111 (Ans : 1111111111111111), Cout = x (Ans : 0)
+# TEST             Sub-4 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Sub-5 :
+# FAILED
+# A = 11, B = 10, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             Sub-6 :
+# FAILED
+# A = 0, B = 10, C = 1111111111111110 (Ans : 1111111111111110), Cout = x (Ans : 0)
+# TEST             Sub-7 :
+# FAILED
+# A = 0, B = 1111111111111111, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             And-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 0 (Ans : 101010101010101), Cout = 0 (Ans : 0)
+# TEST             And-2 :
+# PASSED
+# TEST              Or-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 0 (Ans : 111011101110111), Cout = 0 (Ans : 0)
+# TEST              Or-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST            Nand-1 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST            Nand-2 :
+# FAILED
+# A = 110011001100110, B = 101010101010101, C = 0 (Ans : 1011101110111011), Cout = 0 (Ans : 0)
+# TEST             Nor-1 :
+# FAILED
+# A = 101010101010101, B = 1101110111011101, C = 0 (Ans : 10001000100010), Cout = 0 (Ans : 0)
+# TEST             Nor-2 :
+# FAILED
+# A = 1000100010001000, B = 1000100010001, C = 0 (Ans : 110011001100110), Cout = 0 (Ans : 0)
+# TEST             Xor-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 0 (Ans : 10001000100010), Cout = 0 (Ans : 0)
+# TEST             Xor-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST            Xnor-1 :
+# FAILED
+# A = 111011101110111, B = 1000100010001, C = 0 (Ans : 1001100110011001), Cout = 0 (Ans : 0)
+# TEST            Xnor-2 :
+# PASSED
+# TEST              Id-1 :
+# PASSED
+# TEST              Id-2 :
+# FAILED
+# A = 1101111010101101, B = 0, C = 0 (Ans : 1101111010101101), Cout = 0 (Ans : 0)
+# TEST              Id-3 :
+# FAILED
+# A = 1011111011101111, B = 0, C = 0 (Ans : 1011111011101111), Cout = 0 (Ans : 0)
+# TEST             Not-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST             Not-2 :
+# FAILED
+# A = 1, B = 0, C = 0 (Ans : 1111111111111110), Cout = 0 (Ans : 0)
+# TEST             Not-3 :
+# FAILED
+# A = 1100101011111110, B = 0, C = 0 (Ans : 11010100000001), Cout = 0 (Ans : 0)
+# TEST             Lrs-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 101), Cout = 0 (Ans : 0)
+# TEST             Lrs-2 :
+# PASSED
+# TEST             Lrs-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 0 (Ans : 111111111111101), Cout = 0 (Ans : 0)
+# TEST             Lrs-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 0 (Ans : 111111111111111), Cout = 0 (Ans : 0)
+# TEST             Ars-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 101), Cout = 0 (Ans : 0)
+# TEST             Ars-2 :
+# PASSED
+# TEST             Ars-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 0 (Ans : 1111111111111101), Cout = 0 (Ans : 0)
+# TEST             Ars-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 0 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST              Rr-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 101), Cout = 0 (Ans : 0)
+# TEST              Rr-2 :
+# FAILED
+# A = 1011, B = 0, C = 0 (Ans : 1000000000000101), Cout = 0 (Ans : 0)
+# TEST             Lls-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 10100), Cout = 0 (Ans : 0)
+# TEST             Lls-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 0 (Ans : 1110000000000000), Cout = 0 (Ans : 0)
+# TEST             Als-1 :
+# FAILED
+# A = 1010, B = 0, C = 0 (Ans : 10100), Cout = 0 (Ans : 0)
+# TEST             Als-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 0 (Ans : 1110000000000000), Cout = 0 (Ans : 0)
+# TEST              Rl-1 :
+# FAILED
+# A = 111000000000000, B = 0, C = 0 (Ans : 1110000000000000), Cout = 0 (Ans : 0)
+# TEST              Rl-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 0 (Ans : 1110000000000001), Cout = 0 (Ans : 0)
+# Passed = 5, Failed = 45
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
+#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
+# 1
+# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
+quit -sim
+# End time: 20:24:56 on Dec 06,2021, Elapsed time: 0:00:50
+# Errors: 0, Warnings: 2
+# Compile of alu.v failed with 20 errors.
+# Compile of ALU_TB.v failed with 20 errors.
+# 2 compiles, 2 failed with 40 errors.
+# Compile of alu.v failed with 1 errors.
+# Compile of ALU_TB.v failed with 1 errors.
+# 2 compiles, 2 failed with 2 errors.
+# Compile of alu.v was successful.
+# Compile of ALU_TB.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_TB
+# vsim -gui work.ALU_TB 
+# Start time: 20:28:53 on Dec 06,2021
+# Loading work.ALU_TB
+# Loading work.ALU
+run -all
+# TEST             Add-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Add-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             Add-3 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-4 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-5 :
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-6 :
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Add-7 :
+# FAILED
+# A = 1000000000000000, B = 1000000000000000, C = 0 (Ans : 0), Cout = x (Ans : 1)
+# TEST             Add-8 :
+# FAILED
+# A = 1111111111111111, B = 1, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Add-9 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 1111111111111110 (Ans : 1111111111111110), Cout = x (Ans : 0)
+# TEST             Sub-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Sub-2 :
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             Sub-3 :
+# FAILED
+# A = 0, B = 1, C = 1111111111111111 (Ans : 1111111111111111), Cout = x (Ans : 0)
+# TEST             Sub-4 :
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Sub-5 :
+# FAILED
+# A = 11, B = 10, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             Sub-6 :
+# FAILED
+# A = 0, B = 10, C = 1111111111111110 (Ans : 1111111111111110), Cout = x (Ans : 0)
+# TEST             Sub-7 :
+# FAILED
+# A = 0, B = 1111111111111111, C = 1 (Ans : 1), Cout = x (Ans : 0)
+# TEST             And-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = x (Ans : 0)
+# TEST             And-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST              Or-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = x (Ans : 0)
+# TEST              Or-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 1111111111111111 (Ans : 1111111111111111), Cout = x (Ans : 0)
+# TEST            Nand-1 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 1111111111111111 (Ans : 1111111111111111), Cout = x (Ans : 0)
+# TEST            Nand-2 :
+# FAILED
+# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = x (Ans : 0)
+# TEST             Nor-1 :
+# FAILED
+# A = 101010101010101, B = 1101110111011101, C = 10001000100010 (Ans : 10001000100010), Cout = x (Ans : 0)
+# TEST             Nor-2 :
+# FAILED
+# A = 1000100010001000, B = 1000100010001, C = 110011001100110 (Ans : 110011001100110), Cout = x (Ans : 0)
+# TEST             Xor-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = x (Ans : 0)
+# TEST             Xor-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 1111111111111111 (Ans : 1111111111111111), Cout = x (Ans : 0)
+# TEST            Xnor-1 :
+# FAILED
+# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = x (Ans : 0)
+# TEST            Xnor-2 :
+# FAILED
+# A = 1010101010101010, B = 101010101010101, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST              Id-1 :
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST              Id-2 :
+# FAILED
+# A = 1101111010101101, B = 0, C = 1101111010101101 (Ans : 1101111010101101), Cout = x (Ans : 0)
+# TEST              Id-3 :
+# FAILED
+# A = 1011111011101111, B = 0, C = 1011111011101111 (Ans : 1011111011101111), Cout = x (Ans : 0)
+# TEST             Not-1 :
+# FAILED
+# A = 0, B = 0, C = 1111111111111111 (Ans : 1111111111111111), Cout = x (Ans : 0)
+# TEST             Not-2 :
+# FAILED
+# A = 1, B = 0, C = 1111111111111110 (Ans : 1111111111111110), Cout = x (Ans : 0)
+# TEST             Not-3 :
+# FAILED
+# A = 1100101011111110, B = 0, C = 11010100000001 (Ans : 11010100000001), Cout = x (Ans : 0)
+# TEST             Lrs-1 :
+# FAILED
+# A = 1010, B = 0, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Lrs-2 :
+# FAILED
+# A = 1, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Lrs-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 111111111111101 (Ans : 111111111111101), Cout = x (Ans : 0)
+# TEST             Lrs-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 111111111111111 (Ans : 111111111111111), Cout = x (Ans : 0)
+# TEST             Ars-1 :
+# FAILED
+# A = 1010, B = 0, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST             Ars-2 :
+# FAILED
+# A = 1, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
+# TEST             Ars-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 111111111111101 (Ans : 1111111111111101), Cout = x (Ans : 0)
+# TEST             Ars-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 111111111111111 (Ans : 1111111111111111), Cout = x (Ans : 0)
+# TEST              Rr-1 :
+# FAILED
+# A = 1010, B = 0, C = 101 (Ans : 101), Cout = x (Ans : 0)
+# TEST              Rr-2 :
+# FAILED
+# A = 1011, B = 0, C = 1000000000000101 (Ans : 1000000000000101), Cout = x (Ans : 0)
+# TEST             Lls-1 :
+# FAILED
+# A = 1010, B = 0, C = 10100 (Ans : 10100), Cout = x (Ans : 0)
+# TEST             Lls-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 1110000000000000 (Ans : 1110000000000000), Cout = x (Ans : 0)
+# TEST             Als-1 :
+# FAILED
+# A = 1010, B = 0, C = 10100 (Ans : 10100), Cout = x (Ans : 0)
+# TEST             Als-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 1110000000000000 (Ans : 1110000000000000), Cout = x (Ans : 0)
+# TEST              Rl-1 :
+# FAILED
+# A = 111000000000000, B = 0, C = 1110000000000000 (Ans : 1110000000000000), Cout = x (Ans : 0)
+# TEST              Rl-2 :
+# FAILED
+# A = 1111000000000000, B = 0, C = 1110000000000001 (Ans : 1110000000000001), Cout = x (Ans : 0)
+# Passed = 0, Failed = 50
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
+#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
+# 1
+# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
+quit -sim
+# End time: 20:29:16 on Dec 06,2021, Elapsed time: 0:00:23
+# Errors: 0, Warnings: 4
+# Compile of alu.v was successful.
+# Compile of ALU_TB.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_TB
+# vsim -gui work.ALU_TB 
+# Start time: 20:29:36 on Dec 06,2021
+# Loading work.ALU_TB
+# Loading work.ALU
+run -all
+# TEST             Add-1 :
+# PASSED
+# TEST             Add-2 :
+# PASSED
+# TEST             Add-3 :
+# PASSED
+# TEST             Add-4 :
+# PASSED
+# TEST             Add-5 :
+# PASSED
+# TEST             Add-6 :
+# PASSED
+# TEST             Add-7 :
+# PASSED
+# TEST             Add-8 :
+# PASSED
+# TEST             Add-9 :
+# PASSED
+# TEST             Sub-1 :
+# PASSED
+# TEST             Sub-2 :
+# PASSED
+# TEST             Sub-3 :
+# PASSED
+# TEST             Sub-4 :
+# PASSED
+# TEST             Sub-5 :
+# PASSED
+# TEST             Sub-6 :
+# PASSED
+# TEST             Sub-7 :
+# PASSED
+# TEST             And-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = 1 (Ans : 0)
+# TEST             And-2 :
+# PASSED
+# TEST              Or-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = 1 (Ans : 0)
+# TEST              Or-2 :
+# PASSED
+# TEST            Nand-1 :
+# PASSED
+# TEST            Nand-2 :
+# FAILED
+# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = 1 (Ans : 0)
+# TEST             Nor-1 :
+# PASSED
+# TEST             Nor-2 :
+# PASSED
+# TEST             Xor-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = 1 (Ans : 0)
+# TEST             Xor-2 :
+# PASSED
+# TEST            Xnor-1 :
+# FAILED
+# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = 1 (Ans : 0)
+# TEST            Xnor-2 :
+# PASSED
+# TEST              Id-1 :
+# PASSED
+# TEST              Id-2 :
+# PASSED
+# TEST              Id-3 :
+# PASSED
+# TEST             Not-1 :
+# PASSED
+# TEST             Not-2 :
+# PASSED
+# TEST             Not-3 :
+# PASSED
+# TEST             Lrs-1 :
+# PASSED
+# TEST             Lrs-2 :
+# PASSED
+# TEST             Lrs-3 :
+# PASSED
+# TEST             Lrs-4 :
+# PASSED
+# TEST             Ars-1 :
+# PASSED
+# TEST             Ars-2 :
+# PASSED
+# TEST             Ars-3 :
+# FAILED
+# A = 1111111111111010, B = 0, C = 111111111111101 (Ans : 1111111111111101), Cout = 0 (Ans : 0)
+# TEST             Ars-4 :
+# FAILED
+# A = 1111111111111111, B = 0, C = 111111111111111 (Ans : 1111111111111111), Cout = 0 (Ans : 0)
+# TEST              Rr-1 :
+# PASSED
+# TEST              Rr-2 :
+# PASSED
+# TEST             Lls-1 :
+# PASSED
+# TEST             Lls-2 :
+# PASSED
+# TEST             Als-1 :
+# PASSED
+# TEST             Als-2 :
+# PASSED
+# TEST              Rl-1 :
+# PASSED
+# TEST              Rl-2 :
+# PASSED
+# Passed = 43, Failed = 7
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
+#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
+# 1
+# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
+quit -sim
+# End time: 20:30:59 on Dec 06,2021, Elapsed time: 0:01:23
+# Errors: 0, Warnings: 2
+# Compile of alu.v was successful.
+# Compile of ALU_TB.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_TB
+# vsim -gui work.ALU_TB 
+# Start time: 20:41:36 on Dec 06,2021
+# Loading work.ALU_TB
+# Loading work.ALU
+run -all
+# TEST             Add-1 :
+# PASSED
+# TEST             Add-2 :
+# PASSED
+# TEST             Add-3 :
+# PASSED
+# TEST             Add-4 :
+# PASSED
+# TEST             Add-5 :
+# PASSED
+# TEST             Add-6 :
+# PASSED
+# TEST             Add-7 :
+# PASSED
+# TEST             Add-8 :
+# PASSED
+# TEST             Add-9 :
+# PASSED
+# TEST             Sub-1 :
+# PASSED
+# TEST             Sub-2 :
+# PASSED
+# TEST             Sub-3 :
+# PASSED
+# TEST             Sub-4 :
+# PASSED
+# TEST             Sub-5 :
+# PASSED
+# TEST             Sub-6 :
+# PASSED
+# TEST             Sub-7 :
+# PASSED
+# TEST             And-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = 1 (Ans : 0)
+# TEST             And-2 :
+# PASSED
+# TEST              Or-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = 1 (Ans : 0)
+# TEST              Or-2 :
+# PASSED
+# TEST            Nand-1 :
+# PASSED
+# TEST            Nand-2 :
+# FAILED
+# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = 1 (Ans : 0)
+# TEST             Nor-1 :
+# PASSED
+# TEST             Nor-2 :
+# PASSED
+# TEST             Xor-1 :
+# FAILED
+# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = 1 (Ans : 0)
+# TEST             Xor-2 :
+# PASSED
+# TEST            Xnor-1 :
+# FAILED
+# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = 1 (Ans : 0)
+# TEST            Xnor-2 :
+# PASSED
+# TEST              Id-1 :
+# PASSED
+# TEST              Id-2 :
+# PASSED
+# TEST              Id-3 :
+# PASSED
+# TEST             Not-1 :
+# PASSED
+# TEST             Not-2 :
+# PASSED
+# TEST             Not-3 :
+# PASSED
+# TEST             Lrs-1 :
+# PASSED
+# TEST             Lrs-2 :
+# PASSED
+# TEST             Lrs-3 :
+# PASSED
+# TEST             Lrs-4 :
+# PASSED
+# TEST             Ars-1 :
+# PASSED
+# TEST             Ars-2 :
+# PASSED
+# TEST             Ars-3 :
+# PASSED
+# TEST             Ars-4 :
+# PASSED
+# TEST              Rr-1 :
+# PASSED
+# TEST              Rr-2 :
+# PASSED
+# TEST             Lls-1 :
+# PASSED
+# TEST             Lls-2 :
+# PASSED
+# TEST             Als-1 :
+# PASSED
+# TEST             Als-2 :
+# PASSED
+# TEST              Rl-1 :
+# PASSED
+# TEST              Rl-2 :
+# PASSED
+# Passed = 45, Failed = 5
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
+#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
+# 1
+# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
