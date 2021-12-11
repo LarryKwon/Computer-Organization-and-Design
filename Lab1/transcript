@@ -465,3 +465,13 @@ run -all
 #    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
 # 1
 # Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+quit -sim
+# End time: 18:30:04 on Dec 11,2021, Elapsed time: 1:16:28
+# Errors: 0, Warnings: 1

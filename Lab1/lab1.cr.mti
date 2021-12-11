@@ -6,4 +6,11 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ALU_TB
 
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab1/alu.v {1 {vlog -work work -stats=none {C:\Users\W24876\Desktop\modelsim_project\Lab1\alu.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
 } {} {}}
