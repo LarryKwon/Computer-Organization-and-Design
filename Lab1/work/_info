@@ -10,23 +10,23 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 vALU
-Z0 !s110 1638801050
+Z0 !s110 1639210403
 !i10b 1
-!s100 Tj?:Y=@?nVkX;8:WKmVF43
+!s100 d7of[]@ZTmT4JMgKF`N<A2
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IjUD<;Pe0R9P@8GE6DAS>N1
+I``[c5G78_45;EN6D0@n180
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 dC:/Users/W24876/Desktop/modelsim_project/Lab1
-w1638801029
+w1639210396
 8alu.v
 Falu.v
-!i122 48
-L0 3 54
+!i122 59
+L0 3 132
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1638801049.000000
+Z5 !s108 1639210403.000000
 !s107 alu.v|C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v|
 Z6 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v|
 !i113 1
@@ -44,7 +44,7 @@ R3
 w1535718583
 8C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v
 FC:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v
-!i122 48
+!i122 59
 L0 26 236
 R4
 r1

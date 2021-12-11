@@ -1,1084 +1,151 @@
-vsim -gui work.ALU_TB
-# vsim -gui work.ALU_TB 
-# Start time: 23:00:19 on Dec 06,2021
-# Loading work.ALU_TB
-# Loading work.ALU
-add wave -position insertpoint sim:/ALU_TB/*
-run -all
-# TEST             Add-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-5 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-6 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-7 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-8 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Add-9 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Sub-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Sub-5 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-6 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-7 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             And-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = 1 (Ans : 0)
-# TEST             And-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Or-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = 1 (Ans : 0)
-# TEST              Or-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST            Nand-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST            Nand-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = 1 (Ans : 0)
-# TEST             Nor-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Nor-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Xor-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = 1 (Ans : 0)
-# TEST             Xor-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST            Xnor-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = 1 (Ans : 0)
-# TEST            Xnor-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Id-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Id-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Id-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Not-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Not-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Not-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rr-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rr-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lls-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lls-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Als-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Als-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rl-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rl-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# Passed = 45, Failed = 5
-# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
-#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
-# 1
-# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
-vsim -gui work.ALU_TB
-# End time: 23:07:44 on Dec 06,2021, Elapsed time: 0:07:25
-# Errors: 0, Warnings: 1
-# vsim -gui work.ALU_TB 
-# Start time: 23:07:44 on Dec 06,2021
-# Loading work.ALU_TB
-# Loading work.ALU
-add wave -position insertpoint sim:/ALU_TB/UUT/*
-run -all
-# TEST             Add-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-5 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-6 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-7 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-8 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Add-9 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Sub-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Sub-5 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-6 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-7 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             And-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = 1 (Ans : 0)
-# TEST             And-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Or-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = 1 (Ans : 0)
-# TEST              Or-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST            Nand-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST            Nand-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = 1 (Ans : 0)
-# TEST             Nor-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Nor-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Xor-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = 1 (Ans : 0)
-# TEST             Xor-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST            Xnor-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = 1 (Ans : 0)
-# TEST            Xnor-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Id-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Id-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Id-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Not-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Not-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Not-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rr-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rr-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lls-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lls-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Als-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Als-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rl-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rl-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# Passed = 45, Failed = 5
-# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
-#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
-# 1
-# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
-# A time value could not be extracted from the current line
-# A time value could not be extracted from the current line
+# Compile of alu.v failed with 14 errors.
+# Compile of ALU_TB.v failed with 14 errors.
+# 2 compiles, 2 failed with 28 errors.
+# Compile of alu.v failed with 14 errors.
+# Compile of ALU_TB.v failed with 14 errors.
+# 2 compiles, 2 failed with 28 errors.
+# Compile of alu.v failed with 14 errors.
+# Compile of ALU_TB.v failed with 14 errors.
+# 2 compiles, 2 failed with 28 errors.
+# Compile of alu.v failed with 13 errors.
+# Compile of ALU_TB.v failed with 13 errors.
+# 2 compiles, 2 failed with 26 errors.
+# Compile of alu.v failed with 14 errors.
+# Compile of ALU_TB.v failed with 14 errors.
+# 2 compiles, 2 failed with 28 errors.
+# Compile of alu.v failed with 14 errors.
+# Compile of ALU_TB.v failed with 14 errors.
+# 2 compiles, 2 failed with 28 errors.
+# Compile of alu.v failed with 11 errors.
+# Compile of ALU_TB.v failed with 11 errors.
+# 2 compiles, 2 failed with 22 errors.
 # Compile of alu.v was successful.
 # Compile of ALU_TB.v was successful.
 # 2 compiles, 0 failed with no errors.
 vsim -gui work.ALU_TB
-# End time: 23:12:43 on Dec 06,2021, Elapsed time: 0:04:59
-# Errors: 0, Warnings: 2
 # vsim -gui work.ALU_TB 
-# Start time: 23:12:43 on Dec 06,2021
+# Start time: 17:09:11 on Dec 11,2021
 # Loading work.ALU_TB
 # Loading work.ALU
-add wave -position insertpoint sim:/ALU_TB/UUT/*
-run -all
-# TEST             Add-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-5 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-6 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-7 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 0
-# PASSED
-# TEST             Add-8 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Add-9 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Sub-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Sub-5 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-6 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Sub-7 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             And-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = 1 (Ans : 0)
-# TEST             And-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Or-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = 1 (Ans : 0)
-# TEST              Or-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST            Nand-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST            Nand-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = 1 (Ans : 0)
-# TEST             Nor-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 1
-# temp_for_c2 : 1
-# PASSED
-# TEST             Nor-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Xor-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = 1 (Ans : 0)
-# TEST             Xor-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST            Xnor-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 1
-# FAILED
-# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = 1 (Ans : 0)
-# TEST            Xnor-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Id-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Id-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Id-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Not-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Not-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Not-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lrs-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-3 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Ars-4 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rr-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rr-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lls-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Lls-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Als-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST             Als-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rl-1 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# TEST              Rl-2 :
-# ex_A[16] : 0
-# ex_B[16] : 0
-# temp_for_c1 : 0
-# temp_for_c2 : 0
-# PASSED
-# Passed = 45, Failed = 5
-# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
-#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
-# 1
-# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
-# Compile of alu.v was successful.
-# Break key hit
-# Break key hit
-# Break key hit
-# Break key hit
-# Break key hit
-# Compile of alu.v was successful.
-# Compile of ALU_TB.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.ALU_TB
-# End time: 23:30:59 on Dec 06,2021, Elapsed time: 0:18:16
-# Errors: 0, Warnings: 3
-# vsim -gui work.ALU_TB 
-# Start time: 23:30:59 on Dec 06,2021
-# Loading work.ALU_TB
-# Loading work.ALU
-add wave -position insertpoint sim:/ALU_TB/UUT/*
 run -all
 # TEST             Add-1 :
 # ex_A : 00000000000000000
 # ex_B : 00000000000000000
 # temp_for_c1 : 00000000000000000
 # temp_for_c2 : 0000000000000000
-# PASSED
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
 # TEST             Add-2 :
 # ex_A : 00000000000000001
 # ex_B : 00000000000000000
 # temp_for_c1 : 00000000000000001
 # temp_for_c2 : 0000000000000001
-# PASSED
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = x (Ans : 0)
 # TEST             Add-3 :
 # ex_A : 00000000000000010
 # ex_B : 00000000000000011
 # temp_for_c1 : 00000000000000101
 # temp_for_c2 : 0000000000000101
-# PASSED
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = x (Ans : 0)
 # TEST             Add-4 :
 # ex_A : 00000000000000011
 # ex_B : 00000000000000010
 # temp_for_c1 : 00000000000000101
 # temp_for_c2 : 0000000000000101
-# PASSED
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = x (Ans : 0)
 # TEST             Add-5 :
 # ex_A : 00000000000000010
 # ex_B : 00000000000000011
 # temp_for_c1 : 00000000000000101
 # temp_for_c2 : 0000000000000101
-# PASSED
+# FAILED
+# A = 10, B = 11, C = 101 (Ans : 101), Cout = x (Ans : 0)
 # TEST             Add-6 :
 # ex_A : 00000000000000011
 # ex_B : 00000000000000010
 # temp_for_c1 : 00000000000000101
 # temp_for_c2 : 0000000000000101
-# PASSED
+# FAILED
+# A = 11, B = 10, C = 101 (Ans : 101), Cout = x (Ans : 0)
 # TEST             Add-7 :
 # ex_A : 01000000000000000
 # ex_B : 01000000000000000
 # temp_for_c1 : 10000000000000000
 # temp_for_c2 : 0000000000000000
-# PASSED
+# FAILED
+# A = 1000000000000000, B = 1000000000000000, C = 0 (Ans : 0), Cout = x (Ans : 1)
 # TEST             Add-8 :
 # ex_A : 01111111111111111
 # ex_B : 00000000000000001
 # temp_for_c1 : 10000000000000000
 # temp_for_c2 : 1000000000000000
-# PASSED
+# FAILED
+# A = 1111111111111111, B = 1, C = 0 (Ans : 0), Cout = x (Ans : 0)
 # TEST             Add-9 :
 # ex_A : 01111111111111111
 # ex_B : 01111111111111111
 # temp_for_c1 : 11111111111111110
 # temp_for_c2 : 1111111111111110
-# PASSED
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 1111111111111110 (Ans : 1111111111111110), Cout = x (Ans : 0)
 # TEST             Sub-1 :
 # ex_A : 00000000000000000
 # ex_B : 00000000000000000
 # temp_for_c1 : 00000000000000000
 # temp_for_c2 : 0000000000000000
-# PASSED
+# FAILED
+# A = 0, B = 0, C = 0 (Ans : 0), Cout = x (Ans : 0)
 # TEST             Sub-2 :
 # ex_A : 00000000000000001
 # ex_B : 00000000000000000
 # temp_for_c1 : 00000000000000001
 # temp_for_c2 : 0000000000000001
-# PASSED
+# FAILED
+# A = 1, B = 0, C = 1 (Ans : 1), Cout = x (Ans : 0)
 # TEST             Sub-3 :
 # ex_A : 00000000000000000
 # ex_B : 00000000000000001
 # temp_for_c1 : 00000000000000001
 # temp_for_c2 : 0000000000000001
-# PASSED
+# FAILED
+# A = 0, B = 1, C = 1111111111111111 (Ans : 1111111111111111), Cout = x (Ans : 0)
 # TEST             Sub-4 :
 # ex_A : 01111111111111111
 # ex_B : 01111111111111111
 # temp_for_c1 : 11111111111111110
 # temp_for_c2 : 1111111111111110
-# PASSED
+# FAILED
+# A = 1111111111111111, B = 1111111111111111, C = 0 (Ans : 0), Cout = x (Ans : 0)
 # TEST             Sub-5 :
 # ex_A : 00000000000000011
 # ex_B : 00000000000000010
 # temp_for_c1 : 00000000000000101
 # temp_for_c2 : 0000000000000101
-# PASSED
+# FAILED
+# A = 11, B = 10, C = 1 (Ans : 1), Cout = x (Ans : 0)
 # TEST             Sub-6 :
 # ex_A : 00000000000000000
 # ex_B : 00000000000000010
 # temp_for_c1 : 00000000000000010
 # temp_for_c2 : 0000000000000010
-# PASSED
+# FAILED
+# A = 0, B = 10, C = 1111111111111110 (Ans : 1111111111111110), Cout = x (Ans : 0)
 # TEST             Sub-7 :
 # ex_A : 00000000000000000
 # ex_B : 01111111111111111
 # temp_for_c1 : 01111111111111111
 # temp_for_c2 : 0111111111111111
-# PASSED
+# FAILED
+# A = 0, B = 1111111111111111, C = 1 (Ans : 1), Cout = x (Ans : 0)
 # TEST             And-1 :
 # ex_A : 00111011101110111
 # ex_B : 00101010101010101
 # temp_for_c1 : 01100110011001100
 # temp_for_c2 : 1100110011001100
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 101010101010101 (Ans : 101010101010101), Cout = 1 (Ans : 0)
+# PASSED
 # TEST             And-2 :
 # ex_A : 01010101010101010
 # ex_B : 00101010101010101
@@ -1090,8 +157,7 @@ run -all
 # ex_B : 00101010101010101
 # temp_for_c1 : 01100110011001100
 # temp_for_c2 : 1100110011001100
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 111011101110111 (Ans : 111011101110111), Cout = 1 (Ans : 0)
+# PASSED
 # TEST              Or-2 :
 # ex_A : 01010101010101010
 # ex_B : 00101010101010101
@@ -1109,8 +175,7 @@ run -all
 # ex_B : 00101010101010101
 # temp_for_c1 : 01011101110111011
 # temp_for_c2 : 1011101110111011
-# FAILED
-# A = 110011001100110, B = 101010101010101, C = 1011101110111011 (Ans : 1011101110111011), Cout = 1 (Ans : 0)
+# PASSED
 # TEST             Nor-1 :
 # ex_A : 00101010101010101
 # ex_B : 01101110111011101
@@ -1128,8 +193,7 @@ run -all
 # ex_B : 00101010101010101
 # temp_for_c1 : 01100110011001100
 # temp_for_c2 : 1100110011001100
-# FAILED
-# A = 111011101110111, B = 101010101010101, C = 10001000100010 (Ans : 10001000100010), Cout = 1 (Ans : 0)
+# PASSED
 # TEST             Xor-2 :
 # ex_A : 01010101010101010
 # ex_B : 00101010101010101
@@ -1141,8 +205,7 @@ run -all
 # ex_B : 00001000100010001
 # temp_for_c1 : 01000100010001000
 # temp_for_c2 : 1000100010001000
-# FAILED
-# A = 111011101110111, B = 1000100010001, C = 1001100110011001 (Ans : 1001100110011001), Cout = 1 (Ans : 0)
+# PASSED
 # TEST            Xnor-2 :
 # ex_A : 01010101010101010
 # ex_B : 00101010101010101
@@ -1281,7 +344,123 @@ run -all
 # temp_for_c1 : 01111000000000000
 # temp_for_c2 : 0111000000000000
 # PASSED
-# Passed = 45, Failed = 5
+# Passed = 34, Failed = 16
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
+#    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
+# 1
+# Break in Module ALU_TB at C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v line 55
+# Compile of alu.v was successful.
+# Compile of ALU_TB.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_TB
+# End time: 17:13:36 on Dec 11,2021, Elapsed time: 0:04:25
+# Errors: 0, Warnings: 10
+# vsim -gui work.ALU_TB 
+# Start time: 17:13:36 on Dec 11,2021
+# Loading work.ALU_TB
+# Loading work.ALU
+run -all
+# TEST             Add-1 :
+# PASSED
+# TEST             Add-2 :
+# PASSED
+# TEST             Add-3 :
+# PASSED
+# TEST             Add-4 :
+# PASSED
+# TEST             Add-5 :
+# PASSED
+# TEST             Add-6 :
+# PASSED
+# TEST             Add-7 :
+# PASSED
+# TEST             Add-8 :
+# PASSED
+# TEST             Add-9 :
+# PASSED
+# TEST             Sub-1 :
+# PASSED
+# TEST             Sub-2 :
+# PASSED
+# TEST             Sub-3 :
+# PASSED
+# TEST             Sub-4 :
+# PASSED
+# TEST             Sub-5 :
+# PASSED
+# TEST             Sub-6 :
+# PASSED
+# TEST             Sub-7 :
+# PASSED
+# TEST             And-1 :
+# PASSED
+# TEST             And-2 :
+# PASSED
+# TEST              Or-1 :
+# PASSED
+# TEST              Or-2 :
+# PASSED
+# TEST            Nand-1 :
+# PASSED
+# TEST            Nand-2 :
+# PASSED
+# TEST             Nor-1 :
+# PASSED
+# TEST             Nor-2 :
+# PASSED
+# TEST             Xor-1 :
+# PASSED
+# TEST             Xor-2 :
+# PASSED
+# TEST            Xnor-1 :
+# PASSED
+# TEST            Xnor-2 :
+# PASSED
+# TEST              Id-1 :
+# PASSED
+# TEST              Id-2 :
+# PASSED
+# TEST              Id-3 :
+# PASSED
+# TEST             Not-1 :
+# PASSED
+# TEST             Not-2 :
+# PASSED
+# TEST             Not-3 :
+# PASSED
+# TEST             Lrs-1 :
+# PASSED
+# TEST             Lrs-2 :
+# PASSED
+# TEST             Lrs-3 :
+# PASSED
+# TEST             Lrs-4 :
+# PASSED
+# TEST             Ars-1 :
+# PASSED
+# TEST             Ars-2 :
+# PASSED
+# TEST             Ars-3 :
+# PASSED
+# TEST             Ars-4 :
+# PASSED
+# TEST              Rr-1 :
+# PASSED
+# TEST              Rr-2 :
+# PASSED
+# TEST             Lls-1 :
+# PASSED
+# TEST             Lls-2 :
+# PASSED
+# TEST             Als-1 :
+# PASSED
+# TEST             Als-2 :
+# PASSED
+# TEST              Rl-1 :
+# PASSED
+# TEST              Rl-2 :
+# PASSED
+# Passed = 50, Failed = 0
 # ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab1/ALU_TB.v(55)
 #    Time: 50 ns  Iteration: 0  Instance: /ALU_TB
 # 1

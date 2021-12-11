@@ -19,37 +19,105 @@ module ALU(A,B,OP,C,Cout);
 	
 	reg[16:0] extend_A;
 	reg[16:0] extend_B;
+	
+	reg Overflow;
+	assign Cout = Overflow;
 
-	assign Cout = (tmp_for_c1[16]!=tmp_for_c2[15]);
+	initial begin
+		Overflow = (tmp_for_c1[16]!=tmp_for_c2[15]);
+	end
 
 	always @(*)
 	begin
 		extend_A = A;
 		extend_B = B;
-		$display("ex_A : %b", extend_A);
-		$display("ex_B : %b", extend_B);
-
 		tmp_for_c1 = extend_A + extend_B;
 		tmp_for_c2 = A[14:0] + B[14:0];
-		$display("temp_for_c1 : 	%b", tmp_for_c1);
-		$display("temp_for_c2 : %b", tmp_for_c2);
+
 		case(OP)
 			4'b0000: ALU_RESULT = A+B;
 			4'b0001: ALU_RESULT = A-B;
-			4'b0010: ALU_RESULT = A&B;
-			4'b0011: ALU_RESULT = A|B;
-			4'b0100: ALU_RESULT = ~(A&B);
-			4'b0101: ALU_RESULT = ~(A|B);
-			4'b0110: ALU_RESULT = A^B;
-			4'b0111: ALU_RESULT = ~(A^B);
-			4'b1000: ALU_RESULT = A;
-			4'b1001: ALU_RESULT = ~A;
-			4'b1010: ALU_RESULT = A>>1;
-			4'b1011: ALU_RESULT = $signed(A)>>>1;
-			4'b1100: ALU_RESULT = {A[0],A[15:1]};
-			4'b1101: ALU_RESULT = A << 1;
-			4'b1110: ALU_RESULT = $signed(A) <<< 1;
-			4'b1111: ALU_RESULT = {A[14:0],A[15]};
+			4'b0010: begin
+					ALU_RESULT = A&B;
+					Overflow = 0;
+				end
+
+			4'b0011: 
+				begin
+					ALU_RESULT = A|B;
+					Overflow = 0;
+				end
+
+			4'b0100: 
+				begin
+					ALU_RESULT = ~(A&B);
+					Overflow = 0;
+				end
+
+			4'b0101: 
+				begin
+					ALU_RESULT = ~(A|B);
+					Overflow = 0;
+				end
+
+			4'b0110: 
+				begin
+					ALU_RESULT = A^B;
+					Overflow = 0;
+				end
+
+			4'b0111: 
+				begin
+					ALU_RESULT = ~(A^B);
+					Overflow = 0;
+				end
+
+			4'b1000: 
+				begin
+					ALU_RESULT = A;
+					Overflow  = 0;
+				end
+
+			4'b1001: 
+				begin
+					ALU_RESULT = ~A;
+					Overflow = 0;
+				end
+
+			4'b1010: 
+				begin
+					ALU_RESULT = A>>1;
+					Overflow = 0;
+				end
+
+			4'b1011: 
+				begin
+					ALU_RESULT = $signed(A)>>>1;
+					Overflow = 0;
+				end
+
+			4'b1100: 
+				begin
+					ALU_RESULT = {A[0],A[15:1]};
+					Overflow = 0;
+				end
+
+			4'b1101: 
+				begin
+					ALU_RESULT = A << 1;
+					Overflow = 0;
+				end
+
+			4'b1110: 
+				begin
+					ALU_RESULT = $signed(A) <<< 1;
+					Overflow = 0;
+				end
+			4'b1111: 
+				begin
+					ALU_RESULT = {A[14:0],A[15]};
+					Overflow = 0;
+				end
 			default: ALU_RESULT = A+B;
 		endcase
 	end
