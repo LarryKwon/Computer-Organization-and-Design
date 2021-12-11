@@ -103,7 +103,9 @@ module vending_machine (
 		if (i_select_item[2]) output_total = output_total + 'd1000;
 		if (i_select_item[3]) output_total = output_total + 'd2000;
 
-		current_total_nxt = input_total - output_total;
+		current_total_nxt =  input_total - output_total;
+		if(i_trigger_return) have_to_return = 1;
+		else have_to_return = 0;
 	end
 
 	// Combinational logic for the outputs
@@ -133,7 +135,7 @@ module vending_machine (
 
 			if(i_select_item[3] && o_available_item[3] == 1) o_output_item[3] = 1;
 			else o_output_item[3] = 0;
-
+		//$display("current_total_nxt : %d", current_total_nxt);
 		end
 		else begin
 			current_total_nxt = 0;
@@ -165,7 +167,9 @@ module vending_machine (
 			if(stopwatch > 0) stopwatch = stopwatch - 1;
 
 			//if you have to return some coins then you have to turn on the bit
-			if(stopwatch == 0) begin
+			if(stopwatch == 0 || have_to_return) begin
+				input_total = 0;
+				output_total = 0;
 				if(current_total >= 1000) begin 
 					o_return_coin[2] = 1;
 					current_total_nxt = current_total - 'd1000;
@@ -185,8 +189,7 @@ module vending_machine (
 						else o_return_coin[0] = 0;
 					end
 				end
-			$display("current_total_nxt : %d", current_total_nxt);
-			current_total = current_total_nxt;
+				$display("current_total_nxt : %d", current_total_nxt);
 			end
 /////////////////////////////////////////////////////////////////////////
 		end		   //update all state end
