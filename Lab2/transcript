@@ -339,3 +339,631 @@ run -all
 # FAILED
 # o_available_item = 1111 (Ans: 11)
 # TEST                    WaitReturnTest :
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 22:41:22 on Dec 11,2021, Elapsed time: 0:02:35
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:41:22 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 22:43:16 on Dec 11,2021, Elapsed time: 0:01:54
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:43:16 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# current_total_nxt :        100
+# current_total_nxt :        200
+# current_total_nxt :        300
+# current_total_nxt :        400
+# current_total_nxt :        500
+# TEST                 Insert100CoinTest :
+# PASSED
+# current_total_nxt :       1000
+# current_total_nxt :       1500
+# TEST                 Insert500CoinTest :
+# PASSED
+# current_total_nxt :       2500
+# current_total_nxt :       3500
+# current_total_nxt :       4500
+# current_total_nxt :       5500
+# TEST                Insert1000CoinTest :
+# PASSED
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       4700
+# TEST                 Select1stItemTest :
+# current_total_nxt :       4700
+# PASSED
+# current_total_nxt :       4200
+# current_total_nxt :       4200
+# current_total_nxt :       3700
+# TEST                 Select2ndItemTest :
+# current_total_nxt :       3700
+# PASSED
+# current_total_nxt :       2700
+# TEST                 Select3rdItemTest :
+# current_total_nxt :       2700
+# PASSED
+# current_total_nxt :        700
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 22:48:21 on Dec 11,2021, Elapsed time: 0:05:05
+# Errors: 0, Warnings: 4
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:48:21 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# current_total_nxt :        100
+# current_total_nxt :        100
+# current_total_nxt :        200
+# current_total_nxt :        200
+# current_total_nxt :        300
+# current_total_nxt :        300
+# current_total_nxt :        400
+# current_total_nxt :        400
+# current_total_nxt :        500
+# current_total_nxt :        500
+# TEST                 Insert100CoinTest :
+# PASSED
+# current_total_nxt :       1000
+# current_total_nxt :       1000
+# current_total_nxt :       1500
+# current_total_nxt :       1500
+# TEST                 Insert500CoinTest :
+# PASSED
+# current_total_nxt :       2500
+# current_total_nxt :       2500
+# current_total_nxt :       3500
+# current_total_nxt :       3500
+# current_total_nxt :       4500
+# current_total_nxt :       4500
+# current_total_nxt :       5500
+# current_total_nxt :       5500
+# TEST                Insert1000CoinTest :
+# PASSED
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       4700
+# current_total_nxt :       4700
+# TEST                 Select1stItemTest :
+# current_total_nxt :       4700
+# PASSED
+# current_total_nxt :       4200
+# current_total_nxt :       4200
+# current_total_nxt :       4200
+# current_total_nxt :       3700
+# current_total_nxt :       3700
+# TEST                 Select2ndItemTest :
+# current_total_nxt :       3700
+# PASSED
+# current_total_nxt :       2700
+# current_total_nxt :       2700
+# TEST                 Select3rdItemTest :
+# current_total_nxt :       2700
+# PASSED
+# current_total_nxt :        700
+# current_total_nxt :        700
+# TEST                 Select4thItemTest :
+# current_total_nxt :        700
+# PASSED
+# current_total_nxt :        800
+# current_total_nxt :        800
+# current_total_nxt :       1300
+# current_total_nxt :       1300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# TEST                    WaitReturnTest :
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 22:51:17 on Dec 11,2021, Elapsed time: 0:02:56
+# Errors: 0, Warnings: 2
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:51:17 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# current_total_nxt :        100
+# current_total_nxt :        100
+# current_total_nxt :        200
+# current_total_nxt :        200
+# current_total_nxt :        300
+# current_total_nxt :        300
+# current_total_nxt :        400
+# current_total_nxt :        400
+# current_total_nxt :        500
+# current_total_nxt :        500
+# TEST                 Insert100CoinTest :
+# PASSED
+# current_total_nxt :       1000
+# current_total_nxt :       1000
+# current_total_nxt :       1500
+# current_total_nxt :       1500
+# TEST                 Insert500CoinTest :
+# PASSED
+# current_total_nxt :       2500
+# current_total_nxt :       2500
+# current_total_nxt :       3500
+# current_total_nxt :       3500
+# current_total_nxt :       4500
+# current_total_nxt :       4500
+# current_total_nxt :       5500
+# current_total_nxt :       5500
+# TEST                Insert1000CoinTest :
+# PASSED
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       4700
+# current_total_nxt :       4700
+# TEST                 Select1stItemTest :
+# current_total_nxt :       4700
+# PASSED
+# current_total_nxt :       4200
+# current_total_nxt :       4200
+# current_total_nxt :       4200
+# current_total_nxt :       3700
+# current_total_nxt :       3700
+# TEST                 Select2ndItemTest :
+# current_total_nxt :       3700
+# PASSED
+# current_total_nxt :       2700
+# current_total_nxt :       2700
+# TEST                 Select3rdItemTest :
+# current_total_nxt :       2700
+# PASSED
+# current_total_nxt :        700
+# current_total_nxt :        700
+# TEST                 Select4thItemTest :
+# current_total_nxt :        700
+# PASSED
+# current_total_nxt :        800
+# current_total_nxt :        800
+# current_total_nxt :       1300
+# current_total_nxt :       1300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# TEST                    WaitReturnTest :
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 23:18:07 on Dec 11,2021, Elapsed time: 0:26:50
+# Errors: 0, Warnings: 4
+# vsim -gui work.vending_machine_tb 
+# Start time: 23:18:07 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 23:21:53 on Dec 11,2021, Elapsed time: 0:03:46
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 23:21:53 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# current_total_nxt :        100
+# current_total_nxt :        100
+# current_total_nxt :        200
+# current_total_nxt :        200
+# current_total_nxt :        300
+# current_total_nxt :        300
+# current_total_nxt :        400
+# current_total_nxt :        400
+# current_total_nxt :        500
+# current_total_nxt :        500
+# TEST                 Insert100CoinTest :
+# PASSED
+# current_total_nxt :       1000
+# current_total_nxt :       1000
+# current_total_nxt :       1500
+# current_total_nxt :       1500
+# TEST                 Insert500CoinTest :
+# PASSED
+# current_total_nxt :       2500
+# current_total_nxt :       2500
+# current_total_nxt :       3500
+# current_total_nxt :       3500
+# current_total_nxt :       4500
+# current_total_nxt :       4500
+# current_total_nxt :       5500
+# current_total_nxt :       5500
+# TEST                Insert1000CoinTest :
+# PASSED
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       4700
+# current_total_nxt :       4700
+# TEST                 Select1stItemTest :
+# current_total_nxt :       4700
+# PASSED
+# current_total_nxt :       4200
+# current_total_nxt :       4200
+# current_total_nxt :       4200
+# current_total_nxt :       3700
+# current_total_nxt :       3700
+# TEST                 Select2ndItemTest :
+# current_total_nxt :       3700
+# PASSED
+# current_total_nxt :       2700
+# current_total_nxt :       2700
+# TEST                 Select3rdItemTest :
+# current_total_nxt :       2700
+# PASSED
+# current_total_nxt :        700
+# current_total_nxt :        700
+# TEST                 Select4thItemTest :
+# current_total_nxt :        700
+# PASSED
+# current_total_nxt :        800
+# current_total_nxt :        800
+# current_total_nxt :       1300
+# current_total_nxt :       1300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# TEST                    WaitReturnTest :
+# current_total_nxt :       1300
+# current_total_nxt :       1300
+# FAILED
+#        -700
+# current_total_nxt :       2400
+# current_total_nxt :       2400
+# current_total_nxt :       2500
+# current_total_nxt :       2500
+# current_total_nxt :       2600
+# current_total_nxt :       2600
+# current_total_nxt :       3100
+# current_total_nxt :       3100
+# current_total_nxt :       3600
+# current_total_nxt :       3600
+# current_total_nxt :       4100
+# current_total_nxt :       4100
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       6100
+# current_total_nxt :       6100
+# current_total_nxt :       7100
+# current_total_nxt :       7100
+# TEST                 TriggerReturnTest :
+# FAILED
+#        -900
+# Passed = 8, Failed = 2
+# 1
+# Break in Module vending_machine_tb at C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v line 118
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 00:16:01 on Dec 12,2021, Elapsed time: 0:54:08
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 00:16:01 on Dec 12,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# current_total_nxt :          0
+# current_total_nxt :          0
+# TEST                       InitialTest :
+# current_total_nxt :          0
+# current_total_nxt :          0
+# PASSED
+# current_total_nxt :          0
+# current_total_nxt :        100
+# current_total_nxt :        100
+# current_total_nxt :        200
+# current_total_nxt :        200
+# current_total_nxt :        300
+# current_total_nxt :        300
+# current_total_nxt :        400
+# current_total_nxt :        400
+# current_total_nxt :        500
+# TEST                 Insert100CoinTest :
+# current_total_nxt :        500
+# current_total_nxt :        500
+# PASSED
+# current_total_nxt :        500
+# current_total_nxt :       1000
+# current_total_nxt :       1000
+# current_total_nxt :       1500
+# TEST                 Insert500CoinTest :
+# current_total_nxt :       1500
+# current_total_nxt :       1500
+# PASSED
+# current_total_nxt :       1500
+# current_total_nxt :       2500
+# current_total_nxt :       2500
+# current_total_nxt :       3500
+# current_total_nxt :       3500
+# current_total_nxt :       4500
+# current_total_nxt :       4500
+# current_total_nxt :       5500
+# TEST                Insert1000CoinTest :
+# current_total_nxt :       5500
+# current_total_nxt :       5500
+# PASSED
+# current_total_nxt :       5500
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       4700
+# TEST                 Select1stItemTest :
+# current_total_nxt :       4700
+# current_total_nxt :       4700
+# PASSED
+# current_total_nxt :       4700
+# current_total_nxt :       4200
+# current_total_nxt :       4200
+# current_total_nxt :       3700
+# TEST                 Select2ndItemTest :
+# current_total_nxt :       3700
+# current_total_nxt :       3700
+# PASSED
+# current_total_nxt :       3700
+# current_total_nxt :       2700
+# TEST                 Select3rdItemTest :
+# current_total_nxt :       2700
+# current_total_nxt :       2700
+# PASSED
+# current_total_nxt :       2700
+# current_total_nxt :        700
+# TEST                 Select4thItemTest :
+# current_total_nxt :        700
+# current_total_nxt :        700
+# PASSED
+# current_total_nxt :        700
+# current_total_nxt :        800
+# current_total_nxt :        800
+# current_total_nxt :       1300
+# current_total_nxt :       1300
+# current_total_nxt :       2300
+# TEST                    WaitReturnTest :
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# current_total_nxt :       2300
+# current_total_nxt :       1300
+# current_total_nxt :       1300
+# current_total_nxt :       1300
+# FAILED
+#        -700
+# current_total_nxt :       1300
+# current_total_nxt :       2400
+# current_total_nxt :       2400
+# current_total_nxt :       2500
+# current_total_nxt :       2500
+# current_total_nxt :       2600
+# current_total_nxt :       2600
+# current_total_nxt :       3100
+# current_total_nxt :       3100
+# current_total_nxt :       3600
+# current_total_nxt :       3600
+# current_total_nxt :       4100
+# current_total_nxt :       4100
+# current_total_nxt :       5100
+# current_total_nxt :       5100
+# current_total_nxt :       6100
+# current_total_nxt :       6100
+# current_total_nxt :       7100
+# current_total_nxt :       7100
+# TEST                 TriggerReturnTest :
+# current_total_nxt :       7100
+# current_total_nxt :       7100
+# current_total_nxt :       7100
+# current_total_nxt :       7100
+# current_total_nxt :       7100
+# FAILED
+#        -900
+# Passed = 8, Failed = 2
+# current_total_nxt :       7100
+# 1
+# Break in Module vending_machine_tb at C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v line 118
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 00:17:32 on Dec 12,2021, Elapsed time: 0:01:31
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 00:17:33 on Dec 12,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# TEST                 Select4thItemTest :
+# PASSED
+# TEST                    WaitReturnTest :
+# current_total_nxt :       1300
+# FAILED
+#        -700
+# TEST                 TriggerReturnTest :
+# FAILED
+#        -900
+# Passed = 8, Failed = 2
+# 1
+# Break in Module vending_machine_tb at C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v line 118
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 00:18:58 on Dec 12,2021, Elapsed time: 0:01:25
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 00:18:58 on Dec 12,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# TEST                 Select4thItemTest :
+# PASSED
+# TEST                    WaitReturnTest :
+# current_total_nxt :       1300
+# current_total_nxt :        300
+# current_total_nxt :        200
+# current_total_nxt :        100
+# current_total_nxt :          0
+# PASSED
+# current_total_nxt :          0
+# TEST                 TriggerReturnTest :
+# current_total_nxt :       6100
+# current_total_nxt :       5100
+# current_total_nxt :       4100
+# current_total_nxt :       3100
+# current_total_nxt :       2100
+# FAILED
+#        -200
+# Passed = 9, Failed = 1
+# current_total_nxt :       1100
+# 1
+# Break in Module vending_machine_tb at C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v line 118
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 00:21:12 on Dec 12,2021, Elapsed time: 0:02:14
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 00:21:12 on Dec 12,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# TEST                 Select4thItemTest :
+# PASSED
+# TEST                    WaitReturnTest :
+# current_total_nxt :       1300
+# current_total_nxt :        300
+# current_total_nxt :        200
+# current_total_nxt :        100
+# current_total_nxt :          0
+# PASSED
+# current_total_nxt :          0
+# TEST                 TriggerReturnTest :
+# current_total_nxt :       6100
+# current_total_nxt :       5100
+# current_total_nxt :       4100
+# current_total_nxt :       3100
+# current_total_nxt :       2100
+# FAILED
+#        -200
+# Passed = 9, Failed = 1
+# current_total_nxt :       1100
+# 1
+# Break in Module vending_machine_tb at C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v line 118

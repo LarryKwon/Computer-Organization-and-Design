@@ -84,7 +84,7 @@ module vending_machine (
 
 	// Variables. You may add more your own registers.
 	reg [`kTotalBits-1:0] input_total, output_total, return_total_0,return_total_1,return_total_2;
-
+	
 
 	// Combinational logic for the next states
 	always @(*) begin
@@ -92,6 +92,7 @@ module vending_machine (
 		// You don't have to worry about concurrent activations in each input vector (or array).
 		
 		// Calculate the next current_total state. current_total_nxt =
+		stopwatch = 'd`kWaitTime;
 
 		if (i_input_coin[0]) input_total = input_total + 'd100;
 		if (i_input_coin[1]) input_total = input_total + 'd500;
@@ -109,15 +110,29 @@ module vending_machine (
 	always @(*) begin
 	// TODO: o_available_item
 		if(current_total_nxt > 0) begin
-			if(current_total_nxt >= 'd400) o_available_item[0]=1;
-			if(current_total_nxt >= 'd500) o_available_item[1]=1;
-			if(current_total_nxt >= 'd1000) o_available_item[2]=1;
-			if(current_total_nxt >= 'd2000) o_available_item[3]=1;
+			if(current_total >= 'd2000) o_available_item[3]=1;
+			else o_available_item[3] = 0;
 
+			if(current_total >= 'd1000) o_available_item[2]=1;
+			else o_available_item[2] = 0;
+
+			if(current_total >= 'd500) o_available_item[1]=1;
+			else o_available_item[1] = 0;
+
+			if(current_total >= 'd400) o_available_item[0]=1;
+			else o_available_item[0] = 0;
+			
 			if(i_select_item[0] && o_available_item[0] == 1) o_output_item[0] = 1;
+			else o_output_item[0] = 0;
+
 			if(i_select_item[1] && o_available_item[1] == 1) o_output_item[1] = 1;
+			else o_output_item[2] = 0;
+	
 			if(i_select_item[2] && o_available_item[2] == 1) o_output_item[2] = 1;
+			else o_output_item[2] = 0;
+
 			if(i_select_item[3] && o_available_item[3] == 1) o_output_item[3] = 1;
+			else o_output_item[3] = 0;
 
 		end
 		else begin
@@ -143,18 +158,36 @@ module vending_machine (
 		else begin
 			// TODO: update all states.
 			current_total = current_total_nxt;
-		
 
 /////////////////////////////////////////////////////////////////////////
 
 			// decrease stopwatch
-
-
-
+			if(stopwatch > 0) stopwatch = stopwatch - 1;
 
 			//if you have to return some coins then you have to turn on the bit
-
-
+			if(stopwatch == 0) begin
+				if(current_total >= 1000) begin 
+					o_return_coin[2] = 1;
+					current_total_nxt = current_total - 'd1000;
+				end
+				else begin
+					o_return_coin[2] = 0;
+					if(current_total >= 500) begin
+						o_return_coin[1] = 1;
+						current_total_nxt = current_total - 'd500;
+					end
+					else begin
+						o_return_coin[1] = 0;
+						if(current_total >= 100) begin 
+							o_return_coin[0] = 1;
+							current_total_nxt = current_total - 'd100;
+						end
+						else o_return_coin[0] = 0;
+					end
+				end
+			//$display("current_total_nxt : %d", current_total_nxt);
+			current_total = current_total_nxt;
+			end
 /////////////////////////////////////////////////////////////////////////
 		end		   //update all state end
 	end	   //always end

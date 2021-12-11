@@ -10,23 +10,23 @@ z2
 cModel Technology
 dC:/Users/W24876/Desktop/modelsim_project/Lab1
 vvending_machine
-Z0 !s110 1639229915
+Z0 !s110 1639236065
 !i10b 1
-!s100 01gTnO@U5ZAl2N_Ye6?kM1
+!s100 GHBZK`QLEnGUK:LGEMV8o1
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-ICE3_G1=[^9Y19D2<5e>Re3
+IH:PizZ6<GP;@9?MEHm@RS3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 dC:/Users/W24876/Desktop/modelsim_project/Lab2
-w1639229912
+w1639236057
 8vending_machine.v
 Fvending_machine.v
-!i122 21
-L0 3 160
+!i122 43
+L0 3 193
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1639229915.000000
+Z5 !s108 1639236065.000000
 !s107 vending_machine_def.v|vending_machine.v|C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v|
 Z6 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v|
 !i113 1
@@ -43,7 +43,7 @@ R3
 w1599469375
 8C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v
 FC:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v
-!i122 21
+!i122 43
 L0 6 326
 R4
 r1
