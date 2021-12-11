@@ -95,7 +95,7 @@ module vending_machine (
 
 		if (i_input_coin[0]) input_total = input_total + 'd100;
 		if (i_input_coin[1]) input_total = input_total + 'd500;
-		if (i_input_coin[2]) intput_total = input_total + 'd1000;
+		if (i_input_coin[2]) input_total = input_total + 'd1000;
 
 		if (i_select_item[0]) output_total = output_total + 'd400;
 		if (i_select_item[1]) output_total = output_total + 'd500;
@@ -113,6 +113,12 @@ module vending_machine (
 			if(current_total_nxt >= 'd500) o_available_item[1]=1;
 			if(current_total_nxt >= 'd1000) o_available_item[2]=1;
 			if(current_total_nxt >= 'd2000) o_available_item[3]=1;
+
+			if(i_select_item[0] && o_available_item[0] == 1) o_output_item[0] = 1;
+			if(i_select_item[1] && o_available_item[1] == 1) o_output_item[1] = 1;
+			if(i_select_item[2] && o_available_item[2] == 1) o_output_item[2] = 1;
+			if(i_select_item[3] && o_available_item[3] == 1) o_output_item[3] = 1;
+
 		end
 		else begin
 			current_total_nxt = 0;
@@ -131,6 +137,8 @@ module vending_machine (
 			return_total_0 = 0;
 			return_total_1 = 0;
 			return_total_2 = 0;
+			o_available_item = 4'b0000;
+			o_output_item = 4'b0000;
 		end
 		else begin
 			// TODO: update all states.
@@ -139,7 +147,7 @@ module vending_machine (
 
 /////////////////////////////////////////////////////////////////////////
 
-			// decreas stopwatch
+			// decrease stopwatch
 
 
 

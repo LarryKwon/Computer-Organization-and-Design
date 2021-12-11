@@ -1,0 +1,341 @@
+# Compile of vending_machine.v failed with 1 errors.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v failed with 1 errors.
+# 3 compiles, 2 failed with 2 errors.
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:13:10 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run
+run -all
+# TEST                       InitialTest :
+# FAILED
+# o_available_item = x (Ans: 0)
+# TEST                 Insert100CoinTest :
+# FAILED
+# o_available_item = x11 (Ans: 11)
+# TEST                 Insert500CoinTest :
+# FAILED
+# o_available_item = x111 (Ans: 111)
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# TEST                 Select4thItemTest :
+# FAILED
+# o_available_item = 1111 (Ans: 11)
+# TEST                    WaitReturnTest :
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+# Break key hit
+# Break in Module vending_machine_tb at C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v line 73
+vsim -gui work.vending_machine_tb
+# End time: 22:16:38 on Dec 11,2021, Elapsed time: 0:03:28
+# Errors: 0, Warnings: 5
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:16:38 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# TEST                 Select4thItemTest :
+# FAILED
+# o_available_item = 1111 (Ans: 11)
+# TEST                    WaitReturnTest :
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+# Break key hit
+# Break in Module vending_machine_tb at C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v line 73
+vsim -gui work.vending_machine_tb
+# End time: 22:20:45 on Dec 11,2021, Elapsed time: 0:04:07
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:20:45 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# Break key hit
+# Simulation stop requested.
+run -all
+# Break key hit
+# Break in Module vending_machine at vending_machine.v line 143
+# Break key hit
+# Break key hit
+# Break key hit
+quit -sim
+vsim -gui work.vending_machine_tb
+# End time: 22:22:34 on Dec 11,2021, Elapsed time: 0:01:49
+# Errors: 0, Warnings: 2
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:22:34 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+add wave -position insertpoint sim:/vending_machine_tb/*
+run -all
+quit -sim
+# End time: 22:24:54 on Dec 11,2021, Elapsed time: 0:02:20
+# Errors: 0, Warnings: 2
+vsim -gui work.vending_machine_tb
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:25:03 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+add wave -position insertpoint sim:/vending_machine_tb/*
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+add wave -position insertpoint sim:/vending_machine_tb/#ASSIGN#50/*
+# ** UI-Msg: (vish-4014) No objects found matching '/vending_machine_tb/#ASSIGN#50/*'.
+quit -sim
+# End time: 22:26:54 on Dec 11,2021, Elapsed time: 0:01:51
+# Errors: 0, Warnings: 2
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:30:16 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# Compile of vending_machine.v failed with 1 errors.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v failed with 1 errors.
+# 3 compiles, 2 failed with 2 errors.
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 22:31:07 on Dec 11,2021, Elapsed time: 0:00:51
+# Errors: 0, Warnings: 5
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:31:07 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# FAILED
+# o_available_item = x (Ans: 0)
+# TEST                 Insert100CoinTest :
+# FAILED
+# o_available_item = x11 (Ans: 11)
+# TEST                 Insert500CoinTest :
+# FAILED
+# o_available_item = x111 (Ans: 111)
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# Compile of vending_machine.v failed with 1 errors.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v failed with 1 errors.
+# 3 compiles, 2 failed with 2 errors.
+# Compile of vending_machine.v failed with 1 errors.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v failed with 1 errors.
+# 3 compiles, 2 failed with 2 errors.
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 22:33:29 on Dec 11,2021, Elapsed time: 0:02:22
+# Errors: 0, Warnings: 5
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:33:29 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 22:35:06 on Dec 11,2021, Elapsed time: 0:01:37
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:35:06 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 22:37:10 on Dec 11,2021, Elapsed time: 0:02:04
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:37:11 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# Compile of vending_machine.v was successful with warnings.
+# Compile of vending_machine_def.v was successful.
+# Compile of vending_meachine_TB.v was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.vending_machine_tb
+# End time: 22:38:47 on Dec 11,2021, Elapsed time: 0:01:36
+# Errors: 0, Warnings: 3
+# vsim -gui work.vending_machine_tb 
+# Start time: 22:38:47 on Dec 11,2021
+# Loading work.vending_machine_tb
+# Loading work.vending_machine
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'UUT'.  Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /vending_machine_tb/UUT File: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v Line: 59
+run -all
+# TEST                       InitialTest :
+# PASSED
+# TEST                 Insert100CoinTest :
+# PASSED
+# TEST                 Insert500CoinTest :
+# PASSED
+# TEST                Insert1000CoinTest :
+# PASSED
+# TEST                 Select1stItemTest :
+# PASSED
+# TEST                 Select2ndItemTest :
+# PASSED
+# TEST                 Select3rdItemTest :
+# PASSED
+# TEST                 Select4thItemTest :
+# FAILED
+# o_available_item = 1111 (Ans: 11)
+# TEST                    WaitReturnTest :
