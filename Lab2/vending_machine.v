@@ -92,20 +92,22 @@ module vending_machine (
 		// You don't have to worry about concurrent activations in each input vector (or array).
 		
 		// Calculate the next current_total state. current_total_nxt =
-		stopwatch = 'd`kWaitTime;
+		
+		//$display("stopwatch : %d", stopwatch);
+		if (i_input_coin[0]) input_total = 'd100;
+		if (i_input_coin[1]) input_total =  'd500;
+		if (i_input_coin[2]) input_total =  'd1000;
 
-		if (i_input_coin[0]) input_total = input_total + 'd100;
-		if (i_input_coin[1]) input_total = input_total + 'd500;
-		if (i_input_coin[2]) input_total = input_total + 'd1000;
+		if (i_select_item[0]) output_total = 'd400;
+		if (i_select_item[1]) output_total =  'd500;
+		if (i_select_item[2]) output_total =  'd1000;
+		if (i_select_item[3]) output_total =  'd2000;
 
-		if (i_select_item[0]) output_total = output_total + 'd400;
-		if (i_select_item[1]) output_total = output_total + 'd500;
-		if (i_select_item[2]) output_total = output_total + 'd1000;
-		if (i_select_item[3]) output_total = output_total + 'd2000;
+		current_total_nxt = current_total_nxt + input_total - output_total;
+		input_total = 0;
+		output_total = 0;
+		//$display("combinational logic: current_total_nxt : %d", current_total_nxt);
 
-		current_total_nxt =  input_total - output_total;
-		if(i_trigger_return) have_to_return = 1;
-		else have_to_return = 0;
 	end
 
 	// Combinational logic for the outputs
@@ -142,6 +144,15 @@ module vending_machine (
 		end
 
 	end
+	
+	always @(i_input_coin or i_select_item) begin
+		stopwatch = 'd`kWaitTime;
+	end
+	
+	always @(i_trigger_return) begin 
+		if(i_trigger_return) have_to_return = 1;
+		else have_to_return = 0;
+	end
 
 	// Sequential circuit to reset or update the states
 	always @(posedge clk) begin
@@ -151,46 +162,88 @@ module vending_machine (
 			current_total_nxt = 0;
 			input_total = 0;
 			output_total = 0;
-			return_total_0 = 0;
-			return_total_1 = 0;
-			return_total_2 = 0;
+			returning_coin_0 = 0;
+			returning_coin_1 = 0;
+			returning_coin_2 = 0;
 			o_available_item = 4'b0000;
 			o_output_item = 4'b0000;
 		end
 		else begin
 			// TODO: update all states.
 			current_total = current_total_nxt;
+			//$display("i_trigger_return : %d", i_trigger_return);
 
 /////////////////////////////////////////////////////////////////////////
 
 			// decrease stopwatch
-			if(stopwatch > 0) stopwatch = stopwatch - 1;
+			if(stopwatch > 0) begin 
+				stopwatch = stopwatch - 1;
+				//$display("stopwatch : %d", stopwatch);
+			end
 
+			
+			if(stopwatch == 0) have_to_return = 1;
+			
 			//if you have to return some coins then you have to turn on the bit
-			if(stopwatch == 0 || have_to_return) begin
-				//input_total = 0;
-				//output_total = 0;
-				if(current_total >= 1000) begin 
-					o_return_coin[2] = 1;
-					current_total_nxt = current_total - 'd1000;
-				end
-				else begin
-					o_return_coin[2] = 0;
-					if(current_total >= 500) begin
-						o_return_coin[1] = 1;
-						current_total_nxt = current_total - 'd500;
+			if(have_to_return) begin
+				stopwatch = 'd`kWaitTime;
+				return_temp = current_total;
+				//$display("stopwatch : %d", return_temp);
+				while(return_temp >0) begin
+					if(return_temp >= 1000) begin 
+						returning_coin_2 = returning_coin_2 + 1;
+						return_temp = return_temp - 'd1000;
 					end
 					else begin
-						o_return_coin[1] = 0;
-						if(current_total >= 100) begin 
-							o_return_coin[0] = 1;
-							current_total_nxt = current_total - 'd100;
+						if(return_temp >= 500) begin
+							returning_coin_1 = returning_coin_1 + 1;
+							return_temp = return_temp - 'd500;
 						end
-						else o_return_coin[0] = 0;
+						else begin
+							if(return_temp >= 100) begin 
+								returning_coin_0 = returning_coin_0 + 1;
+								return_temp = return_temp - 'd100;
+							end
+							else begin
+								returning_coin_0 = 0;
+								returning_coin_1 = 0;
+								returning_coin_2 = 0;
+							end
+						end
 					end
+					//$display("return_temp : %d", return_temp);
 				end
-				$display("current_total_nxt : %d", current_total_nxt);
+				current_total_nxt = 0;
+				//$display("sequential logic: current_total_nxt : %d", current_total_nxt);
+				//$display("sequential logic: returning_coins : %d %d %d", returning_coin_0, returning_coin_1, returning_coin_2);
 			end
+			
+			if(returning_coin_2) begin
+				o_return_coin[2] = 1;
+				returning_coin_2 = returning_coin_2 - 1;
+			end
+			else o_return_coin[2] = 0;
+			
+			if(returning_coin_1) begin
+				o_return_coin[1] = 1;
+				returning_coin_1 = returning_coin_1 - 1;
+			end
+			else o_return_coin[1] = 0;
+
+			if(returning_coin_0) begin
+				o_return_coin[0] = 1;
+				returning_coin_0 = returning_coin_0 - 1;
+			end
+			else o_return_coin[0] = 0;		
+			
+			//$display("sequential logic: returning_coins : %d %d %d", returning_coin_0, returning_coin_1, returning_coin_2);
+			
+			if(o_return_coin == 3'b000) begin
+				have_to_return = 0;
+			end
+			
+			
+
 /////////////////////////////////////////////////////////////////////////
 		end		   //update all state end
 	end	   //always end

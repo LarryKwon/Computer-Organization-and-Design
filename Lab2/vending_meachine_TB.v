@@ -236,7 +236,7 @@ begin
 	$display("TEST %s :", Testname);
 
 	while (Current > 0) begin
-		// $display("%d", Current);
+		//$display("%d", Current);
 		wait (o_return_coin);	// ** Wait until the o_return_coin is true
 		# 50; // To safely fetch the o_return_coin signal, add a half cycle here.
 		if (o_return_coin[0]) Current = Current - 'd100;
