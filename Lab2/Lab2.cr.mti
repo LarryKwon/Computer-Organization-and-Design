@@ -1,4 +1,22 @@
-C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_machine_def.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_machine_def.v
+C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_machine.v {2 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_machine.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module vending_machine
+** Warning: C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_machine.v(116): (vlog-2182) 'current_total_nxt' might be read before written in always_comb or always @* block.
+
+Top level modules:
+	vending_machine
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v {2 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module vending_machine
+** Warning: ** while parsing file included at C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_meachine_TB.v(4)
+** at vending_machine.v(116): (vlog-2182) 'current_total_nxt' might be read before written in always_comb or always @* block.
+-- Compiling module vending_machine_tb
+
+Top level modules:
+	vending_machine_tb
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_machine_def.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab2/vending_machine_def.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
 } {} {}}
