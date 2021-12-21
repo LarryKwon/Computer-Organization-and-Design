@@ -15,10 +15,11 @@ always@(*) begin
 
         if(imm_control == 3'b001 ) begin
             // J-type (JAL)
-            imm[19] = I_MEM_DI[31];
-            imm[18:11] = I_MEM_DI[19:12];
-            imm[10] = I_MEM_DI[20];
-            imm[9:0] = I_MEM_DI[30:21];
+            imm[0] = 0;
+            imm[20] = I_MEM_DI[31];
+            imm[19:12] = I_MEM_DI[19:12];
+            imm[11] = I_MEM_DI[20];
+            imm[10:1] = I_MEM_DI[30:21];
             if(I_MEM_DI[31] == 1) begin
                 imm[31:20] = 12'b111111111111;
             end

@@ -25,9 +25,9 @@ always@(*) begin
                     BrLt = 0;
                 end
             end
-            end
-            else begin
-                if(RF_RD1 == RF_RD2) begin
+        end
+        else begin
+            if(RF_RD1 == RF_RD2) begin
                 BrEq = 1;
                 BrLt = 0;
             end 
