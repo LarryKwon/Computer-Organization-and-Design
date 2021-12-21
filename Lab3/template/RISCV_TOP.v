@@ -26,9 +26,84 @@ module RISCV_TOP (
 	output wire [31:0] RF_WD, // register file에 넣을 data
 	output wire HALT,                   // if set, terminate program
 	output reg [31:0] NUM_INST,         // number of instruction completed
-	output wire [31:0] OUTPUT_PORT      // equal RF_WD this port is used for test
-	
+	output wire [31:0] OUTPUT_PORT,      // equal RF_WD this port is used for test
+
+	);
+
+	//connect to regfile
+	assign RF_RA1 = I_MEM_DI[19:15];
+	assign RF_RA2 = I_MEM_DI[24:20];
+	assign RF_WA1 = I_MEM_DI[11:7];
+
+	//connect CSNs of I-Mem, D-Mem
+	assign I_MEM_CSN = ~RSTn;
+	assign D_MEM_CSN = ~RSTn;
+
 	//ImmGen
+	reg[31:0] imm;
+
+	//control unit
+	wire is_sign; // control_unit to alu_unit, branch_comp
+	wire imm_control; // control_unit to ImmGen
+	wire ASel; // control_unit to alu_unit
+	wire BSel; // control_unit to alu_unit
+	wire[4:0] alu_control; // control_unit to alu_unit
+	wire[2:0] wb_control; // for pcSel, from control_unit
+
+
+	//alu unit
+	reg[31:0] alu_result;
+
+	//BranchComp
+	wire BrEq; // BranchComp to controlUnit
+	wire BrLt; // BranchComp to controlUnit
+
+	//port instantiation of ImmGen
+	ImmGen imm_gen1(
+		.RSTn			(RSTn),
+		.imm_control	(imm_control),
+		.I_MEM_DI		(I_MEM_DI),
+		.imm			(imm)
+	);
+
+	//port instantiation of BranchComp
+	BranchComp branch_comp(
+		.RSTn 		(RSTn),
+		.is_sign 	(is_sign),
+		.RF_RD1  	(RF_RD1), // source register 1로 부터 읽을 값
+		.RF_RD2  	(RF_RD2), // source register 2로 부터 읽을 값
+   		.BrEq    	(BrEq),
+    	.BrLt    	(BrLt)
+	);
+
+	//port instantiation of control_unit
+	ControlUnit control_unit(
+		.RSTn			(RSTn),
+		.I_MEM_DI		(I_MEM_DI),
+		.BrEq			(BrEq),		
+		.BrLt			(BrLt),
+		.imm_control	(imm_control),
+		.RF_WE			(RF_WE),
+		.D_MEM_WEN		(D_MEM_WEN),
+		.D_MEM_BE		(D_MEM_BE),
+		.is_sign		(is_sign),
+		.BSel			(BSel),
+		.ASel			(ASel),
+		.alu_control	(alu_control),
+		.wb_control		(wb_control)
+	);
+
+	AluUnit alu_unit(
+		 .RSTn			(RSTn),
+		 .ASel			(ASel),
+		 .BSel			(BSel),
+		 .is_sign		(is_sign),
+		 .alu_control	(alu_control),
+		 .RF_RD1		(RF_RD1), // source register 1로 부터 읽을 값
+		 .RF_RD2		(RF_RD2), // source register 2로 부터 읽을 값
+		 .imm			(imm),
+		 .pc			(pc),
+		 .alu_result	(alu_result)
 	);
 
 	assign OUTPUT_PORT = RF_WD;
@@ -45,32 +120,6 @@ module RISCV_TOP (
 	end
 
 	// TODO: implement
-	
-	//connect csn signal
-	assign I_MEM_CSN = ~RSTn;
-	assign D_MEM_CSN = ~RSTn;
-
-	assign RF_RA1 = I_MEM_DI[19:15];
-	assign RF_RA2 = I_MEM_DI[24:20];
-	assign RF_WA1 = I_MEM_DI[11:7];
-
-	wire [2:0] imm_control;
-	Control_Unit control_unit(
-		.imm_control(imm_control),
-	)
-
-	//immediate
-	//connect to ImmGen
-	wire [31:0] offset;
-
-	ImmGen imm_gen1(
-		.imm_control(imm_control),
-		.I_MEM_DI(I_MEM_DI),
-		.offset(offset)
-	);
-
-	reg[31:0] offset_reg 
-	assign offset_reg = offset
 
 
 	reg[6:0] opcode;

@@ -1,6 +1,8 @@
-module Control_Unit(
+module ControlUnit(
     input wire RSTn,
     input wire [31:0] I_MEM_DI,
+    input wire BrEq,
+    input wire BrLt,
     output wire [2:0] imm_control,
     output wire RF_WE,
     output wire D_MEM_WEN,
@@ -41,14 +43,41 @@ end
 
 
 always@(*) begin
-    if(RSTn==0) begin
+    if(RSTn==1) begin
         opcode = I_MEM_DI[6:0];
         func3 = I_MEM_DI[14:12];
         func7 = I_MEM_DI[31:25];
+        if(opcode == op_LUI) begin
+            imm_control = 3'b000;
+        end
+        if(opcode == op_AUIPC) begin
+            imm_control = 3'b000;
+        end
+        if(opcode == op_Rtype) begin
+
+        end
         if(opcode == op_Itype) begin
             if(func3 = 3'b101 || func3 = 3'b001) begin
-                imm_control
+                imm_control = 3'b101;
             end
+            else begin
+                imm_control = 3'b010;
+            end
+        end
+        if(opcode == op_Ltype) begin
+            imm_control = 3'b010;
+        end
+        if(opcode == op_Stype) begin
+            imm_control = 3'b100;
+        end
+        if(opcode == op_Btype) begin
+            imm_control = 3'b011;
+        end
+        if(opcode == op_JALR) begin
+            imm_control = 3'b010;
+        end
+        if(opcode == op_JAL) begin
+            imm_control = 3'001;
         end
     end
 end
