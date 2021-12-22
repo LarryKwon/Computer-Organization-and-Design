@@ -1,0 +1,140 @@
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 1 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 1 error.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 5 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 5 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 4 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 4 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 3 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 3 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 1 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 1 error.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 10 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 10 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 6 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 6 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 8 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 8 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 2 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 2 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 6 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 7 compiles, 1 failed with 6 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 6 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v failed with 4 errors.
+# Compile of BranchComp.v failed with 1 errors.
+# Compile of ControlUnit.v failed with 3 errors.
+# Compile of ImmGen.v failed with 25 errors.
+# 11 compiles, 5 failed with 39 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 4 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v failed with 4 errors.
+# Compile of BranchComp.v failed with 1 errors.
+# Compile of ControlUnit.v failed with 3 errors.
+# Compile of ImmGen.v failed with 25 errors.
+# 11 compiles, 5 failed with 37 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v failed with 4 errors.
+# Compile of BranchComp.v failed with 1 errors.
+# Compile of ControlUnit.v failed with 3 errors.
+# Compile of ImmGen.v failed with 25 errors.
+# 11 compiles, 4 failed with 33 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v failed with 4 errors.
+# Compile of BranchComp.v failed with 1 errors.
+# Compile of ControlUnit.v failed with 3 errors.
+# Compile of ImmGen.v failed with 2 errors.
+# 11 compiles, 4 failed with 10 errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v failed with 4 errors.
+# Compile of BranchComp.v failed with 1 errors.
+# Compile of ControlUnit.v failed with 3 errors.
+# Compile of ImmGen.v was successful.
+# 11 compiles, 3 failed with 8 errors.

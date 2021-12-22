@@ -26,7 +26,7 @@ module RISCV_TOP (
 	output wire [31:0] RF_WD, // register file에 넣을 data
 	output wire HALT,                   // if set, terminate program
 	output reg [31:0] NUM_INST,         // number of instruction completed
-	output wire [31:0] OUTPUT_PORT,      // equal RF_WD this port is used for test
+	output wire [31:0] OUTPUT_PORT      // equal RF_WD this port is used for test
 
 	);
 
@@ -51,10 +51,19 @@ module RISCV_TOP (
 	wire[1:0] wb_control; // for pcSel, from control_unit
 	wire pcSel;
 
-	wire termination_flag;
+	//termination & output Port
+	wire termination_flag = 0;
+	reg termination_flag_reg;
+	reg[6:0] opcode;
+	reg HALT_reg;
+
+	assign termination_flag = termination_flag_reg;
+	assign HALT = HALT_reg;
+	assign opcode = I_MEM_DI[6:0];
 
 	//alu unit
 	reg[31:0] alu_result;
+	reg [11:0] pc;
 
 	//BranchComp
 	wire BrEq; // BranchComp to controlUnit
@@ -109,6 +118,7 @@ module RISCV_TOP (
 		 .alu_result	(alu_result)
 	);
 
+	/*
 	if(opcode == 7'b1100011 ) begin
 		assign OUTPUT_PORT = pcSel;	
 	end
@@ -120,12 +130,15 @@ module RISCV_TOP (
 			assign OUTPUT_PORT = RF_WD;
 		end
 	end
+	*/
 
-	reg [11:0] pc;
+	assign OUTPUT_PORT = (opcode == 7'b1100011)? pcSel:
+	(opcode == 7'b0100011)? alu_result : RF_WD;
+
+	
 	initial begin
 		NUM_INST <= 0;
 		pc <= 0;
-		termination_flat <= 0;
 	end
 
 	// Only allow for NUM_INST
@@ -135,6 +148,7 @@ module RISCV_TOP (
 
 	// TODO: implement
 	
+	/*
 	//write-back 컨트롤
 	// alu_result가 저장
 	if(wb_control == 2'b00) begin
@@ -150,8 +164,13 @@ module RISCV_TOP (
 	end
 	// LUI일 때 Imm가 저장
 	else if(wb_control == 2'b11) begin
-		RF_WD = imm;
+		assign RF_WD = imm;
 	end
+	*/
+
+	assign RF_WD = (wb_control == 2'b00)? alu_result :
+	(wb_control == 2'b01)? D_MEM_DI :
+	(wb_control == 2'b10)? pc+4 : imm;
 
 	//Write Data를 선택
 	assign D_MEM_DOUT = RF_RD2;
@@ -161,6 +180,26 @@ module RISCV_TOP (
 
 	always@(*) begin
 		I_MEM_ADDR = pc & 12'hFFF;
+
+		if(I_MEM_DI == 32'h00c00093 ) begin
+			termination_flag_reg = 1;
+		end
+		else begin
+			if(termination_flag_reg == 1) begin
+				termination_flag_reg = 1;	
+			end
+			else begin
+				termination_flag_reg = 0;
+			end
+		end
+
+		if(termination_flag_reg & (I_MEM_DI == 32'h00008067)) begin
+			HALT_reg = 1;
+		end 
+		else begin
+			termination_flag_reg = 0;
+			HALT_reg = 0;
+		end
 	end
 
 	always@(posedge CLK) begin
@@ -175,6 +214,10 @@ module RISCV_TOP (
 		end
 	end
 
+	// assign termination_flag = (I_MEM_DI == 32'h00c00093)? 1:
+	// (termination_flag == 1) ? 1 : 0;
+
+	/*
 	if(I_MEM_DI == 32'h00c00093 ) begin
 		assign termination_flag = 1;
 	end
@@ -186,7 +229,10 @@ module RISCV_TOP (
 			assign termination_flag = 0;
 		end
 	end
+	*/
+	// assign HALT = (termination_flag & (I_MEM_DI == 32'h00008067 ))? 1: 0;
 
+	/*
 	if(termination_flag & (I_MEM_DI == 32'h00008067)) begin
 		assign HALT = 1;
 	end 
@@ -194,5 +240,6 @@ module RISCV_TOP (
 		assign termination_flag = 0;
 		assign HALT = 0;
 	end
+	*/
 	
 endmodule 
