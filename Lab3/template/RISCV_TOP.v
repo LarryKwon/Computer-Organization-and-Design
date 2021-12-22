@@ -11,7 +11,7 @@ module RISCV_TOP (
 	//D-Memory Signals
 	output wire D_MEM_CSN, // if RSTn == 1 -> CSN  = 0 / if RSTn == 0 -> CSN = 1
 	input wire [31:0] D_MEM_DI,// output from data memeory. the data what we read
-	output wire [31:0] D_MEM_DOUT, // the date that we write on addr
+	output wire [31:0] D_MEM_DOUT, // the data that we write on addr
 	output wire [11:0] D_MEM_ADDR,//in word address
 	output wire D_MEM_WEN, // if we want to execute the instruction that store data to memory, we make WEN = 0
 	output wire [3:0] D_MEM_BE, // // 바이트 단위를 조정하기 위해 사용, byte enable 값으로 data를 읽거나 할 때(SB, SH, SW, LB, LH, LW 를 할 때 필요)
@@ -48,8 +48,10 @@ module RISCV_TOP (
 	wire ASel; // control_unit to alu_unit
 	wire BSel; // control_unit to alu_unit
 	wire[4:0] alu_control; // control_unit to alu_unit
-	wire[2:0] wb_control; // for pcSel, from control_unit
+	wire[1:0] wb_control; // for pcSel, from control_unit
+	wire pcSel;
 
+	wire termination_flag;
 
 	//alu unit
 	reg[31:0] alu_result;
@@ -87,10 +89,11 @@ module RISCV_TOP (
 		.D_MEM_WEN		(D_MEM_WEN),
 		.D_MEM_BE		(D_MEM_BE),
 		.is_sign		(is_sign),
-		.BSel			(BSel),
 		.ASel			(ASel),
+		.BSel			(BSel),
 		.alu_control	(alu_control),
-		.wb_control		(wb_control)
+		.wb_control		(wb_control),
+		.pcSel			(pcSel)
 	);
 
 	AluUnit alu_unit(
@@ -106,12 +109,23 @@ module RISCV_TOP (
 		 .alu_result	(alu_result)
 	);
 
-	assign OUTPUT_PORT = RF_WD;
+	if(opcode == 7'b1100011 ) begin
+		assign OUTPUT_PORT = pcSel;	
+	end
+	else begin
+		if(opcode == 7'b0100011 ) begin
+			assign OUTPUT_PORT = alu_result;
+		end
+		else begin
+			assign OUTPUT_PORT = RF_WD;
+		end
+	end
 
 	reg [11:0] pc;
 	initial begin
 		NUM_INST <= 0;
 		pc <= 0;
+		termination_flat <= 0;
 	end
 
 	// Only allow for NUM_INST
@@ -120,16 +134,65 @@ module RISCV_TOP (
 	end
 
 	// TODO: implement
+	
+	//write-back 컨트롤
+	// alu_result가 저장
+	if(wb_control == 2'b00) begin
+		assign RF_WD = alu_result;
+	end
+	// D_mem_out 이 저장
+	else if(wb_control == 2'b01) begin
+		assign RF_WD = D_MEM_DI;
+	end
+	// pc + 4 가 저장
+	else if(wb_control == 2'b10) begin
+		assign RF_WD = pc+4;
+	end
+	// LUI일 때 Imm가 저장
+	else if(wb_control == 2'b11) begin
+		RF_WD = imm;
+	end
 
+	//Write Data를 선택
+	assign D_MEM_DOUT = RF_RD2;
+	//Mem Addr 연결
+	assign D_MEM_ADDR = alu_result & 16'h3FFF;
 
-	reg[6:0] opcode;
-	reg[2:0] func;
-
-	assign opcode = I_MEM_DI[6:0];
-	assign func = I_MEM_DI[14:12];
 
 	always@(*) begin
 		I_MEM_ADDR = pc & 12'hFFF;
 	end
 
-endmodule //
+	always@(posedge CLK) begin
+		// next pc
+		// pc = alu result
+		if(pcSel == 1) begin
+			pc = alu_result;
+		end
+		// pc = pc + 4;
+		else begin
+			pc = pc + 4;
+		end
+	end
+
+	if(I_MEM_DI == 32'h00c00093 ) begin
+		assign termination_flag = 1;
+	end
+	else begin
+		if(termination_flag == 1) begin
+			assign termination_flag = 1;	
+		end
+		else begin
+			assign termination_flag = 0;
+		end
+	end
+
+	if(termination_flag & (I_MEM_DI == 32'h00008067)) begin
+		assign HALT = 1;
+	end 
+	else begin
+		assign termination_flag = 0;
+		assign HALT = 0;
+	end
+	
+endmodule 
