@@ -40,11 +40,11 @@ module RISCV_TOP (
 	assign D_MEM_CSN = ~RSTn;
 
 	//ImmGen
-	reg[31:0] imm;
+	wire[31:0] imm;
 
 	//control unit
 	wire is_sign; // control_unit to alu_unit, branch_comp
-	wire imm_control; // control_unit to ImmGen
+	wire[2:0] imm_control; // control_unit to ImmGen
 	wire ASel; // control_unit to alu_unit
 	wire BSel; // control_unit to alu_unit
 	wire[4:0] alu_control; // control_unit to alu_unit
@@ -62,7 +62,7 @@ module RISCV_TOP (
 	assign opcode = I_MEM_DI[6:0];
 
 	//alu unit
-	reg[31:0] alu_result;
+	wire[31:0] alu_result;
 	reg [11:0] pc;
 
 	//BranchComp
@@ -146,6 +146,13 @@ module RISCV_TOP (
 		if (RSTn) NUM_INST <= NUM_INST + 1;
 	end
 
+	
+	always @(RSTn) begin
+		
+		I_MEM_ADDR = pc;
+		
+	end
+
 	// TODO: implement
 	
 	/*
@@ -205,12 +212,17 @@ module RISCV_TOP (
 	always@(posedge CLK) begin
 		// next pc
 		// pc = alu result
-		if(pcSel == 1) begin
-			pc = alu_result;
+		if(RSTn==1) begin
+			if(pcSel == 1) begin
+				pc = alu_result;
+			end
+			// pc = pc + 4;
+			else begin
+				pc = pc + 4;
+			end
 		end
-		// pc = pc + 4;
 		else begin
-			pc = pc + 4;
+			pc = 0;
 		end
 	end
 

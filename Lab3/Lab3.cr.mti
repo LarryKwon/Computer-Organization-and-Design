@@ -1,12 +1,11 @@
-C:/Users/W24876/Desktop/modelsim_project/Lab3/template/AluUnit.v {0 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/AluUnit.v
+C:/Users/W24876/Desktop/modelsim_project/Lab3/template/AluUnit.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/AluUnit.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module AluUnit
-** Error: C:/Users/W24876/Desktop/modelsim_project/Lab3/template/AluUnit.v(65): (vlog-2730) Undefined variable: 'alu_input'.
-** Error: C:/Users/W24876/Desktop/modelsim_project/Lab3/template/AluUnit.v(75): (vlog-2730) Undefined variable: 'alu1_result'.
-** Error: C:/Users/W24876/Desktop/modelsim_project/Lab3/template/AluUnit.v(75): (vlog-2730) Undefined variable: 'alu1_input2'.
-** Error: (vlog-13069) C:/Users/W24876/Desktop/modelsim_project/Lab3/template/AluUnit.v(106): near "EOF": syntax error, unexpected end of source code.
 
-} {4.0 8.0} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v
+Top level modules:
+	AluUnit
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module TB_RISCV_sort
 
@@ -34,31 +33,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ImmGen
 
-} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ControlUnit.v {0 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ControlUnit.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ControlUnit
-** Error: (vlog-13069) C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ControlUnit.v(65): near "=": syntax error, unexpected '=', expecting ++ or --.
-** Error: (vlog-13069) C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ControlUnit.v(101): near "else": syntax error, unexpected else.
-** Error: C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ControlUnit.v(111): (vlog-13205) Syntax error found in the scope following 'RF_WE'. Is there a missing '::'?
-
-} {4.0 7.0} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/BranchComp.v {0 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/BranchComp.v
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/BranchComp.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/BranchComp.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module BranchComp
-** Error: (vlog-13069) C:/Users/W24876/Desktop/modelsim_project/Lab3/template/BranchComp.v(46): near "EOF": syntax error, unexpected end of source code.
-
-} {4.0 5.0} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TB_RISCV_inst
 
 Top level modules:
-	TB_RISCV_inst
-
-} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_TOP.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_TOP.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module RISCV_TOP
-
-Top level modules:
-	RISCV_TOP
+	BranchComp
 
 } {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_CLKRST.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_CLKRST.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -73,5 +53,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	REG_FILE
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_RISCV_inst
+
+Top level modules:
+	TB_RISCV_inst
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_TOP.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_TOP.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISCV_TOP
+
+Top level modules:
+	RISCV_TOP
 
 } {} {}}

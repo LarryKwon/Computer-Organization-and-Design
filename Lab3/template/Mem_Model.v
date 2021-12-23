@@ -1,5 +1,5 @@
 `timescale 1ns/10ps
-module SP_SRAM #(parameter ROMDATA = "", AWIDTH = 12, SIZE = 4096) (
+module SP_SRAM #(parameter ROMDATA = "C:\\Users\\W24876\\Desktop\\modelsim_project\\Lab3\\testcase\\hex\\inst.hex", AWIDTH = 12, SIZE = 4096) (
 	input	wire			CLK,
 	input	wire			CSN,//chip select negative??
 	input	wire	[AWIDTH-1:0]	ADDR,
