@@ -192,8 +192,8 @@ module RISCV_TOP (
 			termination_flag_reg = 1;
 		end
 		else begin
-			if(termination_flag_reg == 1) begin
-				termination_flag_reg = 1;	
+			if(I_MEM_DI == 32'h00008067 && termination_flag_reg == 1) begin
+				termination_flag_reg = 1;
 			end
 			else begin
 				termination_flag_reg = 0;
@@ -204,7 +204,6 @@ module RISCV_TOP (
 			HALT_reg = 1;
 		end 
 		else begin
-			termination_flag_reg = 0;
 			HALT_reg = 0;
 		end
 	end

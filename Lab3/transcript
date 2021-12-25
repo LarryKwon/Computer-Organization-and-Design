@@ -1,3 +1,87 @@
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop 
+# Start time: 19:09:42 on Dec 25,2021
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV_forloop
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/*
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/alu_unit/*
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/imm_gen1/*
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/branch_comp/*
+run -all
+# Test #   16 has been failed!
+# output_port = 0x4 (Ans : 0x5)
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v(158)
+#    Time: 765 ns  Iteration: 1  Instance: /TB_RISCV_forloop
+# 1
+# Break in Module TB_RISCV_forloop at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v line 158
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop
+# End time: 19:38:21 on Dec 25,2021, Elapsed time: 0:28:39
+# Errors: 0, Warnings: 1
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop 
+# Start time: 19:38:22 on Dec 25,2021
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV_forloop
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# 11 compiles, 0 failed with no errors.
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/*
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/alu_unit/*
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/imm_gen1/*
+add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/branch_comp/*
+run -all
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v(116)
+#    Time: 1 ms  Iteration: 0  Instance: /TB_RISCV_forloop
+# 1
+# Break in Module TB_RISCV_forloop at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v line 116
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 1 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# 11 compiles, 1 failed with 1 error.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v failed with 1 errors.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# 11 compiles, 1 failed with 1 error.
 # Compile of Mem_Model.v was successful.
 # Compile of REG_FILE.v was successful.
 # Compile of RISCV_CLKRST.v was successful.
@@ -11,8 +95,10 @@
 # Compile of ImmGen.v was successful.
 # 11 compiles, 0 failed with no errors.
 vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop
+# End time: 19:58:23 on Dec 25,2021, Elapsed time: 0:20:01
+# Errors: 0, Warnings: 5
 # vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop 
-# Start time: 20:09:18 on Dec 23,2021
+# Start time: 19:58:24 on Dec 25,2021
 # Loading work.AluUnit
 # Loading work.BranchComp
 # Loading work.ControlUnit
@@ -23,21 +109,26 @@ vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FIL
 # Loading work.SP_SRAM
 # Loading work.TB_RISCV_forloop
 add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/control_unit/*
-add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/imm_gen1/*
-add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/alu_unit/*
 run -all
-# Test #   16 has been failed!
-# output_port = 0x4 (Ans : 0x5)
-# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v(158)
-#    Time: 765 ns  Iteration: 1  Instance: /TB_RISCV_forloop
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v(116)
+#    Time: 1 ms  Iteration: 0  Instance: /TB_RISCV_forloop
 # 1
-# Break in Module TB_RISCV_forloop at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v line 158
+# Break in Module TB_RISCV_forloop at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v line 116
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
 vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop
-# End time: 20:16:18 on Dec 23,2021, Elapsed time: 0:07:00
-# Errors: 0, Warnings: 2
+# End time: 20:02:54 on Dec 25,2021, Elapsed time: 0:04:30
+# Errors: 0, Warnings: 1
 # vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop 
-# Start time: 20:16:18 on Dec 23,2021
+# Start time: 20:02:55 on Dec 25,2021
 # Loading work.AluUnit
 # Loading work.BranchComp
 # Loading work.ControlUnit
@@ -47,15 +138,164 @@ vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FIL
 # Loading work.RISCV_TOP
 # Loading work.SP_SRAM
 # Loading work.TB_RISCV_forloop
-add wave -position insertpoint sim:/TB_RISCV_forloop/*
+# Compile of ImmGen.v was successful.
+# 11 compiles, 0 failed with no errors.
 add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/control_unit/*
-add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/alu_unit/*
-add wave -position insertpoint sim:/TB_RISCV_forloop/riscv_top1/imm_gen1/*
 run -all
-# Test #   16 has been failed!
-# output_port = 0x4 (Ans : 0x5)
-# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v(158)
-#    Time: 765 ns  Iteration: 1  Instance: /TB_RISCV_forloop
+# Finish:         73 cycle
+# Success.
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v(166)
+#    Time: 845 ns  Iteration: 1  Instance: /TB_RISCV_forloop
 # 1
-# Break in Module TB_RISCV_forloop at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v line 158
+# Break in Module TB_RISCV_forloop at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v line 166
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_inst
+# End time: 20:04:01 on Dec 25,2021, Elapsed time: 0:01:06
+# Errors: 0, Warnings: 2
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_inst 
+# Start time: 20:04:01 on Dec 25,2021
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV_inst
+add wave -position insertpoint sim:/TB_RISCV_inst/riscv_top1/*
+add wave -position insertpoint sim:/TB_RISCV_inst/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV_inst/riscv_top1/alu_unit/*
+add wave -position insertpoint sim:/TB_RISCV_inst/riscv_top1/imm_gen1/*
+add wave -position insertpoint sim:/TB_RISCV_inst/riscv_top1/branch_comp/*
+run -all
+# Test #    1 has been passed
+# Test #    2 has been passed
+# Test #    3 has been passed
+# Test #    4 has been passed
+# Test #    5 has been passed
+# Test #    6 has been passed
+# Test #    7 has been passed
+# Test #    8 has been passed
+# Test #    9 has been passed
+# Test #   10 has been passed
+# Test #   11 has been passed
+# Test #   12 has been passed
+# Test #   13 has been passed
+# Test #   14 has been passed
+# Test #   15 has been passed
+# Test #   16 has been passed
+# Test #   17 has been passed
+# Test #   18 has been passed
+# Test #   19 has been passed
+# Test #   20 has been passed
+# Test #   21 has been passed
+# Test #   22 has been passed
+# Test #   23 has been passed
+# Finish:         24 cycle
+# Success.
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v(175)
+#    Time: 355 ns  Iteration: 1  Instance: /TB_RISCV_inst
+# 1
+# Break in Module TB_RISCV_inst at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v line 175
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_sort
+# End time: 20:05:16 on Dec 25,2021, Elapsed time: 0:01:15
+# Errors: 0, Warnings: 1
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_sort 
+# Start time: 20:05:16 on Dec 25,2021
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV_sort
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/*
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/alu_unit/*
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/imm_gen1/*
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/branch_comp/*
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "sort.hex" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/W24876/Desktop/modelsim_project/Lab3/template/Mem_Model.v(18)
+#    Time: 0 ps  Iteration: 0  Instance: /TB_RISCV_sort/i_mem1
+# Test #    1 has been failed!
+# output_port = 0xx (Ans : 0xf00)
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v(184)
+#    Time: 145 ns  Iteration: 1  Instance: /TB_RISCV_sort
+# 1
+# Break in Module TB_RISCV_sort at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v line 184
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# 11 compiles, 0 failed with no errors.
+# Compile of Mem_Model.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_forloop.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# 11 compiles, 0 failed with no errors.
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop
+# End time: 20:11:04 on Dec 25,2021, Elapsed time: 0:05:48
+# Errors: 0, Warnings: 4
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_forloop 
+# Start time: 20:11:04 on Dec 25,2021
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV_forloop
+run -all
+# Finish:         73 cycle
+# Success.
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v(166)
+#    Time: 845 ns  Iteration: 1  Instance: /TB_RISCV_forloop
+# 1
+# Break in Module TB_RISCV_forloop at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v line 166
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_sort
+# End time: 20:11:31 on Dec 25,2021, Elapsed time: 0:00:27
+# Errors: 0, Warnings: 1
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV_sort 
+# Start time: 20:11:31 on Dec 25,2021
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV_sort
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/*
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/alu_unit/*
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/imm_gen1/*
+add wave -position insertpoint sim:/TB_RISCV_sort/riscv_top1/branch_comp/*
+run -all
+# Finish:       9408 cycle
+# Success.
+# ** Note: $finish    : C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v(192)
+#    Time: 94195 ns  Iteration: 1  Instance: /TB_RISCV_sort
+# 1
+# Break in Module TB_RISCV_sort at C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v line 192
+# End time: 20:12:56 on Dec 25,2021, Elapsed time: 0:01:25
+# Errors: 0, Warnings: 1

@@ -109,7 +109,7 @@ always@(*) begin
             end
             //bge
             else if(func3 == 3'b101 || func3 == 3'b111) begin
-                if(BrEq == 0 && BrLt == 0 )begin
+                if(BrLt == 0 )begin
                     pcSel_reg = 1;
                 end
                 else begin
