@@ -213,15 +213,15 @@ module RISCV_TOP (
 		// pc = alu result
 		if(RSTn==1) begin
 			if(pcSel == 1) begin
-				pc = alu_result;
+				pc <= alu_result;
 			end
 			// pc = pc + 4;
 			else begin
-				pc = pc + 4;
+				pc <= pc + 4;
 			end
 		end
 		else begin
-			pc = 0;
+			pc <= 0;
 		end
 	end
 
