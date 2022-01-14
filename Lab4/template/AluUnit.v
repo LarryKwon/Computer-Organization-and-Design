@@ -1,30 +1,80 @@
 module AluUnit(
     input wire RSTn,
-    input wire ASel,
-    input wire BSel,
+    input wire [1:0] ASel,
+    input wire [1:0] BSel,
     input wire is_sign,
     input wire [4:0] alu_control,
     input wire [31:0] RF_RD1, // source register 1로 부터 읽을 값
 	input wire [31:0] RF_RD2, // source register 2로 부터 읽을 값
     input wire [31:0] imm,
     input wire [11:0] pc,
-    output wire [31:0] alu_result
+    input wire [11:0] old_pc,
+    output wire [31:0] alu_result,
+    output wire [1:0] br_control // BrEq,BrLt
 );
 
 wire [31:0] alu_input1;
 wire [31:0] alu_input2;
 
-assign alu_input1 = (ASel)? pc : RF_RD1;
-assign alu_input2 = (BSel)? imm : RF_RD2;
+always @(*) begin
+    if(ASel == 2'b00) begin
+        alu_input1 = RF_RD1;
+    end
+    else if(ASel == 2'b01) begin
+        alu_input1 = pc;
+    end
+    else if(ASel == 2'b10) begin
+        alu_input1 = old_pc;
+    end
+
+    if(BSel == 2'b00) begin
+        alu_input2 = RF_RD2;
+    end
+    else if(BSel == 2'b01) begin
+        alu_input2 = imm;
+    end
+    else if(BSel == 2'b10) begin
+        alu_input2 = 4;
+    end
+    
+end
 
 reg [31:0] alu_result_reg;
-
-
-
+reg [1:0] br_control_reg;
 assign alu_result = alu_result_reg;
+assign br_control = br_control_reg;
+
 
 always@(*) begin
     if(RSTn == 1) begin
+
+        if(is_sign) begin
+            if(RF_RD1 == RF_RD2) begin
+                br_control_reg = 2'b10;
+            end 
+            else if(RF_RD1 != RF_RD2) begin
+                if($signed(RF_RD1) < $signed(RF_RD2)) begin
+                    br_control_reg = 2'b01;
+                end
+                else begin
+                    br_control_reg = 2'b00;
+                end
+            end
+        end
+        else begin
+            if(RF_RD1 == RF_RD2) begin
+                br_control_reg = 2'b10;
+            end 
+            else if(RF_RD1 != RF_RD2) begin
+                if(RF_RD1 < RF_RD2) begin
+                    br_control_reg = 2'b01;
+                end
+                else begin
+                    br_control_reg = 2'b00;
+                end
+            end
+        end
+
        if(alu_control == 4'b0000) begin
        // add
             if(is_sign) begin
@@ -95,6 +145,8 @@ always@(*) begin
             alu_result_reg = (alu_input1 + alu_input2);
             alu_result_reg[0] = 0;
        end
+
+       if(alu_control == 4'b1010)
     end
 end
 
