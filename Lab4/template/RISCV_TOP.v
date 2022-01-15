@@ -33,23 +33,62 @@ module RISCV_TOP (
 
 	//connect to I_MEM
 	// IR_WRITE 필요 -> control_unit
-	reg[31:0] I_MEM_DI_reg;
-	assign I_MEM_DI = I_MEM_DI_reg;
 	assign I_MEM_CSN = ~RSTn;
+	reg[31:0] I_MEM_DI_reg;
+	wire IR_WE;
+	always @(*) begin
+		if(IR_WE == 1) begin
+			I_MEM_DI_reg = I_MEM_DI;
+		end
+	end
 
 	//connect to regfile
-	//reg1_control, reg2_control -> control_unit
 	assign RF_RA1 = I_MEM_DI_reg[19:15];
 	assign RF_RA2 = I_MEM_DI_reg[24:20];
 	assign RF_WA1 = I_MEM_DI_reg[11:7];
 	
 	reg[31:0] RF_RD1_reg; //RD1값 저장 reg
 	reg[31:0] RF_RD2_reg; //RD2값 저장 reg
-	assign RF_RD1 = RF_RD1_reg;
-	assign RF_RD2 = RF_RD2_reg;
+	always @(*) begin
+		RF_RD1_reg = RF_RD1;
+		RF_RD2_reg = RF_RD2;
+	end
 
 	//ImmGen
 	wire[31:0] imm;
+
+	//alu unit
+	wire[31:0] alu_result;
+	reg[31:0] alu_out;
+	wire ALU_REG_WE;
+	always @(*) begin
+		if(ALU_REG_WE == 1) begin
+			alu_out = alu_result;	
+		end
+	end
+	
+
+	//BranchComp
+	wire[1:0] br_control; // BranchComp in alu_unit to controlUnit
+
+	//connect to D_MEM
+	assign D_MEM_CSN = ~RSTn;
+	assign D_MEM_DOUT = RF_RD2_reg; //Write Data 연결
+	assign D_MEM_ADDR = alu_out & 16'h3FFF; //Mem Addr 연결
+
+
+	//pc & stage
+	//pcWrite 필요 -> control_unit
+	reg [11:0] pc;
+	reg [11:0] old_pc;
+	reg [2:0] stage;
+	wire PC_WE; // sequential logic 에 사용
+
+	always @(*) begin // old_pc에 pc값을 연결
+		if(IR_WE == 1) begin
+			old_pc = pc;
+		end
+	end
 
 	//termination & output Port
 	wire termination_flag = 0;
@@ -61,73 +100,56 @@ module RISCV_TOP (
 	assign HALT = HALT_reg;
 	assign opcode = I_MEM_DI[6:0];
 
-	//alu unit
-	wire[31:0] alu_result;
-	reg[31:0] alu_Out;
-	assign alu_result = alu_Out;
-
-	//BranchComp
-	wire[1:0] br_control; // BranchComp in alu_unit to controlUnit
-
-	//connect to D_MEM
-	assign D_MEM_CSN = ~RSTn;
-	assign D_MEM_DOUT = RF_RD2_reg; //Write Data 연결
-	assign D_MEM_ADDR = alu_Out & 16'h3FFF; //Mem Addr 연결
 
 
-	//pc
-	//pcWrite 필요 -> control_unit
-	reg [11:0] pc;
-	reg [11:0] old_pc;
 
-	always @(*) begin // old_pc에 pc값을 연결
-		if(ir_write_control == 1) begin
-			old_pc = pc;
-		end
-	end
-	
 	//port instantiation of ImmGen
 	ImmGen imm_gen1(
-		.RSTn			(RSTn),
+		.RSTn					(RSTn),
 		.imm_control	(imm_control),
-		.I_MEM_DI		(I_MEM_DI),
-		.imm			(imm)
+		.I_MEM_DI			(I_MEM_DI_reg),
+		.imm					(imm)
 	);
 
 	AluUnit alu_unit(
-		 .RSTn			(RSTn),
-		 .ASel			(ASel),
-		 .BSel			(BSel),
-		 .is_sign		(is_sign),
+		 .RSTn				(RSTn),
+		 .ASel				(ASel),
+		 .BSel				(BSel),
+		 .is_sign			(is_sign),
 		 .alu_control	(alu_control),
-		 .RF_RD1		(RF_RD1), // source register 1로 부터 읽을 값
-		 .RF_RD2		(RF_RD2), // source register 2로 부터 읽을 값
-		 .imm			(imm),
-		 .pc			(pc),
-		 .old_pc		(old_pc),
+		 .RF_RD1			(RF_RD1_reg), // source register 1로 부터 읽을 값
+		 .RF_RD2			(RF_RD2_reg), // source register 2로 부터 읽을 값
+		 .imm					(imm),
+		 .pc					(pc),
+		 .old_pc			(old_pc),
 		 .alu_result	(alu_result),
 		 .br_control	(br_control)
 	);
 
 	ControlUnit control_unit(
-		.RSTn			(RSTn),
-		.I_MEM_DI		(I_MEM_DI),
-		.br_control		(br_control),	
+		.RSTn					(RSTn),
+		.I_MEM_DI			(I_MEM_DI_reg),
+		.br_control		(br_control),
+		.stage				(stage),
 		.imm_control	(imm_control),
-		.RF_WE			(RF_WE),
+		.RF_WE				(RF_WE),
 		.D_MEM_WEN		(D_MEM_WEN),
-		.D_MEM_BE		(D_MEM_BE),
-		.is_sign		(is_sign),
-		.ASel			(ASel),
-		.BSel			(BSel),
+		.D_MEM_BE			(D_MEM_BE),
+		.is_sign			(is_sign),
+		.ASel					(ASel),
+		.BSel					(BSel),
 		.alu_control	(alu_control),
 		.wb_control		(wb_control),
-		.pcSel			(pcSel)
+		.ALU_REG_WE		(ALU_REG_WE),
+		.IR_WE				(IR_WE),
+		.PC_WE				(PC_WE),
+		.pcSel				(pcSel)
 	);
 
 	initial begin
 		NUM_INST <= 0;
 		pc <= 0;
+		stage <= 3'b000;
 	end
 
 	always @(RSTn) begin
@@ -136,12 +158,21 @@ module RISCV_TOP (
 		
 	end
 
+	//regWrite mux
+	assign RF_WD = (wb_control == 2'b00)? alu_out :
+	(wb_control == 2'b01)? D_MEM_DI :
+	(wb_control == 2'b10)? alu_result : imm;
+
+
+	//output port
+	assign OUTPUT_PORT = (opcode == 7'b1100011)? pcSel:
+	(opcode == 7'b0100011)? alu_out : RF_WD;
 
 	//I_MEM_ADDR 설정
-	// 종료 조건 설정
 	always@(*) begin
 		I_MEM_ADDR = pc & 12'hFFF;
-
+		
+		// 종료 조건 설정
 		if(I_MEM_DI == 32'h00c00093 ) begin
 			termination_flag_reg = 1;
 		end
@@ -163,9 +194,50 @@ module RISCV_TOP (
 	end
 
 	always @(posedge CLK) begin
-		//Num_Inst 계산 어떻게 할지
 		// pc <= next_pc 값이 언제, 어떻게 일어나는지
-		//
+		if(RSTn==1) begin
+			if(pc_WE == 1) begin
+				if(pcSel == 1) begin
+					pc <= alu_out;
+				end
+				// pc = pc + 4;
+				else begin
+					pc <= alu_result
+				end
+			end
+		end
+		else begin
+				pc <= 0;
+		end
+
+		// stage 계산 어떻게 할지
+		if(RSTn == 1) begin
+			
+		end
+
 	end
+
+	// Only allow for NUM_INST
+	always @ (negedge CLK) begin
+		//Num_Inst 계산 어떻게 할지
+		if (RSTn) begin
+			if(opcode == 7'b1100011) begin
+				if(stage == 3'b010) begin
+					NUM_INST <= NUM_INST + 1;
+				end
+			end
+			else if(opcode == 7'b0100011) begin
+				if(stage == 3'b011) begin
+					NUM_INST <= NUM_INST + 1;
+				end
+			end
+			else begin
+				if(stage == 3'b100) begin
+					NUM_INST <= NUM_INST + 1;
+				end
+			end
+		end
+	end
+
 	
 endmodule //
