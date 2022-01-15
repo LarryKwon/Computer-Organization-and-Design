@@ -36,7 +36,7 @@ module RISCV_TOP (
 	assign I_MEM_CSN = ~RSTn;
 	reg[31:0] I_MEM_DI_reg;
 	wire IR_WE;
-	always @(*) begin
+	always @(posedge CLK) begin
 		if(IR_WE == 1) begin
 			I_MEM_DI_reg = I_MEM_DI;
 		end
@@ -61,7 +61,7 @@ module RISCV_TOP (
 	wire[31:0] alu_result;
 	reg[31:0] alu_out;
 	wire ALU_REG_WE;
-	always @(*) begin
+	always @(posedge CLK) begin
 		if(ALU_REG_WE == 1) begin
 			alu_out = alu_result;	
 		end
@@ -81,10 +81,10 @@ module RISCV_TOP (
 	//pcWrite 필요 -> control_unit
 	reg [11:0] pc;
 	reg [11:0] old_pc;
-	reg [2:0] stage;
+	wire [2:0] stage;
 	wire PC_WE; // sequential logic 에 사용
 
-	always @(*) begin // old_pc에 pc값을 연결
+	always @(posedge CLK) begin // old_pc에 pc값을 연결
 		if(IR_WE == 1) begin
 			old_pc = pc;
 		end
@@ -128,9 +128,9 @@ module RISCV_TOP (
 
 	ControlUnit control_unit(
 		.RSTn					(RSTn),
+		.CLK				(CLK),
 		.I_MEM_DI			(I_MEM_DI_reg),
 		.br_control		(br_control),
-		.stage				(stage),
 		.imm_control	(imm_control),
 		.RF_WE				(RF_WE),
 		.D_MEM_WEN		(D_MEM_WEN),
@@ -143,13 +143,14 @@ module RISCV_TOP (
 		.ALU_REG_WE		(ALU_REG_WE),
 		.IR_WE				(IR_WE),
 		.PC_WE				(PC_WE),
-		.pcSel				(pcSel)
+		.pcSel				(pcSel),
+		.stage				(stage),
 	);
 
+	//초기화
 	initial begin
 		NUM_INST <= 0;
 		pc <= 0;
-		stage <= 3'b000;
 	end
 
 	always @(RSTn) begin
@@ -208,11 +209,6 @@ module RISCV_TOP (
 		end
 		else begin
 				pc <= 0;
-		end
-
-		// stage 계산 어떻게 할지
-		if(RSTn == 1) begin
-			
 		end
 
 	end
