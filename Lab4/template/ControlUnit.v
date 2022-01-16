@@ -278,17 +278,17 @@ module ControlUnit(
             end
             if(opcode == op_Btype)begin
                 if(func3 == 3'b110 || func3 == 3'b111) begin
-                    index = 5'b11010;
+                    index = 5'b11000;
                 end
                 else begin
-                    index = 5'b11011;
+                    index = 5'b11001;
                 end
             end
             if(opcode == op_LUI) begin
-                index = 5'b11100;
+                index = 5'b11010;
             end
             if(opcode == op_AUIPC)begin
-                index = 5'b11101;
+                index = 5'b11011;
             end
         end
     end
