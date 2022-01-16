@@ -78,6 +78,7 @@ module ControlUnit(
     reg PC_WE_reg;
     reg pcSel_reg;
     reg [2:0] stage_reg;
+    reg ALU_REG_WE_reg;
 
     assign imm_control = imm_control_reg;
     assign RF_WE = RF_WE_reg;
@@ -92,36 +93,39 @@ module ControlUnit(
     assign PC_WE = PC_WE_reg;
     assign pcSel = pcSel_reg;
     assign stage = stage_reg;
+    assign ALU_REG_WE = ALU_REG_WE_reg;
 
 
     //control signal 결정용 내부 레지스터
-    reg[5:0] index;
-    wire[27:0] control_signal;
+    reg[4:0] index;
+    wire[25:0] control_signal;
+
+	MicroCode microCode(
+		.RSTn				(RSTn),
+        .inst              (index),
+        .stage              (stage_reg),
+		.constrol_signal	(control_signal)
+	);
+
     always @(*) begin
         if(RSTn == 1) begin
-            imm_control_reg = 
-            RF_WE_reg = 
-            D_MEM_WEN_reg = 
-            D_MEM_BE_reg = 
-            is_sign_reg = 
-            ASel_reg = 
-            BSel_reg = 
-            alu_control_reg = 
-            wbSel_reg = 
-            IR_WE_reg = 
-            PC_WE_reg = 
-            pcSel_reg = 
-            stage_reg =
+            PC_WE_reg = control_signal[24];
+            IR_WE_reg = control_signal[23];
+            RF_WE_reg = control_signal[22];
+            ASel_reg = control_signal[21:20];
+            BSel_reg = control_signal[19:18];
+            ALU_REG_WE_reg = control_signal[17];
+            is_sign_reg = control_signal[16];
+            pcSel_reg = control_signal[15];
+            wbSel_reg = control_signal[14:13];
+            D_MEM_WEN_reg = control_signal[12];
+
+            D_MEM_BE_reg = control_signal[11:8];
+            alu_control_reg = control_signal[7:3];
+            imm_control_reg = control_signal[2:0];
         end
 
     end
-
-	MicroCode microCode(
-		.RSTn					(RSTn),
-        .index              (index)
-		.imm					(imm)
-	);
-
 
     initial begin
         //opcode
@@ -164,8 +168,181 @@ module ControlUnit(
             PC_WE_reg = pcUpdate | (is_branch & br_result);
             //index 생성
 
+            if(opcode == op_Rtype) begin
+                if(func3 == 3'b000) begin
+                    //add
+                    if(func7 == 7'b0000000) begin
+                        index = 5'b00000;
+                    end
+                    //sub
+                    else if(func7 == 7'b0100000) begin
+                        index = 5'b00001;
+                    end
+                end
+                //slt and sltu
+                else if(func3 == 3'b010 || func3 == 3'b011) begin 
+                    if(func3 == 3'b010) begin
+                        index = 5'b00010;
+                    end
+                    else begin
+                        index = 5'b00011;
+                    end
+                end
+                //xor
+                else if(func3 == 3'b100) begin
+                    index = 5'b00100;
+                end
+                //or
+                else if(func3 == 3'b110) begin
+                    index = 5'b00101;
+                end
+                //and
+                else if(func3 == 3'b111) begin
+                    index = 5'b00110;
+                end
+                //sll
+                else if(func3 == 3'b001) begin
+                    index = 5'b00111;
+                end
+                //srl, sra
+                else if(func3 == 3'b101) begin
+                    //srl
+                    if(func7 == 7'b0000000) begin
+                        index = 5'b01000;    
+                    end
+                    //sra
+                    else if(func7 == 7'b0100000) begin
+                        index = 5'b01001;
+                    end
+                end
+            end
+            if(opcode == op_Itype) begin
+                if(func3 == 3'b000) begin
+                    //add
+                    if(func7 == 7'b0000000) begin
+                        index = 5'b01010;
+                    end
+                    //sub
+                    else if(func7 == 7'b0100000) begin
+                        index = 5'b01011;
+                    end
+                end
+                //slt and sltu
+                else if(func3 == 3'b010 || func3 == 3'b011) begin 
+                    if(func3 == 3'b010) begin
+                        index = 5'b01100;
+                    end
+                    else begin
+                        index = 5'b01101;
+                    end
+                end
+                //xor
+                else if(func3 == 3'b100) begin
+                    index = 5'b01110;
+                end
+                //or
+                else if(func3 == 3'b110) begin
+                    index = 5'b01111;
+                end
+                //and
+                else if(func3 == 3'b111) begin
+                    index = 5'b10000;
+                end
+                //sll
+                else if(func3 == 3'b001) begin
+                    index = 5'b10001;
+                end
+                //srl, sra
+                else if(func3 == 3'b101) begin
+                    //srl
+                    if(func7 == 7'b0000000) begin
+                        index = 5'b10010;    
+                    end
+                    //sra
+                    else if(func7 == 7'b0100000) begin
+                        index = 5'b10011;
+                    end
+                end
+            end
+            if(opcode == op_Ltype) begin
+                index = 5'b10100;
+            end
+            if(opcode == op_Stype) begin
+                index = 5'b10101;
+            end
+            if(opcode == op_JALR) begin
+                index = 5'b10110;
+            end
+            if(opcode == op_JAL)begin
+                index = 5'b10111;
+            end
+            if(opcode == op_Btype)begin
+                if(func3 == 3'b110 || func3 == 3'b111) begin
+                    index = 5'b11010;
+                end
+                else begin
+                    index = 5'b11011;
+                end
+            end
+            if(opcode == op_LUI) begin
+                index = 5'b11100;
+            end
+            if(opcode == op_AUIPC)begin
+                index = 5'b11101;
+            end
         end
     end
+
+    // is_branch & branch_result 값 설정
+    always@(*) begin
+        if(RSTn == 1) begin
+            if(opcode == op_Btype) begin
+                is_branch = 1;
+                //beq
+                if(func3 == 3'b000) begin
+                    if(BrEq == 1) begin
+                        br_result= 1;
+                    end
+                    else begin
+                        br_result = 0;
+                    end
+                end
+                //bne
+                else if(func3 == 3'b001) begin
+                    if(BrEq == 0) begin
+                        br_result = 1;
+                    end
+                    else begin
+                        br_result = 0;
+                    end
+                end
+                //blt
+                else if(func3 == 3'b100 || func3 == 3'b110) begin
+                    if(BrEq == 0 && BrLt == 1) begin
+                        br_result = 1;
+                    end
+                    else begin
+                        br_result = 0;
+                    end
+                end
+                //bge
+                else if(func3 == 3'b101 || func3 == 3'b111) begin
+                    if(BrLt == 0 )begin
+                        br_result = 1;
+                    end
+                    else begin
+                        br_result = 0;
+                    end
+                end
+            end
+            else begin
+                is_branch = 0;
+            end
+        end
+    end
+
+    
+
 
     always @(posedge CLK) begin
         if(RSTn == 1) begin
