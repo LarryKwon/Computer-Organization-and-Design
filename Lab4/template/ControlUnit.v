@@ -109,19 +109,19 @@ module ControlUnit(
 
     always @(*) begin
         if(RSTn == 1) begin
-            PC_WE_reg = control_signal[24];
-            IR_WE_reg = control_signal[23];
-            RF_WE_reg = control_signal[22];
-            ASel_reg = control_signal[21:20];
-            BSel_reg = control_signal[19:18];
-            ALU_REG_WE_reg = control_signal[17];
-            is_sign_reg = control_signal[16];
-            pcSel_reg = control_signal[15];
-            wbSel_reg = control_signal[14:13];
-            D_MEM_WEN_reg = control_signal[12];
+            pcUpdate = control_signal[23];
+            IR_WE_reg = control_signal[22];
+            RF_WE_reg = control_signal[21];
+            ASel_reg = control_signal[20:19];
+            BSel_reg = control_signal[18:17];
+            ALU_REG_WE_reg = control_signal[16];
+            is_sign_reg = control_signal[15];
+            pcSel_reg = control_signal[14];
+            wbSel_reg = control_signal[13:12];
+            D_MEM_WEN_reg = control_signal[11];
 
-            D_MEM_BE_reg = control_signal[11:8];
-            alu_control_reg = control_signal[7:3];
+            D_MEM_BE_reg = control_signal[10:7];
+            alu_control_reg = control_signal[6:3];
             imm_control_reg = control_signal[2:0];
         end
 
@@ -218,14 +218,7 @@ module ControlUnit(
             end
             if(opcode == op_Itype) begin
                 if(func3 == 3'b000) begin
-                    //add
-                    if(func7 == 7'b0000000) begin
-                        index = 5'b01010;
-                    end
-                    //sub
-                    else if(func7 == 7'b0100000) begin
-                        index = 5'b01011;
-                    end
+                    index = 5'b01010;
                 end
                 //slt and sltu
                 else if(func3 == 3'b010 || func3 == 3'b011) begin 
