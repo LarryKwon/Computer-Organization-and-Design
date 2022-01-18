@@ -10,242 +10,242 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 vAluUnit
-!s110 1642506273
+Z0 !s110 1642517605
 !i10b 1
 !s100 M[M8^1f[Koj8hVjzW2G:=2
-Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IlUOM2Lz2l45iD^FbbO?4N3
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/Users/W24876/Desktop/modelsim_project/Lab4
-w1642501140
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/template/AluUnit.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/template/AluUnit.v
-!i122 198
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>kO7@d1]85;Fm;2=JU1lf3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/W24880/Desktop/modelsim_project/Lab4
+Z4 w1642510828
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/AluUnit.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/AluUnit.v
+!i122 300
 L0 1 156
-Z3 OV;L;2020.1;71
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z4 !s108 1642506273.000000
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/template/AluUnit.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/template/AluUnit.v|
+Z6 !s108 1642517605.000000
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/AluUnit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/AluUnit.v|
 !i113 1
-Z5 o-work work
-Z6 tCvgOpt 0
+Z7 o-work work
+Z8 tCvgOpt 0
 n@alu@unit
 vBranchComp
-Z7 !s110 1642506274
+R0
 !i10b 1
 !s100 Vn:2P6W0f`L3aJe8SaKIL3
-R0
-Ii1mA;61i5kedLTRYNJ=n63
 R1
+I?`LfdY377R:MkhVhclFOM0
 R2
-Z8 w1641981423
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/template/BranchComp.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/template/BranchComp.v
-!i122 199
-L0 1 50
 R3
+Z9 w1641812881
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v
+!i122 301
+L0 1 50
+R5
 r1
 !s85 0
 31
-R4
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/template/BranchComp.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/template/BranchComp.v|
-!i113 1
-R5
 R6
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v|
+!i113 1
+R7
+R8
 n@branch@comp
 vControlUnit
-R7
+R0
 !i10b 1
 !s100 W?03N8@QDZDRODhSk>R;E0
-R0
-Ioi`8IUN>k_<X2oW[zcGm:2
 R1
+IcS0ZDAHLW^23[mLT?I`P`0
 R2
-w1642506179
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/template/ControlUnit.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/template/ControlUnit.v
-!i122 200
-L0 1 399
 R3
+R4
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v
+!i122 302
+L0 1 399
+R5
 r1
 !s85 0
 31
-!s108 1642506274.000000
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/template/ControlUnit.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/template/ControlUnit.v|
-!i113 1
-R5
 R6
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v|
+!i113 1
+R7
+R8
 n@control@unit
 vImmGen
-Z9 !s110 1642506275
+R0
 !i10b 1
 !s100 1PH^7aYD0f89CR@:g1S_g1
-R0
-ImoBOMCce214S[Reda;^3Y3
 R1
+IngfKR6jjj9H`aNnFN1PT02
 R2
-R8
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/template/ImmGen.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/template/ImmGen.v
-!i122 201
-L0 1 77
 R3
+R9
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v
+!i122 303
+L0 1 77
+R5
 r1
 !s85 0
 31
-Z10 !s108 1642506275.000000
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/template/ImmGen.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/template/ImmGen.v|
-!i113 1
-R5
 R6
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v|
+!i113 1
+R7
+R8
 n@imm@gen
 vMicroCode
-!s110 1642506276
+Z10 !s110 1642517606
 !i10b 1
 !s100 kjGJY1OVlI1dc8;R;KNc]2
-R0
-I:[526aTXhbz>0l<1LoNI50
 R1
+I>hK9=Fz<bd[^YDaojnH5U3
 R2
-w1642505372
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/template/MicroCode.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/template/MicroCode.v
-!i122 203
-L0 1 199
 R3
+R4
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v
+!i122 305
+L0 1 199
+R5
 r1
 !s85 0
 31
-Z11 !s108 1642506276.000000
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/template/MicroCode.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/template/MicroCode.v|
-!i113 1
-R5
 R6
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v|
+!i113 1
+R7
+R8
 n@micro@code
 vREG_FILE
-Z12 !s110 1642506277
+R10
 !i10b 1
 !s100 F?Ro0Z1WNb]1ai4=eCG8f3
-R0
-ICg4fRCWDlmD]mg6adkiNX1
 R1
+I>e?>LmMAJP<?1TglEWSN]2
 R2
-Z13 w1641819713
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/template/REG_FILE.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/template/REG_FILE.v
-!i122 204
-L0 1 72
 R3
+Z11 w1544684674
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/REG_FILE.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/REG_FILE.v
+!i122 306
+L0 1 72
+R5
 r1
 !s85 0
 31
-R11
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/template/REG_FILE.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/template/REG_FILE.v|
+Z12 !s108 1642517606.000000
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/REG_FILE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/REG_FILE.v|
 !i113 1
-R5
-R6
+R7
+R8
 n@r@e@g_@f@i@l@e
 vRISCV_CLKRST
-R12
+R10
 !i10b 1
 !s100 Kl1ojc8dfbzn6Bk>K`H?Z0
-R0
-IXzHz]DHk[TYaW4;Y00a=E2
 R1
+ICE[>o0KzjQibV_RMXYfM[2
 R2
-R13
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v
-!i122 205
-L0 3 21
 R3
+w1544684675
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v
+!i122 307
+L0 3 21
+R5
 r1
 !s85 0
 31
-!s108 1642506277.000000
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v|
+R12
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v|
 !i113 1
-R5
-R6
+R7
+R8
 n@r@i@s@c@v_@c@l@k@r@s@t
 vRISCV_TOP
-Z14 !s110 1642506278
+R10
 !i10b 1
-!s100 jR4OkTS=R?P7SZMQd=PcA1
-R0
-IJK^23Gz3@8AW5]a>:i^K92
+!s100 :PV?`P6Q2;bQC:8@]ooVn0
 R1
+IZgN8?U=Tn^=YIa9R=ce[93
 R2
-w1642504867
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v
-!i122 206
-L0 1 255
 R3
+w1642517600
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v
+!i122 308
+L0 1 255
+R5
 r1
 !s85 0
 31
-Z15 !s108 1642506278.000000
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v|
+R12
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v|
 !i113 1
-R5
-R6
+R7
+R8
 n@r@i@s@c@v_@t@o@p
 vSP_SRAM
-R9
+R0
 !i10b 1
 !s100 oZfzSBjZHcGHT>G?0i0];0
-R0
-IkiAKdeQbMSg2b=jedHRVR3
 R1
+I_JXEPMUk8:@W@;SV;d0Ql3
 R2
-R13
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/template/Mem_Model.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/template/Mem_Model.v
-!i122 202
-L0 2 42
 R3
+R11
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/Mem_Model.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/Mem_Model.v
+!i122 304
+L0 2 42
+R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/template/Mem_Model.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/template/Mem_Model.v|
-!i113 1
-R5
 R6
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/Mem_Model.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/Mem_Model.v|
+!i113 1
+R7
+R8
 n@s@p_@s@r@a@m
 vTB_RISCV
-R14
+R10
 !i10b 1
-!s100 F495QgJ?UZD9?B;AIQVaa0
-R0
-IMf@5_7X[bY^2JZP:Vn:JW1
+!s100 flQ:`k1XD9BPfcj37O@Vj0
 R1
+II[nO3K18Ulo1?l@>bf[4?3
 R2
-w1642501952
-8C:/Users/W24876/Desktop/modelsim_project/Lab4/TB_RISCV_inst.v
-FC:/Users/W24876/Desktop/modelsim_project/Lab4/TB_RISCV_inst.v
-!i122 207
-L0 5 174
 R3
+w1642510873
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v
+!i122 309
+L0 5 167
+R5
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/W24876/Desktop/modelsim_project/Lab4/TB_RISCV_inst.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24876/Desktop/modelsim_project/Lab4/TB_RISCV_inst.v|
+R12
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v|
 !i113 1
-R5
-R6
+R7
+R8
 n@t@b_@r@i@s@c@v

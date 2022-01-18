@@ -38,7 +38,7 @@ module RISCV_TOP (
 	wire IR_WE;
 	
 
-	always @(posedge CLK) begin
+	always @(*) begin
 		if(IR_WE == 1) begin
 			I_MEM_DI_reg = I_MEM_DI;
 		end
@@ -100,7 +100,7 @@ module RISCV_TOP (
 
 	assign termination_flag = termination_flag_reg;
 	assign HALT = HALT_reg;
-	assign opcode = I_MEM_DI[6:0];
+	assign opcode = I_MEM_DI_reg[6:0];
 
 	//control unit
     wire [2:0] imm_control; // immediate 생성 관련
@@ -190,11 +190,11 @@ module RISCV_TOP (
 		I_MEM_ADDR = pc & 12'hFFF;
 		
 		// 종료 조건 설정
-		if(I_MEM_DI == 32'h00c00093 ) begin
+		if(I_MEM_DI_reg == 32'h00c00093 ) begin
 			termination_flag_reg = 1;
 		end
 		else begin
-			if(I_MEM_DI == 32'h00008067 && termination_flag_reg == 1) begin
+			if(I_MEM_DI_reg == 32'h00008067 && termination_flag_reg == 1) begin
 				termination_flag_reg = 1;
 			end
 			else begin
@@ -202,7 +202,7 @@ module RISCV_TOP (
 			end
 		end
 
-		if(termination_flag_reg & (I_MEM_DI == 32'h00008067)) begin
+		if(termination_flag_reg & (I_MEM_DI_reg == 32'h00008067)) begin
 			HALT_reg = 1;
 		end 
 		else begin
