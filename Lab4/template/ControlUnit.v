@@ -70,8 +70,8 @@ module ControlUnit(
     reg D_MEM_WEN_reg;
     reg[3:0] D_MEM_BE_reg;
     reg is_sign_reg;
-    reg ASel_reg;
-    reg BSel_reg;
+    reg[1:0] ASel_reg;
+    reg[1:0] BSel_reg;
     reg[4:0] alu_control_reg;
     reg[1:0] wbSel_reg;
     reg IR_WE_reg;
@@ -98,7 +98,7 @@ module ControlUnit(
 
     //control signal 결정용 내부 레지스터
     reg[4:0] index;
-    wire[25:0] control_signal;
+    wire[23:0] control_signal;
 
 	MicroCode microCode(
 		.RSTn				(RSTn),
@@ -156,6 +156,7 @@ module ControlUnit(
         pcUpdate <= 1;
         pcSel_reg <= 0;
         stage_reg <= 3'b000;
+        IR_WE_reg <= 1;
     end
 
     // opcode, func3, func7, stage를 이용해서 index 생성
@@ -216,7 +217,7 @@ module ControlUnit(
                     end
                 end
             end
-            if(opcode == op_Itype) begin
+            else if(opcode == op_Itype) begin
                 if(func3 == 3'b000) begin
                     index = 5'b01010;
                 end
@@ -257,19 +258,19 @@ module ControlUnit(
                     end
                 end
             end
-            if(opcode == op_Ltype) begin
+            else if(opcode == op_Ltype) begin
                 index = 5'b10100;
             end
-            if(opcode == op_Stype) begin
+            else if(opcode == op_Stype) begin
                 index = 5'b10101;
             end
-            if(opcode == op_JALR) begin
+            else if(opcode == op_JALR) begin
                 index = 5'b10110;
             end
-            if(opcode == op_JAL)begin
+            else if(opcode == op_JAL)begin
                 index = 5'b10111;
             end
-            if(opcode == op_Btype)begin
+            else if(opcode == op_Btype)begin
                 if(func3 == 3'b110 || func3 == 3'b111) begin
                     index = 5'b11000;
                 end
@@ -277,11 +278,14 @@ module ControlUnit(
                     index = 5'b11001;
                 end
             end
-            if(opcode == op_LUI) begin
+            else if(opcode == op_LUI) begin
                 index = 5'b11010;
             end
-            if(opcode == op_AUIPC)begin
+            else if(opcode == op_AUIPC)begin
                 index = 5'b11011;
+            end
+            else begin
+                index = 5'b11100;
             end
         end
     end

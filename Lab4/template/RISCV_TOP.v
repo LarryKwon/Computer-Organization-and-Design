@@ -36,6 +36,8 @@ module RISCV_TOP (
 	assign I_MEM_CSN = ~RSTn;
 	reg[31:0] I_MEM_DI_reg;
 	wire IR_WE;
+	
+
 	always @(posedge CLK) begin
 		if(IR_WE == 1) begin
 			I_MEM_DI_reg = I_MEM_DI;
@@ -100,6 +102,20 @@ module RISCV_TOP (
 	assign HALT = HALT_reg;
 	assign opcode = I_MEM_DI[6:0];
 
+	//control unit
+    wire [2:0] imm_control; // immediate 생성 관련
+    wire is_sign; // sign 명령어인지 아닌지
+    wire [1:0] ASel; // RF_RD1, pc, oldPc
+    wire [1:0] BSel; // RF_RD2, imm, 4
+    wire [4:0] alu_control; //alu control decoder
+    wire [1:0] wbSel;   //wbSel
+												// - 00: Alu_out
+												// - 01: D_MEM_OUT
+												// - 10: AluResult
+												// - 11: Imm
+    wire pcSel;   // pcSel
+									// - 0: alu_result(즉시 계산값)
+									// - 1: alu_out(저장값)
 
 
 
@@ -139,7 +155,7 @@ module RISCV_TOP (
 		.ASel					(ASel),
 		.BSel					(BSel),
 		.alu_control	(alu_control),
-		.wb_control		(wb_control),
+		.wbSel				(wbSel),
 		.ALU_REG_WE		(ALU_REG_WE),
 		.IR_WE				(IR_WE),
 		.PC_WE				(PC_WE),
@@ -156,13 +172,13 @@ module RISCV_TOP (
 	always @(RSTn) begin
 		
 		I_MEM_ADDR = pc;
-		
+		I_MEM_DI_reg  = I_MEM_DI;
 	end
 
 	//regWrite mux
-	assign RF_WD = (wb_control == 2'b00)? alu_out :
-	(wb_control == 2'b01)? D_MEM_DI :
-	(wb_control == 2'b10)? alu_result : imm;
+	assign RF_WD = (wbSel == 2'b00)? alu_out :
+	(wbSel == 2'b01)? D_MEM_DI :
+	(wbSel == 2'b10)? alu_result : imm;
 
 
 	//output port

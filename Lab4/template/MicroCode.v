@@ -189,6 +189,11 @@ module MicroCode #(
         MC[8'b11011000] <= 24'b110011000000011110000000;// AUIPC IF
         MC[8'b10011010] <= 24'b000010110000011110000000;// AUIPC EX
         MC[8'b10011100] <= 24'b001010100000011110000000;// AUIPC WB
+
+        //???
+        MC[8'b11100000] <= 24'b010011000000011110000000;
+        // PC_WE_reg, IR_WE_reg, RF_WE_reg, ASel_reg, BSel_reg, ALU_REG_WE_reg, is_sign_reg, pcSel_reg, wbSel_reg, D_MEM_WEN_reg
+        // D_MEM_BE_reg == 1111, alu_control_reg, imm_control_reg
     end
 
 endmodule
