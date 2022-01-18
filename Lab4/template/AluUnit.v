@@ -16,27 +16,32 @@ module AluUnit(
 wire [31:0] alu_input1;
 wire [31:0] alu_input2;
 
+reg [31:0] alu_input1_reg;
+reg[31:0] alu_input2_reg;
+
+assign alu_input1 = alu_input1_reg;
+assign alu_input2 = alu_input2_reg;
+
 always @(*) begin
     if(ASel == 2'b00) begin
-        alu_input1 = RF_RD1;
+        alu_input1_reg = RF_RD1;
     end
     else if(ASel == 2'b01) begin
-        alu_input1 = pc;
+        alu_input1_reg = pc;
     end
     else if(ASel == 2'b10) begin
-        alu_input1 = old_pc;
+        alu_input1_reg = old_pc;
     end
 
     if(BSel == 2'b00) begin
-        alu_input2 = RF_RD2;
+        alu_input2_reg = RF_RD2;
     end
     else if(BSel == 2'b01) begin
-        alu_input2 = imm;
+        alu_input2_reg = imm;
     end
     else if(BSel == 2'b10) begin
-        alu_input2 = 4;
+        alu_input2_reg = 4;
     end
-    
 end
 
 reg [31:0] alu_result_reg;
@@ -145,8 +150,6 @@ always@(*) begin
             alu_result_reg = (alu_input1 + alu_input2);
             alu_result_reg[0] = 0;
        end
-
-       if(alu_control == 4'b1010)
     end
 end
 

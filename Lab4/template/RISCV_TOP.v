@@ -144,7 +144,7 @@ module RISCV_TOP (
 		.IR_WE				(IR_WE),
 		.PC_WE				(PC_WE),
 		.pcSel				(pcSel),
-		.stage				(stage),
+		.stage				(stage)
 	);
 
 	//초기화
@@ -197,13 +197,13 @@ module RISCV_TOP (
 	always @(posedge CLK) begin
 		// pc <= next_pc 값이 언제, 어떻게 일어나는지
 		if(RSTn==1) begin
-			if(pc_WE == 1) begin
+			if(PC_WE == 1) begin
 				if(pcSel == 1) begin
 					pc <= alu_out;
 				end
 				// pc = pc + 4;
 				else begin
-					pc <= alu_result
+					pc <= alu_result;
 				end
 			end
 		end

@@ -104,7 +104,7 @@ module ControlUnit(
 		.RSTn				(RSTn),
         .inst              (index),
         .stage              (stage_reg),
-		.constrol_signal	(control_signal)
+		.control_signal	(control_signal)
 	);
 
     always @(*) begin

@@ -5,19 +5,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	AluUnit
 
-} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TB_RISCV_sort
-
-Top level modules:
-	TB_RISCV_sort
-
 } {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/Mem_Model.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/Mem_Model.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module SP_SRAM
 
 Top level modules:
 	SP_SRAM
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_sort.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_RISCV_sort
+
+Top level modules:
+	TB_RISCV_sort
 
 } {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_forloop.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -26,33 +26,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TB_RISCV_forloop
 
-} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ControlUnit.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ControlUnit.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TB_RISCV_inst
+-- Compiling module ControlUnit
 
 Top level modules:
-	TB_RISCV_inst
-
-} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/REG_FILE.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/REG_FILE.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module REG_FILE
-
-Top level modules:
-	REG_FILE
-
-} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_CLKRST.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_CLKRST.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module RISCV_CLKRST
-
-Top level modules:
-	RISCV_CLKRST
-
-} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/BranchComp.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/BranchComp.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module BranchComp
-
-Top level modules:
-	BranchComp
+	ControlUnit
 
 } {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ImmGen.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ImmGen.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -61,11 +40,32 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ImmGen
 
-} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ControlUnit.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/ControlUnit.v
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/BranchComp.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/BranchComp.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ControlUnit
+-- Compiling module BranchComp
 
 Top level modules:
-	ControlUnit
+	BranchComp
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_CLKRST.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/RISCV_CLKRST.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISCV_CLKRST
+
+Top level modules:
+	RISCV_CLKRST
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/template/REG_FILE.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/template/REG_FILE.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module REG_FILE
+
+Top level modules:
+	REG_FILE
+
+} {} {}} C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v {1 {vlog -work work -stats=none C:/Users/W24876/Desktop/modelsim_project/Lab3/testbench/TB_RISCV_inst.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_RISCV_inst
+
+Top level modules:
+	TB_RISCV_inst
 
 } {} {}}
