@@ -12,12 +12,33 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	SP_SRAM
 
-} {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v
+} {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_inst.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_inst.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module TB_RISCV
 
 Top level modules:
 	TB_RISCV
+
+} {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MicroCode
+
+Top level modules:
+	MicroCode
+
+} {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ControlUnit
+
+Top level modules:
+	ControlUnit
+
+} {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISCV_TOP
+
+Top level modules:
+	RISCV_TOP
 
 } {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -33,26 +54,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	REG_FILE
 
-} {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module MicroCode
-
-Top level modules:
-	MicroCode
-
 } {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ImmGen
 
 Top level modules:
 	ImmGen
-
-} {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ControlUnit
-
-Top level modules:
-	ControlUnit
 
 } {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

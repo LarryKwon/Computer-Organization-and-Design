@@ -10,28 +10,28 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 vAluUnit
-Z0 !s110 1642517605
+Z0 !s110 1642602537
 !i10b 1
 !s100 M[M8^1f[Koj8hVjzW2G:=2
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I>kO7@d1]85;Fm;2=JU1lf3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 dC:/Users/W24880/Desktop/modelsim_project/Lab4
-Z4 w1642510828
+w1642510828
 8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/AluUnit.v
 FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/AluUnit.v
-!i122 300
+!i122 410
 L0 1 156
-Z5 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1642517605.000000
+!s108 1642602536.000000
 !s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/AluUnit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/AluUnit.v|
 !i113 1
-Z7 o-work work
-Z8 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 n@alu@unit
 vBranchComp
 R0
@@ -41,45 +41,45 @@ R1
 I?`LfdY377R:MkhVhclFOM0
 R2
 R3
-Z9 w1641812881
+Z7 w1641812881
 8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v
 FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v
-!i122 301
+!i122 411
 L0 1 50
-R5
+R4
 r1
 !s85 0
 31
-R6
+Z8 !s108 1642602537.000000
 !s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/BranchComp.v|
 !i113 1
-R7
-R8
+R5
+R6
 n@branch@comp
 vControlUnit
 R0
 !i10b 1
-!s100 W?03N8@QDZDRODhSk>R;E0
+!s100 0K5QMJb3QIb1Kb:HT?_@B0
 R1
-IcS0ZDAHLW^23[mLT?I`P`0
+I:AXQ6_fG4mjE9PI^66oEZ3
 R2
 R3
-R4
+w1642602419
 8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v
 FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v
-!i122 302
-L0 1 399
-R5
+!i122 412
+L0 1 400
+R4
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ControlUnit.v|
 !i113 1
-R7
-R8
+R5
+R6
 n@control@unit
 vImmGen
 R0
@@ -89,72 +89,72 @@ R1
 IngfKR6jjj9H`aNnFN1PT02
 R2
 R3
-R9
+R7
 8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v
 FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v
-!i122 303
+!i122 413
 L0 1 77
-R5
+R4
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/ImmGen.v|
 !i113 1
-R7
-R8
+R5
+R6
 n@imm@gen
 vMicroCode
-Z10 !s110 1642517606
+Z9 !s110 1642602538
 !i10b 1
-!s100 kjGJY1OVlI1dc8;R;KNc]2
+!s100 F;6OeXB?e[Nf0;[cPdkXl1
 R1
-I>hK9=Fz<bd[^YDaojnH5U3
+IRN?fQKdSCnN1;>VB8[1EV1
 R2
 R3
-R4
+w1642602381
 8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v
 FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v
-!i122 305
-L0 1 199
-R5
+!i122 415
+L0 1 200
+R4
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/MicroCode.v|
 !i113 1
-R7
-R8
+R5
+R6
 n@micro@code
 vREG_FILE
-R10
+R9
 !i10b 1
 !s100 F?Ro0Z1WNb]1ai4=eCG8f3
 R1
 I>e?>LmMAJP<?1TglEWSN]2
 R2
 R3
-Z11 w1544684674
+Z10 w1544684674
 8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/REG_FILE.v
 FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/REG_FILE.v
-!i122 306
+!i122 416
 L0 1 72
-R5
+R4
 r1
 !s85 0
 31
-Z12 !s108 1642517606.000000
+Z11 !s108 1642602538.000000
 !s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/REG_FILE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/REG_FILE.v|
 !i113 1
-R7
-R8
+R5
+R6
 n@r@e@g_@f@i@l@e
 vRISCV_CLKRST
-R10
+R9
 !i10b 1
 !s100 Kl1ojc8dfbzn6Bk>K`H?Z0
 R1
@@ -164,21 +164,21 @@ R3
 w1544684675
 8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v
 FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v
-!i122 307
+!i122 417
 L0 3 21
-R5
+R4
 r1
 !s85 0
 31
-R12
+R11
 !s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_CLKRST.v|
 !i113 1
-R7
-R8
+R5
+R6
 n@r@i@s@c@v_@c@l@k@r@s@t
 vRISCV_TOP
-R10
+R9
 !i10b 1
 !s100 :PV?`P6Q2;bQC:8@]ooVn0
 R1
@@ -188,18 +188,18 @@ R3
 w1642517600
 8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v
 FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v
-!i122 308
+!i122 418
 L0 1 255
-R5
+R4
 r1
 !s85 0
 31
-R12
+R11
 !s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/RISCV_TOP.v|
 !i113 1
-R7
-R8
+R5
+R6
 n@r@i@s@c@v_@t@o@p
 vSP_SRAM
 R0
@@ -209,43 +209,43 @@ R1
 I_JXEPMUk8:@W@;SV;d0Ql3
 R2
 R3
-R11
+R10
 8C:/Users/W24880/Desktop/modelsim_project/Lab4/template/Mem_Model.v
 FC:/Users/W24880/Desktop/modelsim_project/Lab4/template/Mem_Model.v
-!i122 304
+!i122 414
 L0 2 42
-R5
+R4
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/template/Mem_Model.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/template/Mem_Model.v|
 !i113 1
-R7
-R8
+R5
+R6
 n@s@p_@s@r@a@m
 vTB_RISCV
-R10
+R9
 !i10b 1
-!s100 flQ:`k1XD9BPfcj37O@Vj0
+!s100 HdU6aE]0MF5YZf4L`?CK`2
 R1
-II[nO3K18Ulo1?l@>bf[4?3
+I4KkRNXmJaOMNbi8_iARX=2
 R2
 R3
-w1642510873
-8C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v
-FC:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v
-!i122 309
-L0 5 167
-R5
+w1642510880
+8C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_inst.v
+FC:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_inst.v
+!i122 419
+L0 5 174
+R4
 r1
 !s85 0
 31
-R12
-!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v|
+R11
+!s107 C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_inst.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_inst.v|
 !i113 1
-R7
-R8
+R5
+R6
 n@t@b_@r@i@s@c@v

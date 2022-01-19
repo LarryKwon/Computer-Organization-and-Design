@@ -1,0 +1,315 @@
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
+# Start time: 23:03:31 on Jan 19,2022
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.MicroCode
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: W24876  Hostname: DESKTOP-U41GKO3  ProcessID: 7944
+#           Attempting to use alternate WLF file "./wlft6xtwc1".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft6xtwc1
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/imm_gen1/*
+run -all
+# Finish:        308 cycle
+# Success.
+# ** Note: $finish    : C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v(166)
+#    Time: 3185 ns  Iteration: 1  Instance: /TB_RISCV
+# 1
+# Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v line 166
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of Mem_Model.v was successful.
+# Compile of MicroCode.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
+# End time: 23:13:48 on Jan 19,2022, Elapsed time: 0:10:17
+# Errors: 0, Warnings: 6
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
+# Start time: 23:13:48 on Jan 19,2022
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.MicroCode
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: W24876  Hostname: DESKTOP-U41GKO3  ProcessID: 7944
+#           Attempting to use alternate WLF file "./wlft8df1rn".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft8df1rn
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/imm_gen1/*
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "C:\Users\W24876\Desktop\modelsim_project\Lab4\testcase\hex\sort.hex" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/W24880/Desktop/modelsim_project/Lab4/template/Mem_Model.v(19)
+#    Time: 0 ps  Iteration: 0  Instance: /TB_RISCV/i_mem1
+# ** Note: $finish    : C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_sort.v(116)
+#    Time: 10 ms  Iteration: 0  Instance: /TB_RISCV
+# 1
+# Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_sort.v line 116
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of Mem_Model.v was successful.
+# Compile of MicroCode.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
+# End time: 23:15:27 on Jan 19,2022, Elapsed time: 0:01:39
+# Errors: 0, Warnings: 5
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
+# Start time: 23:15:27 on Jan 19,2022
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.MicroCode
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of Mem_Model.v was successful.
+# Compile of MicroCode.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
+# End time: 23:15:47 on Jan 19,2022, Elapsed time: 0:00:20
+# Errors: 0, Warnings: 2
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
+# Start time: 23:15:47 on Jan 19,2022
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.MicroCode
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: W24876  Hostname: DESKTOP-U41GKO3  ProcessID: 7944
+#           Attempting to use alternate WLF file "./wlftcfegth".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftcfegth
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/imm_gen1/*
+run -all
+# Test #    2 has been failed!
+# output_port = 0x48 (Ans : 0x18)
+# ** Note: $finish    : C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_sort.v(184)
+#    Time: 335 ns  Iteration: 1  Instance: /TB_RISCV
+# 1
+# Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_sort.v line 184
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of Mem_Model.v was successful.
+# Compile of MicroCode.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
+# End time: 23:25:31 on Jan 19,2022, Elapsed time: 0:09:44
+# Errors: 0, Warnings: 4
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
+# Start time: 23:25:31 on Jan 19,2022
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.MicroCode
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: W24876  Hostname: DESKTOP-U41GKO3  ProcessID: 7944
+#           Attempting to use alternate WLF file "./wlftvs1i3e".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftvs1i3e
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/imm_gen1/*
+run -all
+# Finish:      41444 cycle
+# Success.
+# ** Note: $finish    : C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_sort.v(192)
+#    Time: 414545 ns  Iteration: 1  Instance: /TB_RISCV
+# 1
+# Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_sort.v line 192
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of Mem_Model.v was successful.
+# Compile of MicroCode.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of Mem_Model.v was successful.
+# Compile of MicroCode.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_forloop.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
+# End time: 23:27:35 on Jan 19,2022, Elapsed time: 0:02:04
+# Errors: 0, Warnings: 7
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
+# Start time: 23:27:35 on Jan 19,2022
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.MicroCode
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV
+run -all
+# Finish:        309 cycle
+# Success.
+# ** Note: $finish    : C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v(166)
+#    Time: 3195 ns  Iteration: 1  Instance: /TB_RISCV
+# 1
+# Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_forloop.v line 166
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of Mem_Model.v was successful.
+# Compile of MicroCode.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_sort.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
+# End time: 23:28:19 on Jan 19,2022, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 4
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
+# Start time: 23:28:19 on Jan 19,2022
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.MicroCode
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV
+run -all
+# Finish:      41477 cycle
+# Success.
+# ** Note: $finish    : C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_sort.v(192)
+#    Time: 414875 ns  Iteration: 1  Instance: /TB_RISCV
+# 1
+# Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_sort.v line 192
+# Compile of AluUnit.v was successful.
+# Compile of BranchComp.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of Mem_Model.v was successful.
+# Compile of MicroCode.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of RISCV_CLKRST.v was successful.
+# Compile of RISCV_TOP.v was successful.
+# Compile of TB_RISCV_inst.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
+# End time: 23:29:07 on Jan 19,2022, Elapsed time: 0:00:48
+# Errors: 0, Warnings: 4
+# vsim -gui work.AluUnit work.BranchComp work.ControlUnit work.ImmGen work.MicroCode work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
+# Start time: 23:29:07 on Jan 19,2022
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.ControlUnit
+# Loading work.MicroCode
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV
+run -all
+# Test #    1 has been passed
+# Test #    2 has been passed
+# Test #    3 has been passed
+# Test #    4 has been passed
+# Test #    5 has been passed
+# Test #    6 has been passed
+# Test #    7 has been passed
+# Test #    8 has been passed
+# Test #    9 has been passed
+# Test #   10 has been passed
+# Test #   11 has been passed
+# Test #   12 has been passed
+# Test #   13 has been passed
+# Test #   14 has been passed
+# Test #   15 has been passed
+# Test #   16 has been passed
+# Test #   17 has been passed
+# Test #   18 has been passed
+# Test #   19 has been passed
+# Test #   20 has been passed
+# Test #   21 has been passed
+# Finish:         89 cycle
+# Success.
+# ** Note: $finish    : C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_inst.v(173)
+#    Time: 995 ns  Iteration: 1  Instance: /TB_RISCV
+# 1
+# Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab4/testbench/TB_RISCV_inst.v line 173
+# End time: 23:29:17 on Jan 19,2022, Elapsed time: 0:00:10
+# Errors: 0, Warnings: 1

@@ -389,7 +389,8 @@ module ControlUnit(
                 (stage_reg == stage_WB) ? stage_IF : stage_IF;           
             end
             if(opcode == op_JAL)begin
-                stage_reg = (stage_reg == stage_IF) ? stage_EX:
+                stage_reg = (stage_reg == stage_IF) ? stage_ID:
+                (stage_reg == stage_ID) ? stage_EX :
                 (stage_reg == stage_EX) ? stage_WB :
                 (stage_reg == stage_WB) ? stage_IF : stage_IF;            
             end
