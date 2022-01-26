@@ -67,18 +67,45 @@ module RISCV_TOP (
     wire[4:0] WA_WB;
 
     // control signals
-    /*EX*/
+    /* control unit에서 나오는 wire*/
+    //EX
     wire [4:0] alu_control;
     wire is_sign;
     wire [2:0] imm_control;
     wire ASel;
     wire BSel;
-    /*MEM*/
+    //MEM
     wire memWrite;
     wire [3:0] memByte;
-    /*WB*/
+    //WB
     wire [1:0] wbSel;
     wire regWrite;
+
+    /* ID/EX 단계 */
+    //EX
+    reg [4:0] alu_control_ID_EX;
+    reg is_sign_ID_EX;
+    reg [2:0] imm_control_ID_EX;
+    reg ASel_ID_EX;
+    reg BSel_ID_EX;
+    //MEM
+    reg memWrite_ID_EX;
+    reg [3:0] memByte_ID_EX;
+    //WB
+    reg [1:0] wbSel_ID_EX;
+    reg regWrite_ID_EX;
+
+    /* EX/MEM 단계 */
+    //MEM
+    reg memWrite_EX_MEM;
+    reg [3:0] memByte_EX_MEM;
+    //WB
+    reg [1:0] wbSel_EX_MEM;
+    reg regWrite_EX_MEM;
+
+    /* MEM/WB 단계 */
+    //WB
+    reg regWrite_MEM_WB;
 
     /*for stall*/    
     wire isNop_IF_ID;
@@ -104,6 +131,7 @@ module RISCV_TOP (
 	initial begin
 		NUM_INST <= 0;
         pc <= 0;
+
 	end
     
     assign I_MEM_CSN = ~RSTn;
@@ -121,7 +149,7 @@ module RISCV_TOP (
     /*포트 연결부*/
     BranchComp branch_comp(
 		.RSTn 		(RSTn),
-		.is_sign 	(is_sign),
+		.is_sign 	(is_sign_ID_EX),
 		.RF_RD1  	(RF_RD1_ID_EX), // source register 1로 부터 읽을 값
 		.RF_RD2  	(RF_RD2_ID_EX), // source register 2로 부터 읽을 값
    		.BrEq    	(BrEq),
@@ -130,25 +158,28 @@ module RISCV_TOP (
 
     ImmGen imm_gen1(
 		.RSTn				(RSTn),
-		.imm_control	    (imm_control),
+		.imm_control	    (imm_control_ID_EX),
 		.I_MEM_DI			(INST_ID_EX),
 		.imm				(imm)
 	);
 
     AluUnit alu_unit(
         .RSTn			(RSTn),
-        .ASel           (ASel),
-        .BSel           (BSel),
+        .ASel           (ASel_ID_EX),
+        .BSel           (BSel_ID_EX),
         .forwardA		(forwardA),
         .forwardB		(forwardB),
-        .is_sign		(is_sign),
-        .alu_control	(alu_control),
+        .is_sign		(is_sign_ID_EX),
+        .alu_control	(alu_control_ID_EX),
         .RF_RD1			(RF_RD1_ID_EX), // source register 1로 부터 읽을 값
         .RF_RD2			(RF_RD2_ID_EX), // source register 2로 부터 읽을 값
         .imm			(imm),
         .pc				(pc_ID_EX),
-        .alu_result	    (alu_result),
-        .br_control	    (br_control)
+        .SRC1_EX_MEM    (alu_out),
+        .SRC2_EX_MEM    (alu_out),
+        .SRC1_MEM_WB    (RF_WD_MEM_WB),
+        .SRC2_MEM_WB    (RF_WD_MEM_WB),
+        .alu_result	    (alu_result)
 	);
 
 	ControlUnit control_unit(
@@ -174,6 +205,28 @@ module RISCV_TOP (
         .isNop_ID_EX    (isNop_ID_EX)
 	);
 
+    ForwardUnit forward_unit(
+        .RSTn           (RSTn),
+		.RS1_EX			(INST_ID_EX[19:15]),
+        .RS2_EX         (INST_ID_EX[24:20]),
+        .RD_MEM         (INST_EX_MEM[11:7]),
+        .RD_WB          (INST_MEM_WB[11:7]),
+        .regWrite_MEM   (regWrite_EX_MEM),
+        .regWrite_WB    (regWrite_MEM_WB)
+	);
+
+    BTB btb(
+        .RSTn           (RSTn),
+        .INST_ID_EX     (INST_ID_EX),
+        .pc_ID_EX       (pc_ID_EX),
+        .pc             (pc),
+        .isTaken        (isTaken),
+        .alu_result     (alu_result),
+        .target_addr    (target_addr),
+        .pred           (pred),
+        .misPredict     (misPredict)
+    )
+
     /* datapath 연결부 */
 
     /*IF datapath*/
@@ -181,19 +234,20 @@ module RISCV_TOP (
         I_MEM_ADDR = pc & 12'hFFF;
     end
     /*
-        pc +4  and BTB logic 추가
+        @Todo: pc +4  and BTB logic 추가
     */
 
     // IF/ID register
     //instruction reg
     always @(posedge CLK) begin
-        INST_IF_ID = I_MEM_DI;
+        // @Todo: isNop_IF_ID, IF_ID_WE에 따른 stall 과 noop 기능 추가
+        INST_IF_ID <= I_MEM_DI;
     end
     //pc
     always @(posedge CLK) begin
-        pc_IF_ID = pc;
+        pc_IF_ID <= pc;
     end
-    
+
 
     /*ID datapath*/
     //connect to RA1, RA2 of RegisterFile
@@ -202,23 +256,89 @@ module RISCV_TOP (
 	
     // ID/EX register
     // RF_RD1, RF_RD2
-	always @(*) begin
-		RF_RD1_ID_EX = RF_RD1;
-		RF_RD2_ID_EX = RF_RD2;
+	always @(posedge CLK) begin
+		RF_RD1_ID_EX <= RF_RD1;
+		RF_RD2_ID_EX <= RF_RD2;
 	end
     //pc_IFID
     always @(posedge CLK) begin
-        pc_ID_EX = pc_IF_ID;
+        pc_ID_EX <= pc_IF_ID;
     end
     //instruction reg
-    always @(*) begin
-        INST_ID_EX = INST_IF_ID
+    always @(posedge CLK) begin
+        // @Todo: isNop_IF_ID에 따른 noop 기능 추가
+        INST_ID_EX <= INST_IF_ID;
     end
+    //control signal
+    always @(posedge CLK) begin
+        regWrite_ID_EX <= regWrite;
+        wbSel_ID_EX <= wbSel;
+        memWrite_ID_EX <= memWrite;
+        memByte_ID_EX <= memByte;
+        
+        alu_control_ID_EX <= alu_control;
+        is_sign_ID_EX <= is_sign;
+        imm_control_ID_EX <= imm_control;
+        ASel_ID_EX <= ASel;
+        BSel_ID_EX <= BSel;
+    end
+    
 
     /*EX datapath*/
-    //connect to branchComp
+    //alu_out
+    always @(posedge CLK) begin
+        alu_out <= alu_result;
+    end
+    //RF_RD2_EX_MEM
+    always @(posedge CLK) begin
+        RF_RD2_EX_MEM <= RF_RD1_ID_EX;
+    end
+    //pc_EX_MEM
+    always @(posedge CLK) begin
+        pc_EX_MEM <= pc_ID_EX;
+    end
+    //instruction reg
+    always @(posedge CLK) begin
+        INST_EX_MEM <= INST_MEM_WB;
+    end
+    //control signal
+    always @(posedge CLK) begin
+        regWrite_EX_MEM <= regWrite_ID_EX;
+        wbSel_EX_MEM <= wbSel_ID_EX ;
+        memWrite_EX_MEM <= memWrite_ID_EX;
+        memByte_EX_MEM <= memByte_ID_EX;
+    end
 
-    
+    /*MEM datapath*/
+    //data memory connection
+    assign D_MEM_ADDR = alu_out & 16'h3FFF;
+    assign D_MEM_DOUT = RF_RD2_EX_MEM;
+    assign D_MEM_WEN = memWrite_EX_MEM;
+    //instruction reg
+    always @(posedge CLK) begin
+        INST_MEM_WB <= INST_EX_MEM;
+    end
+
+    always @(posedge CLK) begin
+        if(wbSel_EX_MEM == 2'b00) begin
+            RF_WD_MEM_WB <= alu_out; 
+        end
+        else if(wbSel_EX_MEM == 2'b01) begin
+            RF_WD_MEM_WB <= D_MEM_DI;
+        end
+        else if(wbSel_EX_MEM == 2'b10) begin
+            RF_WD_MEM_WB <= pc_EX_MEM + 4;
+        end
+    end
+    //control signal
+    always @(posedge CLK) begin
+        regWrite_MEM_WB <= regWrite_EX_MEM;
+    end
+
+    /*WB datapath*/
+    assign RF_WD = RF_WD_MEM_WB;
+    assign RF_WA1 = INST_MEM_WB[11:7];
+    assign RF_WE = regWrite_MEM_WB;
 
     
     //termination & output Port
@@ -229,7 +349,7 @@ module RISCV_TOP (
 
 	assign termination_flag = termination_flag_reg;
 	assign HALT = HALT_reg;
-	assign opcode = INST_IFID[6:0];
+	assign opcode = INST_IF_ID[6:0];
 
 	always@(*) begin
 		// 종료 조건 설정
