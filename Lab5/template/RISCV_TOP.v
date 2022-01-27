@@ -36,14 +36,14 @@ module RISCV_TOP (
     reg [11:0] pc; 
     reg [31:0] INST_IF_ID;   
     reg [11:0] pc_IF_ID;
+	reg isBubble_IF_ID;
 
     //ID
     reg [31:0] RF_RD1_ID_EX; //RD1값 저장 reg
 	reg [31:0] RF_RD2_ID_EX; //RD2값 저장 reg
     reg [11:0] pc_ID_EX;
     reg [31:0] INST_ID_EX;
-    wire[4:0]  RA1_EX;
-    wire[4:0] RA2_EX;
+	reg isBubble_ID_EX;
 
     //ex
     wire[31:0] imm;
@@ -58,13 +58,15 @@ module RISCV_TOP (
     //BranchComp
 	wire BrEq; // BranchComp to controlUnit
 	wire BrLt; // BranchComp to controlUnit
-
-    //MEM
-
-    //WB
-    reg [31:0] RF_WD_MEM_WB;
+	reg isBubble_EX_MEM;
+    
+	//MEM
+	reg [31:0] RF_WD_MEM_WB;
     reg [31:0] INST_MEM_WB;
     wire[4:0] WA_WB;
+	reg isBubble_MEM_WB;
+    
+	//WB
 
     // control signals
     /* control unit에서 나오는 wire*/
@@ -110,6 +112,9 @@ module RISCV_TOP (
     /*for stall*/    
     wire isNop_IF_ID;
     wire isNop_ID_EX;
+	wire isNop_ID_EX_c;
+	wire isNop_ID_EX_d;
+	assign isNop_ID_EX = isNop_ID_EX_c | isNop_ID_EX_d;
     wire IF_ID_WE;
     wire pcWrite;
 
@@ -119,9 +124,8 @@ module RISCV_TOP (
     
     /*BTB <-> control unit*/
     wire misPredict; // BTB to controlUnit
-    wire pred; // BTB to PC
     wire isTaken; // controlUnit to BTB
-    wire target_addr; // BTB to PC
+	wire[11:0] nextPc;
 
 	//output port -> 수정 필요
 	assign OUTPUT_PORT = (opcode == 7'b1100011)? ~misPredict:
@@ -131,7 +135,8 @@ module RISCV_TOP (
 	initial begin
 		NUM_INST <= 0;
         pc <= 0;
-
+		isBubble_IF_ID <= 0;
+		isNop_IF_ID <= 0;
 	end
     
     assign I_MEM_CSN = ~RSTn;
@@ -139,11 +144,6 @@ module RISCV_TOP (
     always @(RSTn) begin
 		I_MEM_ADDR = pc;
 		INST_IF_ID = I_MEM_DI;
-	end
-
-	// Only allow for NUM_INST
-	always @ (negedge CLK) begin
-		if (RSTn) NUM_INST <= NUM_INST + 1;
 	end
 
     /*포트 연결부*/
@@ -199,10 +199,19 @@ module RISCV_TOP (
 		.wbSel		    (wbSel),
         .misPredict     (misPredict),
         .isTaken        (isTaken),
-        .pcWrite        (pcWrite),
-        .IF_ID_WE       (IF_ID_WE),
         .isNop_IF_ID    (isNop_IF_ID),
-        .isNop_ID_EX    (isNop_ID_EX)
+        .isNop_ID_EX    (isNop_ID_EX_c)
+	);
+
+	DetectionUnit detection_unit(
+		.RSTn			(RSTn),
+		.memWrite		(memWrite_ID_EX),
+		.RD_EX			(INST_ID_EX[11:7]),
+		.RS1_ID			(INST_IF_ID[19:15]),
+		.RS2_ID			(INST_IF_ID[24:20]),
+		.IF_ID_WE		(IF_ID_WE),
+		.pcWrite		(pcWrite),
+		.isNop			(isNop_ID_EX_d)
 	);
 
     ForwardUnit forward_unit(
@@ -212,7 +221,9 @@ module RISCV_TOP (
         .RD_MEM         (INST_EX_MEM[11:7]),
         .RD_WB          (INST_MEM_WB[11:7]),
         .regWrite_MEM   (regWrite_EX_MEM),
-        .regWrite_WB    (regWrite_MEM_WB)
+        .regWrite_WB    (regWrite_MEM_WB),
+		.forwardA		(forwardA),
+		.forwardB		(forwardB)
 	);
 
     BTB btb(
@@ -222,10 +233,9 @@ module RISCV_TOP (
         .pc             (pc),
         .isTaken        (isTaken),
         .alu_result     (alu_result),
-        .target_addr    (target_addr),
-        .pred           (pred),
+        .nextPc    		(nextPC),
         .misPredict     (misPredict)
-    )
+    );
 
     /* datapath 연결부 */
 
@@ -233,9 +243,10 @@ module RISCV_TOP (
     always @(*) begin
         I_MEM_ADDR = pc & 12'hFFF;
     end
-    /*
-        @Todo: pc +4  and BTB logic 추가
-    */
+    always @(posedge CLK) begin
+		// @Todo: pcWrite가 0일 때 hold시키기
+		pc <= nextPc;
+	end
 
     // IF/ID register
     //instruction reg
@@ -247,6 +258,10 @@ module RISCV_TOP (
     always @(posedge CLK) begin
         pc_IF_ID <= pc;
     end
+	//isBubble_IF_ID
+	always @(posedge CLK) begin
+		isBubble_IF_ID <=  isNop_IF_ID;
+	end
 
 
     /*ID datapath*/
@@ -266,11 +281,16 @@ module RISCV_TOP (
     end
     //instruction reg
     always @(posedge CLK) begin
-        // @Todo: isNop_IF_ID에 따른 noop 기능 추가
+        // @Todo: isNop_ID_EX에 따른 noop 기능 추가
         INST_ID_EX <= INST_IF_ID;
+
+		//@Todo: isNop_ID_EX, 일 때 isBubble값을 1로 바꾸기, 아니면 0
     end
     //control signal
     always @(posedge CLK) begin
+
+		//@Todo: isNop_ID_EX일 때, 컨트롤 시그널 잘 조절하기
+
         regWrite_ID_EX <= regWrite;
         wbSel_ID_EX <= wbSel;
         memWrite_ID_EX <= memWrite;
@@ -282,6 +302,15 @@ module RISCV_TOP (
         ASel_ID_EX <= ASel;
         BSel_ID_EX <= BSel;
     end
+	//isBubble
+	always @(posedge CLK) begin
+		if(isNop_ID_EX) begin
+			isBubble_ID_EX <= isNop_ID_EX;
+		end
+		else begin
+			isBubble_ID_EX <= isBubble_IF_ID;	
+		end
+	end
     
 
     /*EX datapath*/
@@ -308,6 +337,10 @@ module RISCV_TOP (
         memWrite_EX_MEM <= memWrite_ID_EX;
         memByte_EX_MEM <= memByte_ID_EX;
     end
+	//isBubble
+	always @(posedge CLK) begin
+		isBubble_EX_MEM <= isBubble_ID_EX;
+	end
 
     /*MEM datapath*/
     //data memory connection
@@ -334,12 +367,25 @@ module RISCV_TOP (
     always @(posedge CLK) begin
         regWrite_MEM_WB <= regWrite_EX_MEM;
     end
+	//isBubble
+	always @(posedge CLK) begin
+		isBubble_MEM_WB <= isBubble_EX_MEM;
+	end
 
     /*WB datapath*/
     assign RF_WD = RF_WD_MEM_WB;
     assign RF_WA1 = INST_MEM_WB[11:7];
     assign RF_WE = regWrite_MEM_WB;
 
+
+	// Only allow for NUM_INST
+	always @ (negedge CLK) begin
+		if(RSTn) begin	
+			if(isBubble_MEM_WB == 0) begin
+				NUM_INST <= NUM_INST + 1;
+			end
+		end
+	end
     
     //termination & output Port
 	wire termination_flag = 0;
