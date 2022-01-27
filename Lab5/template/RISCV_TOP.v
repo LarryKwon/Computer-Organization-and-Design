@@ -232,7 +232,7 @@ module RISCV_TOP (
         .pc_ID_EX       (pc_ID_EX),
         .pc             (pc),
         .isTaken        (isTaken),
-        .alu_result     (alu_result),
+        .updatedAddr    (alu_result),
         .nextPc    		(nextPC),
         .misPredict     (misPredict)
     );
