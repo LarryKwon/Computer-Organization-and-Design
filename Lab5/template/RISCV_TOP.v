@@ -31,7 +31,9 @@ module RISCV_TOP (
 
     /* wire 및 reg 선언부 */
     //register 및 wire
-    
+    //nop
+    reg [31:0] nop;
+
     //IF
     reg [11:0] pc; 
     reg [31:0] INST_IF_ID;   
@@ -79,8 +81,8 @@ module RISCV_TOP (
     //MEM
     wire memWrite;
     wire [3:0] memByte;
-    //WB
     wire [1:0] wbSel;
+    //WB
     wire regWrite;
 
     /* ID/EX 단계 */
@@ -93,21 +95,23 @@ module RISCV_TOP (
     //MEM
     reg memWrite_ID_EX;
     reg [3:0] memByte_ID_EX;
-    //WB
     reg [1:0] wbSel_ID_EX;
+    //WB
     reg regWrite_ID_EX;
 
     /* EX/MEM 단계 */
     //MEM
     reg memWrite_EX_MEM;
     reg [3:0] memByte_EX_MEM;
-    //WB
     reg [1:0] wbSel_EX_MEM;
+    //WB
     reg regWrite_EX_MEM;
+    reg isTaken_EX_MEM;
 
     /* MEM/WB 단계 */
     //WB
     reg regWrite_MEM_WB;
+    reg isTaken_MEM_WB;
 
     /*for stall*/    
     wire isNop_IF_ID;
@@ -127,16 +131,13 @@ module RISCV_TOP (
     wire isTaken; // controlUnit to BTB
 	wire[11:0] nextPc;
 
-	//output port -> 수정 필요
-	assign OUTPUT_PORT = (opcode == 7'b1100011)? ~misPredict:
-	(opcode == 7'b0100011)? alu_out : RF_WD;
-
     /*초기화 */
 	initial begin
 		NUM_INST <= 0;
         pc <= 0;
 		isBubble_IF_ID <= 0;
 		isNop_IF_ID <= 0;
+        nop <= 32'b00000000000000000000000000010011;
 	end
     
     assign I_MEM_CSN = ~RSTn;
@@ -244,15 +245,25 @@ module RISCV_TOP (
         I_MEM_ADDR = pc & 12'hFFF;
     end
     always @(posedge CLK) begin
-		// @Todo: pcWrite가 0일 때 hold시키기
-		pc <= nextPc;
+		//pcWrite가 0일 때 hold시키기
+        if(pcWrite == 1) begin
+            pc <= nextPc;
+        end
 	end
 
     // IF/ID register
     //instruction reg
     always @(posedge CLK) begin
-        // @Todo: isNop_IF_ID, IF_ID_WE에 따른 stall 과 noop 기능 추가
-        INST_IF_ID <= I_MEM_DI;
+        if(IF_ID_WE) begin
+            // isNop_IF_ID일 때 nop대입 
+            if(isNop_IF_ID) begin
+                INST_IF_ID <= nop;
+            end
+            //IF_ID_WE이 아니면 그 다음 instruction 대입
+            else begin
+                INST_IF_ID <= I_MEM_DI;
+            end
+        end
     end
     //pc
     always @(posedge CLK) begin
@@ -281,28 +292,46 @@ module RISCV_TOP (
     end
     //instruction reg
     always @(posedge CLK) begin
-        // @Todo: isNop_ID_EX에 따른 noop 기능 추가
-        INST_ID_EX <= INST_IF_ID;
-
-		//@Todo: isNop_ID_EX, 일 때 isBubble값을 1로 바꾸기, 아니면 0
+        // isNop_ID_EX에 따른 noop 기능 추가
+        if(isNop_ID_EX) begin
+            INST_ID_EX <= nop;
+        end
+        else begin
+            INST_ID_EX <= INST_ID_EX;
+        end
+		
     end
     //control signal
     always @(posedge CLK) begin
 
 		//@Todo: isNop_ID_EX일 때, 컨트롤 시그널 잘 조절하기
+        if(isNop_ID_EX) begin
+            regWrite_ID_EX <= 0;
+            wbSel_ID_EX <= 2'b00;
+            memWrite_ID_EX <= 0;
+            memByte_ID_EX <= memByte;
 
-        regWrite_ID_EX <= regWrite;
-        wbSel_ID_EX <= wbSel;
-        memWrite_ID_EX <= memWrite;
-        memByte_ID_EX <= memByte;
-        
-        alu_control_ID_EX <= alu_control;
-        is_sign_ID_EX <= is_sign;
-        imm_control_ID_EX <= imm_control;
-        ASel_ID_EX <= ASel;
-        BSel_ID_EX <= BSel;
+            alu_control_ID_EX <= alu_control;
+            is_sign_ID_EX <= is_sign;
+            imm_control_ID_EX <= imm_control;
+            ASel_ID_EX <= ASel;
+            BSel_ID_EX <= BSel;
+        end
+        else begin
+            regWrite_ID_EX <= regWrite;
+            wbSel_ID_EX <= wbSel;
+            memWrite_ID_EX <= memWrite;
+            memByte_ID_EX <= memByte;
+            
+            alu_control_ID_EX <= alu_control;
+            is_sign_ID_EX <= is_sign;
+            imm_control_ID_EX <= imm_control;
+            ASel_ID_EX <= ASel;
+            BSel_ID_EX <= BSel;
+        end
     end
 	//isBubble
+    //isNop_ID_EX, 일 때 isBubble값을 1로 바꾸기, 아니면 0
 	always @(posedge CLK) begin
 		if(isNop_ID_EX) begin
 			isBubble_ID_EX <= isNop_ID_EX;
@@ -336,6 +365,7 @@ module RISCV_TOP (
         wbSel_EX_MEM <= wbSel_ID_EX ;
         memWrite_EX_MEM <= memWrite_ID_EX;
         memByte_EX_MEM <= memByte_ID_EX;
+        isTaken_EX_MEM <= isTaken;
     end
 	//isBubble
 	always @(posedge CLK) begin
@@ -366,6 +396,7 @@ module RISCV_TOP (
     //control signal
     always @(posedge CLK) begin
         regWrite_MEM_WB <= regWrite_EX_MEM;
+        isTaken_MEM_WB <= isTaken_EX_MEM;
     end
 	//isBubble
 	always @(posedge CLK) begin
@@ -377,15 +408,6 @@ module RISCV_TOP (
     assign RF_WA1 = INST_MEM_WB[11:7];
     assign RF_WE = regWrite_MEM_WB;
 
-
-	// Only allow for NUM_INST
-	always @ (negedge CLK) begin
-		if(RSTn) begin	
-			if(isBubble_MEM_WB == 0) begin
-				NUM_INST <= NUM_INST + 1;
-			end
-		end
-	end
     
     //termination & output Port
 	wire termination_flag = 0;
@@ -395,7 +417,19 @@ module RISCV_TOP (
 
 	assign termination_flag = termination_flag_reg;
 	assign HALT = HALT_reg;
-	assign opcode = INST_IF_ID[6:0];
+	assign opcode = INST_MEM_WB[6:0];
+
+    // Only allow for NUM_INST
+	always @ (negedge CLK) begin
+		if(RSTn) begin	
+			if(isBubble_MEM_WB == 0) begin
+				NUM_INST <= NUM_INST + 1;
+			end
+		end
+	end
+    
+    //output port
+	assign OUTPUT_PORT = (opcode == 7'b1100011)? isTaken_MEM_WB : RF_WD;
 
 	always@(*) begin
 		// 종료 조건 설정
@@ -418,4 +452,4 @@ module RISCV_TOP (
 			HALT_reg = 0;
 		end
 	end
-endmodule //
+endmodule

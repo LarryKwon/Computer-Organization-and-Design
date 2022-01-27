@@ -15,6 +15,7 @@ module BTB(
     reg[11:0] realAddr;
     reg[11:0] predAddr;
     reg predTaken;
+    reg predTaken_EX;
     
     reg[6:0] opcode;
 
@@ -34,7 +35,7 @@ module BTB(
     //define synchronous write 
     always @(negedge CLK) begin
         //btb update의 target update
-        if(opcode == 7'b1100011 | opcode == 7'b1101111 | opcode == 7'b1100111) begin   
+        if(opcode == 7'b1100011 | opcode == 7'b1101111 | opcode == 7'b1100111) begin
             btb[pc_ID_EX][11:0] = updatedAddr;
         end
     end
@@ -50,6 +51,13 @@ module BTB(
         end
         else begin
             predTaken = 0;
+        end
+
+        if(btb[pc_ID_EX][13:12] == 2'b10 | btb[pc_ID_EX][13:12] == 2'b01) begin
+                predTaken_EX = 1;
+        end
+        else begin
+            predTaken_EX = 0;
         end
 
         //predTaken에 따른 predAddr값 결정
@@ -86,7 +94,7 @@ module BTB(
         
         //isTaken과 predTaken에 따른 misPredict 값 결정
         if(opcode == 7'b1100011 | opcode == 7'b1101111 | opcode == 7'b1100111) begin   
-            if(isTaken != predTaken) begin
+            if(isTaken != predTaken_EX) begin
                 misPredict_reg = 1;
             end
             else begin
