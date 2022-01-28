@@ -49,7 +49,6 @@ module RISCV_TOP (
 
     //ex
     wire[31:0] imm;
-    reg [31:0] alu_out;
     reg [31:0] RF_RD2_EX_MEM;
     reg [11:0] pc_EX_MEM;
     reg [31:0] INST_EX_MEM;
@@ -136,7 +135,6 @@ module RISCV_TOP (
 		NUM_INST <= 0;
         pc <= 0;
 		isBubble_IF_ID <= 0;
-		isNop_IF_ID <= 0;
         nop <= 32'b00000000000000000000000000010011;
 	end
     
@@ -206,6 +204,7 @@ module RISCV_TOP (
 
 	DetectionUnit detection_unit(
 		.RSTn			(RSTn),
+        .opcode         (INST_ID_EX),
 		.memWrite		(memWrite_ID_EX),
 		.RD_EX			(INST_ID_EX[11:7]),
 		.RS1_ID			(INST_IF_ID[19:15]),
@@ -229,12 +228,13 @@ module RISCV_TOP (
 
     BTB btb(
         .RSTn           (RSTn),
+        .CLK            (CLK),
         .INST_ID_EX     (INST_ID_EX),
         .pc_ID_EX       (pc_ID_EX),
         .pc             (pc),
         .isTaken        (isTaken),
         .updatedAddr    (alu_result),
-        .nextPc    		(nextPC),
+        .nextPc    		(nextPc),
         .misPredict     (misPredict)
     );
 
@@ -297,7 +297,7 @@ module RISCV_TOP (
             INST_ID_EX <= nop;
         end
         else begin
-            INST_ID_EX <= INST_ID_EX;
+            INST_ID_EX <= INST_IF_ID;
         end
 		
     end
@@ -357,7 +357,7 @@ module RISCV_TOP (
     end
     //instruction reg
     always @(posedge CLK) begin
-        INST_EX_MEM <= INST_MEM_WB;
+        INST_EX_MEM <= INST_ID_EX;
     end
     //control signal
     always @(posedge CLK) begin
@@ -422,9 +422,11 @@ module RISCV_TOP (
     // Only allow for NUM_INST
 	always @ (negedge CLK) begin
 		if(RSTn) begin	
-			if(isBubble_MEM_WB == 0) begin
-				NUM_INST <= NUM_INST + 1;
-			end
+            if(INST_MEM_WB) begin
+                if(isBubble_MEM_WB == 0 ) begin
+                    NUM_INST <= NUM_INST + 1;
+                end
+            end
 		end
 	end
     
@@ -433,11 +435,11 @@ module RISCV_TOP (
 
 	always@(*) begin
 		// 종료 조건 설정
-		if(I_MEM_DI_reg == 32'h00c00093 ) begin
+		if( INST_MEM_WB == 32'h00c00093 ) begin
 			termination_flag_reg = 1;
 		end
 		else begin
-			if(I_MEM_DI_reg == 32'h00008067 && termination_flag_reg == 1) begin
+			if(INST_MEM_WB == 32'h00008067 && termination_flag_reg == 1) begin
 				termination_flag_reg = 1;
 			end
 			else begin
@@ -445,7 +447,7 @@ module RISCV_TOP (
 			end
 		end
 
-		if(termination_flag_reg & (I_MEM_DI_reg == 32'h00008067)) begin
+		if(termination_flag_reg & (INST_MEM_WB == 32'h00008067)) begin
 			HALT_reg = 1;
 		end 
 		else begin

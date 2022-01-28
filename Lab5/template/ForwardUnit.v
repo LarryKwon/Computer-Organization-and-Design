@@ -1,12 +1,12 @@
 module ForwardUnit(
-    input wire RSTn           
-    input wire[4:0] RS1_EX	
-    input wire[4:0] RS2_EX         
-    input wire[4:0] RD_MEM   
-    input wire[4:0] RD_WB       
-    input wire regWrite_MEM
-    input wire regWrite_WB    
-    output wire[1:0] forwardA
+    input wire RSTn,  
+    input wire[4:0] RS1_EX,	
+    input wire[4:0] RS2_EX,        
+    input wire[4:0] RD_MEM,   
+    input wire[4:0] RD_WB,       
+    input wire regWrite_MEM,
+    input wire regWrite_WB,    
+    output wire[1:0] forwardA,
     output wire[1:0] forwardB
 );
 
@@ -21,17 +21,21 @@ module ForwardUnit(
             if(regWrite_MEM == 1 & RD_MEM != 0) begin
                 if(RD_MEM == RS1_EX) begin
                     forwardA_reg = 2'b10;
+                    forwardB_reg = 2'b00;
                 end
                 else if(RD_MEM == RS2_EX) begin
                     forwardB_reg = 2'b10;
+                    forwardA_reg = 2'b00;
                 end
             end
             else if(regWrite_WB == 1 & RD_WB != 0)begin
                 if(RD_WB == RS1_EX) begin
                     forwardA_reg = 2'b01;
+                    forwardB_reg = 2'b00;
                 end
                 else if(RD_WB == RS2_EX) begin
                     forwardB_reg = 2'b01;
+                    forwardA_reg = 2'b00;
                 end
             end
             else begin

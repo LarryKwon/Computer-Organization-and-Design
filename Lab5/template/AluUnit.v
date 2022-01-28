@@ -2,20 +2,33 @@ module AluUnit(
     input wire RSTn,
     input wire ASel,
     input wire BSel,
+    input wire[1:0] forwardA,
+    input wire[1:0] forwardB,
     input wire is_sign,
     input wire [4:0] alu_control,
     input wire [31:0] RF_RD1, // source register 1로 부터 읽을 값
 	input wire [31:0] RF_RD2, // source register 2로 부터 읽을 값
     input wire [31:0] imm,
     input wire [11:0] pc,
+    input wire [31:0] SRC1_EX_MEM,
+    input wire [31:0] SRC2_EX_MEM,
+    input wire [31:0] SRC1_MEM_WB,
+    input wire [31:0] SRC2_MEM_WB,
     output wire [31:0] alu_result
 );
 
 wire [31:0] alu_input1;
 wire [31:0] alu_input2;
 
-assign alu_input1 = (ASel)? pc : RF_RD1;
-assign alu_input2 = (BSel)? imm : RF_RD2;
+assign alu_input1 = (ASel)? pc : 
+(forwardA == 2'b00)? RF_RD1 :
+(forwardA == 2'b10)? SRC1_EX_MEM :
+(forwardA == 2'b01)? SRC1_MEM_WB : SRC1_MEM_WB;
+
+assign alu_input2 = (BSel)? imm : 
+(forwardB == 2'b00)? RF_RD2 :
+(forwardB == 2'b10)? SRC2_EX_MEM :
+(forwardB == 2'b01)? SRC2_MEM_WB : SRC2_MEM_WB;
 
 reg [31:0] alu_result_reg;
 

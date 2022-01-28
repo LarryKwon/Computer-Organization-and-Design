@@ -1,11 +1,12 @@
 module DetectionUnit(
-    input wire RSTn	
-    input wire memWrite
-    input wire[4:0] RD_EX	
-    input wire[4:0] RS1_ID	
-    input wire[4:0] RS2_ID	
-    input wire IF_ID_WE	
-    input wire pcWrite	
+    input wire RSTn,
+    input wire[31:0] INST_ID_EX,
+    input wire memWrite,
+    input wire[4:0] RD_EX,	
+    input wire[4:0] RS1_ID,	
+    input wire[4:0] RS2_ID,	
+    input wire IF_ID_WE,
+    input wire pcWrite,	
     input wire isNop
 );
     reg pcWrite_reg;
@@ -17,22 +18,24 @@ module DetectionUnit(
     assign IF_ID_WE = IF_ID_WE_reg;
 
     always@(*) begin
-        if(memWrite == 0 & RD_EX != 0) begin
-            if(RS1_ID == RD_EX | RS2_ID == RD_EX) begin
-                isNop_reg = 1'b1;
-                pcWrite_reg = 1'b0;
-                IF_ID_WE_reg = 1'b0;
+        if(RSTn == 1) begin
+            if(memWrite == 0 & RD_EX != 0) begin
+                if(RS1_ID == RD_EX | RS2_ID == RD_EX) begin
+                    isNop_reg = 1'b1;
+                    pcWrite_reg = 1'b0;
+                    IF_ID_WE_reg = 1'b0;
+                end
+                else begin
+                    isNop_reg = 1'b0;
+                    pcWrite_reg = 1'b1;
+                    IF_ID_WE_reg = 1'b1;
+                end
             end
             else begin
                 isNop_reg = 1'b0;
                 pcWrite_reg = 1'b1;
                 IF_ID_WE_reg = 1'b1;
             end
-        end
-        else begin
-            isNop_reg = 1'b0;
-            pcWrite_reg = 1'b1;
-            IF_ID_WE_reg = 1'b1;
         end
     end
 endmodule

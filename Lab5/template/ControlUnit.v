@@ -80,6 +80,8 @@ module ControlUnit(
         regWrite_reg <= 0;
         memWrite_reg <= 0;
         memByte_reg <= 4'b1111;
+        isNop_IF_ID_reg <= 0;
+        isNop_ID_EX_reg <= 0;
     end
 
     always @(*) begin
@@ -87,7 +89,7 @@ module ControlUnit(
             //INST_IF_ID 꺼 decode
             opcode_ID = INST_IF_ID[6:0];
             func3_ID = INST_IF_ID[14:12];
-            fucn7_ID = INST_IF_ID[31:25];
+            func7_ID = INST_IF_ID[31:25];
 
             if(opcode_ID == op_Rtype) begin
                 // imm이 없음
@@ -320,7 +322,7 @@ module ControlUnit(
                     end
                 end
                 //bge
-                else if(func3_X == 3'b101 || func3_EX == 3'b111) begin
+                else if(func3_EX == 3'b101 || func3_EX == 3'b111) begin
                     if(BrLt == 0 )begin
                         isTaken_reg = 1;
                     end
