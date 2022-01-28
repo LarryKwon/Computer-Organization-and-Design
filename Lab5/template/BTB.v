@@ -54,7 +54,7 @@ module BTB(
         end
 
         if(btb[pc_ID_EX][13:12] == 2'b10 | btb[pc_ID_EX][13:12] == 2'b01) begin
-                predTaken_EX = 1;
+            predTaken_EX = 1;
         end
         else begin
             predTaken_EX = 0;

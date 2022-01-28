@@ -376,7 +376,7 @@ module RISCV_TOP (
     //data memory connection
     assign D_MEM_ADDR = alu_out & 16'h3FFF;
     assign D_MEM_DOUT = RF_RD2_EX_MEM;
-    assign D_MEM_WEN = memWrite_EX_MEM;
+    assign D_MEM_WEN = ~memWrite_EX_MEM;
     //instruction reg
     always @(posedge CLK) begin
         INST_MEM_WB <= INST_EX_MEM;
