@@ -1,7 +1,6 @@
 module DetectionUnit(
     input wire RSTn,
-    input wire[31:0] INST_ID_EX,
-    input wire memWrite,
+    input wire memRead,
     input wire[4:0] RD_EX,	
     input wire[4:0] RS1_ID,	
     input wire[4:0] RS2_ID,	
@@ -19,7 +18,7 @@ module DetectionUnit(
 
     always@(*) begin
         if(RSTn == 1) begin
-            if(memWrite == 0 & RD_EX != 0) begin
+            if(memRead == 0 & RD_EX != 0) begin
                 if(RS1_ID == RD_EX | RS2_ID == RD_EX) begin
                     isNop_reg = 1'b1;
                     pcWrite_reg = 1'b0;

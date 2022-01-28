@@ -27,6 +27,10 @@ module ForwardUnit(
                     forwardB_reg = 2'b10;
                     forwardA_reg = 2'b00;
                 end
+                else begin
+                    forwardB_reg = 2'b00;
+                    forwardA_reg = 2'b00;
+                end
             end
             else if(regWrite_WB == 1 & RD_WB != 0)begin
                 if(RD_WB == RS1_EX) begin
@@ -35,6 +39,10 @@ module ForwardUnit(
                 end
                 else if(RD_WB == RS2_EX) begin
                     forwardB_reg = 2'b01;
+                    forwardA_reg = 2'b00;
+                end
+                else begin
+                    forwardB_reg = 2'b00;
                     forwardA_reg = 2'b00;
                 end
             end

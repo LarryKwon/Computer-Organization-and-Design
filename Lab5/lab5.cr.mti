@@ -33,13 +33,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	AluUnit
 
-} {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/ForwardUnit.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/ForwardUnit.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ForwardUnit
-
-Top level modules:
-	ForwardUnit
-
 } {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/ImmGen.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/ImmGen.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ImmGen
@@ -54,6 +47,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	REG_FILE
 
+} {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/DetectionUnit.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/DetectionUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DetectionUnit
+
+Top level modules:
+	DetectionUnit
+
 } {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v {2 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module BTB
@@ -61,6 +61,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	BTB
+
+} {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISCV_TOP
+
+Top level modules:
+	RISCV_TOP
 
 } {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_CLKRST.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_CLKRST.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

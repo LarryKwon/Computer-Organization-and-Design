@@ -1,135 +1,5 @@
 # Compile of AluUnit.v was successful.
 # Compile of BranchComp.v was successful.
-# Compile of BTB.v failed with 2 errors.
-# Compile of ControlUnit.v failed with 2 errors.
-# Compile of DetectionUnit.v failed with 1 errors.
-# Compile of ForwardUnit.v failed with 1 errors.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 3 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 5 failed with 9 errors.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v failed with 3 errors.
-# Compile of ControlUnit.v failed with 2 errors.
-# Compile of DetectionUnit.v failed with 1 errors.
-# Compile of ForwardUnit.v failed with 1 errors.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 3 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 5 failed with 10 errors.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v failed with 2 errors.
-# Compile of ControlUnit.v failed with 2 errors.
-# Compile of DetectionUnit.v failed with 1 errors.
-# Compile of ForwardUnit.v failed with 1 errors.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 3 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 5 failed with 9 errors.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v failed with 1 errors.
-# Compile of ControlUnit.v failed with 2 errors.
-# Compile of DetectionUnit.v failed with 1 errors.
-# Compile of ForwardUnit.v failed with 1 errors.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 3 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 5 failed with 8 errors.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v failed with 2 errors.
-# Compile of DetectionUnit.v failed with 1 errors.
-# Compile of ForwardUnit.v failed with 1 errors.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 3 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 4 failed with 7 errors.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v failed with 2 errors.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v failed with 1 errors.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 3 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 3 failed with 6 errors.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v failed with 2 errors.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 3 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 2 failed with 5 errors.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 3 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 1 failed with 3 errors.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 1 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 1 failed with 1 error.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v failed with 1 errors.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 1 failed with 1 error.
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
 # Compile of BTB.v was successful with warnings.
 # Compile of ControlUnit.v was successful.
 # Compile of DetectionUnit.v was successful.
@@ -143,7 +13,7 @@
 # 12 compiles, 0 failed with no errors.
 vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
 # vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:26:44 on Jan 28,2022
+# Start time: 22:05:16 on Jan 28,2022
 # Loading work.AluUnit
 # Loading work.BranchComp
 # Loading work.BTB
@@ -156,25 +26,11 @@ vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionU
 # Loading work.RISCV_TOP
 # Loading work.SP_SRAM
 # Loading work.TB_RISCV
-# ** Error (suppressible): (vsim-3389) Port 'forwardA' not found in the connected module (4th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/alu_unit File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 165
-# ** Error (suppressible): (vsim-3389) Port 'forwardB' not found in the connected module (5th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/alu_unit File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 165
-# ** Error (suppressible): (vsim-3389) Port 'SRC1_EX_MEM' not found in the connected module (12th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/alu_unit File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 165
-# ** Error (suppressible): (vsim-3389) Port 'SRC2_EX_MEM' not found in the connected module (13th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/alu_unit File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 165
-# ** Error (suppressible): (vsim-3389) Port 'SRC1_MEM_WB' not found in the connected module (14th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/alu_unit File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 165
-# ** Error (suppressible): (vsim-3389) Port 'SRC2_MEM_WB' not found in the connected module (15th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/alu_unit File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 165
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (32) for port 'updatedAddr'. The port definition is at: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/btb File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 228
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (1) for port 'nextPc'. The port definition is at: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/btb File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 228
+# ** Error: (vsim-3063) Port 'opcode' not found in the connected module (2nd connection).
+#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/detection_unit File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 209
 # Error loading design
-# End time: 19:26:45 on Jan 28,2022, Elapsed time: 0:00:01
-# Errors: 6, Warnings: 18
+# End time: 22:05:17 on Jan 28,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
 # Compile of AluUnit.v was successful.
 # Compile of BranchComp.v was successful.
 # Compile of BTB.v was successful with warnings.
@@ -190,7 +46,7 @@ vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionU
 # 12 compiles, 0 failed with no errors.
 vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
 # vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:34:29 on Jan 28,2022
+# Start time: 22:05:47 on Jan 28,2022
 # Loading work.AluUnit
 # Loading work.BranchComp
 # Loading work.BTB
@@ -203,21 +59,12 @@ vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionU
 # Loading work.RISCV_TOP
 # Loading work.SP_SRAM
 # Loading work.TB_RISCV
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (32) for port 'updatedAddr'. The port definition is at: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/btb File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 228
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (1) for port 'nextPc'. The port definition is at: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/btb File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 228
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (32) for port 'updatedAddr'. The port definition is at: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v(8).
-#    Time: 0 ps  Iteration: 0  Instance: /TB_RISCV/riscv_top1/btb File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 228
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (1) for port 'nextPc'. The port definition is at: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /TB_RISCV/riscv_top1/btb File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 228
-add wave -position insertpoint sim:/RISCV_TOP/*
-add wave -position insertpoint sim:/RISCV_TOP/control_unit/*
-add wave -position insertpoint sim:/RISCV_TOP/btb/*
-add wave -position insertpoint sim:/RISCV_TOP/forward_unit/*
-run -all
-# Break key hit
-# Break in Module BTB at C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v line 31
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'detection_unit'.  Expected 9, found 8.
+#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/detection_unit File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 209
+# ** Warning: (vsim-3722) C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v(209): [TFMPC] - Missing connection for port 'INST_ID_EX'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'detection_unit'.  Expected 9, found 8.
+#    Time: 0 ps  Iteration: 0  Instance: /TB_RISCV/riscv_top1/detection_unit File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 209
+# ** Warning: (vsim-3722) C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v(209): [TFMPC] - Missing connection for port 'INST_ID_EX'.
 # Compile of AluUnit.v was successful.
 # Compile of BranchComp.v was successful.
 # Compile of BTB.v was successful with warnings.
@@ -232,365 +79,10 @@ run -all
 # Compile of TB_RISCV_inst.v was successful.
 # 12 compiles, 0 failed with no errors.
 vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 19:39:25 on Jan 28,2022, Elapsed time: 0:04:56
+# End time: 22:06:39 on Jan 28,2022, Elapsed time: 0:00:52
 # Errors: 0, Warnings: 7
 # vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:39:25 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (1) for port 'nextPc'. The port definition is at: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /RISCV_TOP/btb File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 228
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (1) for port 'nextPc'. The port definition is at: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v(9).
-#    Time: 0 ps  Iteration: 0  Instance: /TB_RISCV/riscv_top1/btb File: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/RISCV_TOP.v Line: 228
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v was successful.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 19:40:36 on Jan 28,2022, Elapsed time: 0:01:11
-# Errors: 0, Warnings: 4
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:40:36 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-add wave -position insertpoint sim:/TB_RISCV/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/forward_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/btb/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
-run -all
-# A time value could not be extracted from the current line
-# A time value could not be extracted from the current line
-# Break key hit
-# Break in Module BTB at C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v line 31
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v was successful.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 19:44:31 on Jan 28,2022, Elapsed time: 0:03:55
-# Errors: 0, Warnings: 2
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:44:31 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/forward_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/btb/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/detection_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
-run -all
-# Break key hit
-# Break in Module BTB at C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v line 31
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v was successful.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 19:48:19 on Jan 28,2022, Elapsed time: 0:03:48
-# Errors: 0, Warnings: 2
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:48:19 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-run -all
-# Break key hit
-# Break in Module BTB at C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v line 31
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v was successful.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 19:50:27 on Jan 28,2022, Elapsed time: 0:02:08
-# Errors: 0, Warnings: 2
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:50:27 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-run -all
-# Test #    1 has been failed!
-# output_port = 0xx (Ans : 0x5)
-# ** Note: $finish    : C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v(165)
-#    Time: 115 ns  Iteration: 1  Instance: /TB_RISCV
-# 1
-# Break in Module TB_RISCV at C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v line 165
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 19:51:10 on Jan 28,2022, Elapsed time: 0:00:43
-# Errors: 0, Warnings: 1
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:51:10 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/detection_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/forward_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/btb/*
-run -all
-# Test #    1 has been failed!
-# output_port = 0xx (Ans : 0x5)
-# ** Note: $finish    : C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v(165)
-#    Time: 115 ns  Iteration: 1  Instance: /TB_RISCV
-# 1
-# Break in Module TB_RISCV at C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v line 165
-# WARNING: No extended dataflow license exists
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v was successful.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 19:54:43 on Jan 28,2022, Elapsed time: 0:03:33
-# Errors: 0, Warnings: 2
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:54:43 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-run -all
-# Test #    1 has been failed!
-# output_port = 0xx (Ans : 0x5)
-# ** Note: $finish    : C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v(165)
-#    Time: 115 ns  Iteration: 1  Instance: /TB_RISCV
-# 1
-# Break in Module TB_RISCV at C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v line 165
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 19:55:00 on Jan 28,2022, Elapsed time: 0:00:17
-# Errors: 0, Warnings: 1
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:55:00 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/detection_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/forward_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/btb/*
-run -all
-# Test #    1 has been failed!
-# output_port = 0xx (Ans : 0x5)
-# ** Note: $finish    : C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v(165)
-#    Time: 115 ns  Iteration: 1  Instance: /TB_RISCV
-# 1
-# Break in Module TB_RISCV at C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v line 165
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 19:56:59 on Jan 28,2022, Elapsed time: 0:01:59
-# Errors: 0, Warnings: 1
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 19:56:59 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/detection_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/forward_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/btb/*
-run -all
-# Test #    1 has been failed!
-# output_port = 0xx (Ans : 0x5)
-# ** Note: $finish    : C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v(165)
-#    Time: 115 ns  Iteration: 1  Instance: /TB_RISCV
-# 1
-# Break in Module TB_RISCV at C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v line 165
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v was successful.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 20:01:57 on Jan 28,2022, Elapsed time: 0:04:58
-# Errors: 0, Warnings: 2
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 20:01:57 on Jan 28,2022
-# Loading work.AluUnit
-# Loading work.BranchComp
-# Loading work.BTB
-# Loading work.ControlUnit
-# Loading work.DetectionUnit
-# Loading work.ForwardUnit
-# Loading work.ImmGen
-# Loading work.REG_FILE
-# Loading work.RISCV_CLKRST
-# Loading work.RISCV_TOP
-# Loading work.SP_SRAM
-# Loading work.TB_RISCV
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/detection_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/forward_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/btb/*
-run -all
-# ** Note: $finish    : C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v(117)
-#    Time: 1 ms  Iteration: 0  Instance: /TB_RISCV
-# 1
-# Break in Module TB_RISCV at C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v line 117
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful with warnings.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v was successful.
-# Compile of TB_RISCV_inst.v was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 20:07:41 on Jan 28,2022, Elapsed time: 0:05:44
-# Errors: 0, Warnings: 2
-# vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 20:07:41 on Jan 28,2022
+# Start time: 22:06:39 on Jan 28,2022
 # Loading work.AluUnit
 # Loading work.BranchComp
 # Loading work.BTB
@@ -616,9 +108,9 @@ run -all
 # Test #    4 has been passed
 # Test #    5 has been passed
 # Test #    6 has been failed!
-# output_port = 0x0 (Ans : 0x5)
+# output_port = 0x1 (Ans : 0x5)
 # ** Note: $finish    : C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v(165)
-#    Time: 235 ns  Iteration: 1  Instance: /TB_RISCV
+#    Time: 205 ns  Iteration: 1  Instance: /TB_RISCV
 # 1
 # Break in Module TB_RISCV at C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v line 165
 # Compile of AluUnit.v was successful.
@@ -635,10 +127,10 @@ run -all
 # Compile of TB_RISCV_inst.v was successful.
 # 12 compiles, 0 failed with no errors.
 vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
-# End time: 20:39:41 on Jan 28,2022, Elapsed time: 0:32:00
+# End time: 22:30:11 on Jan 28,2022, Elapsed time: 0:23:32
 # Errors: 0, Warnings: 2
 # vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 20:39:41 on Jan 28,2022
+# Start time: 22:30:11 on Jan 28,2022
 # Loading work.AluUnit
 # Loading work.BranchComp
 # Loading work.BTB
@@ -652,20 +144,25 @@ vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionU
 # Loading work.SP_SRAM
 # Loading work.TB_RISCV
 add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/detection_unit/*
 add wave -position insertpoint sim:/TB_RISCV/riscv_top1/forward_unit/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/btb/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/control_unit/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
 run -all
 # Test #    1 has been passed
 # Test #    2 has been passed
 # Test #    3 has been passed
 # Test #    4 has been passed
 # Test #    5 has been passed
-# Test #    6 has been failed!
-# output_port = 0x0 (Ans : 0x5)
+# Test #    6 has been passed
+# Test #    7 has been passed
+# Test #    8 has been passed
+# Test #    9 has been passed
+# Test #   10 has been passed
+# Test #   11 has been passed
+# Test #   12 has been passed
+# Test #   13 has been failed!
+# output_port = 0xc (Ans : 0x2)
 # ** Note: $finish    : C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v(165)
-#    Time: 235 ns  Iteration: 1  Instance: /TB_RISCV
+#    Time: 275 ns  Iteration: 1  Instance: /TB_RISCV
 # 1
 # Break in Module TB_RISCV at C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v line 165

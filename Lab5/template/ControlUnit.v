@@ -7,6 +7,7 @@ module ControlUnit(
     output wire[2:0] imm_control,	
     output wire regWrite,
     output wire memWrite,
+    output wire memRead,
     output wire[3:0] memByte,
     output wire is_sign,
     output wire ASel,
@@ -43,6 +44,7 @@ module ControlUnit(
     reg[2:0] imm_control_reg;
     reg regWrite_reg;
     reg memWrite_reg;
+    reg memRead_reg;
     reg memByte_reg;
     reg is_sign_reg;
     reg ASel_reg;
@@ -95,6 +97,7 @@ module ControlUnit(
                 // imm이 없음
                 regWrite_reg = 1; // 연산결과 rd에 써야함
                 memWrite_reg = 0; // 메모리에 쓸 필요 없음
+                memRead_reg = 0;
                 //ALU: rd1 + rd2
                 ASel_reg = 0;
                 BSel_reg = 0;
@@ -153,6 +156,7 @@ module ControlUnit(
             else if(opcode_ID == op_Itype) begin
                 regWrite_reg = 1; // 연산결과 rd에 써야함
                 memWrite_reg = 0; // 메모리에 쓸 필요 없음
+                memRead_reg = 0;
                 //ALU: rd1 + imm
                 ASel_reg = 0;
                 BSel_reg = 1;
@@ -213,6 +217,7 @@ module ControlUnit(
                 imm_control_reg = 3'b010; // 상위 12비트 그냥 읽기
                 regWrite_reg = 1; // 연산결과 rd에 써야함
                 memWrite_reg = 0; // 메모리에 쓸 필요 없음
+                memRead_reg = 1;
                 //ALU: rd1 + imm
                 ASel_reg = 0;
                 BSel_reg = 1;
@@ -231,6 +236,7 @@ module ControlUnit(
                 imm_control_reg = 3'b100; // S-type, 잘라서 12비트 만들기
                 regWrite_reg = 0; // 연산결과 rd에 안써도 됨.
                 memWrite_reg = 1; // 메모리에 데이터 써야함.
+                memRead_reg = 0;
                 //ALU: rd1 + imm
                 ASel_reg = 0;
                 BSel_reg = 1;
@@ -243,6 +249,7 @@ module ControlUnit(
                 imm_control_reg = 3'b011; // B-type 잘라서 13비트 만들기
                 regWrite_reg = 0; // 연산결과 rd에 안써도 됨.
                 memWrite_reg = 0; // 메모리에 쓸 필요 없음
+                memRead_reg = 0;
                 //ALU: pc + imm;
                 ASel_reg = 1;
                 BSel_reg = 1;
@@ -260,6 +267,7 @@ module ControlUnit(
                 imm_control_reg = 3'b010; // 상위 12비트 읽기
                 regWrite_reg = 1; // pc+4를 rd에 저장
                 memWrite_reg = 0; // 메모리에 쓸 필요 없음
+                memRead_reg = 0;
                 //ALU: rd1 + imm
                 ASel_reg = 0;
                 BSel_reg = 1;
@@ -272,6 +280,7 @@ module ControlUnit(
                 imm_control_reg = 3'b001; // 잘라서 21비트 읽기
                 regWrite_reg = 1; // pc+4를 rd에 저장
                 memWrite_reg = 1; // 메모리에 쓸 필요 없음
+                memRead_reg = 0;
                 //ALU: pc + imm
                 ASel_reg = 1;
                 BSel_reg = 1;

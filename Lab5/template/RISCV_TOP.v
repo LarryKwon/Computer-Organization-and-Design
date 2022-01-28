@@ -79,6 +79,7 @@ module RISCV_TOP (
     wire BSel;
     //MEM
     wire memWrite;
+    wire memRead;
     wire [3:0] memByte;
     wire [1:0] wbSel;
     //WB
@@ -93,6 +94,7 @@ module RISCV_TOP (
     reg BSel_ID_EX;
     //MEM
     reg memWrite_ID_EX;
+    reg memRead_ID_EX;
     reg [3:0] memByte_ID_EX;
     reg [1:0] wbSel_ID_EX;
     //WB
@@ -101,6 +103,7 @@ module RISCV_TOP (
     /* EX/MEM 단계 */
     //MEM
     reg memWrite_EX_MEM;
+    reg memRead_EX_MEM;
     reg [3:0] memByte_EX_MEM;
     reg [1:0] wbSel_EX_MEM;
     //WB
@@ -190,6 +193,7 @@ module RISCV_TOP (
 		.imm_control	(imm_control),
 		.regWrite		(regWrite),
 		.memWrite		(memWrite),
+        .memRead        (memRead),
 		.memByte		(memByte),
 		.is_sign		(is_sign),
 		.ASel			(ASel),
@@ -204,8 +208,7 @@ module RISCV_TOP (
 
 	DetectionUnit detection_unit(
 		.RSTn			(RSTn),
-        .opcode         (INST_ID_EX),
-		.memWrite		(memWrite_ID_EX),
+		.memRead		(memRead_ID_EX),
 		.RD_EX			(INST_ID_EX[11:7]),
 		.RS1_ID			(INST_IF_ID[19:15]),
 		.RS2_ID			(INST_IF_ID[24:20]),
@@ -309,6 +312,7 @@ module RISCV_TOP (
             regWrite_ID_EX <= 0;
             wbSel_ID_EX <= 2'b00;
             memWrite_ID_EX <= 0;
+            memRead_ID_EX <= 0;
             memByte_ID_EX <= memByte;
 
             alu_control_ID_EX <= alu_control;
@@ -321,6 +325,7 @@ module RISCV_TOP (
             regWrite_ID_EX <= regWrite;
             wbSel_ID_EX <= wbSel;
             memWrite_ID_EX <= memWrite;
+            memRead_ID_EX <= memRead;
             memByte_ID_EX <= memByte;
             
             alu_control_ID_EX <= alu_control;
@@ -364,6 +369,7 @@ module RISCV_TOP (
         regWrite_EX_MEM <= regWrite_ID_EX;
         wbSel_EX_MEM <= wbSel_ID_EX ;
         memWrite_EX_MEM <= memWrite_ID_EX;
+        memRead_EX_MEM <= memRead_ID_EX;
         memByte_EX_MEM <= memByte_ID_EX;
         isTaken_EX_MEM <= isTaken;
     end
