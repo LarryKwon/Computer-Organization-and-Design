@@ -18,17 +18,10 @@ module DetectionUnit(
 
     always@(*) begin
         if(RSTn == 1) begin
-            if(memRead == 0 & RD_EX != 0) begin
-                if(RS1_ID == RD_EX | RS2_ID == RD_EX) begin
-                    isNop_reg = 1'b1;
-                    pcWrite_reg = 1'b0;
-                    IF_ID_WE_reg = 1'b0;
-                end
-                else begin
-                    isNop_reg = 1'b0;
-                    pcWrite_reg = 1'b1;
-                    IF_ID_WE_reg = 1'b1;
-                end
+            if(memRead == 1 & RD_EX != 0 & (RS1_ID == RD_EX | RS2_ID == RD_EX)) begin
+                isNop_reg = 1'b1;
+                pcWrite_reg = 1'b0;
+                IF_ID_WE_reg = 1'b0;
             end
             else begin
                 isNop_reg = 1'b0;

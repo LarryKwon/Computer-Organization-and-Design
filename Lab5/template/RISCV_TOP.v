@@ -152,8 +152,14 @@ module RISCV_TOP (
     BranchComp branch_comp(
 		.RSTn 		(RSTn),
 		.is_sign 	(is_sign_ID_EX),
+        .forwardA		(forwardA),
+        .forwardB		(forwardB),
 		.RF_RD1  	(RF_RD1_ID_EX), // source register 1로 부터 읽을 값
 		.RF_RD2  	(RF_RD2_ID_EX), // source register 2로 부터 읽을 값
+        .SRC1_EX_MEM    (alu_out),
+        .SRC2_EX_MEM    (alu_out),
+        .SRC1_MEM_WB    (RF_WD_MEM_WB),
+        .SRC2_MEM_WB    (RF_WD_MEM_WB),
    		.BrEq    	(BrEq),
     	.BrLt    	(BrLt)
 	);
@@ -354,7 +360,16 @@ module RISCV_TOP (
     end
     //RF_RD2_EX_MEM
     always @(posedge CLK) begin
-        RF_RD2_EX_MEM <= RF_RD1_ID_EX;
+
+        if(forwardB == 2'b00) begin
+            RF_RD2_EX_MEM <= RF_RD2_ID_EX; 
+        end
+        else if(forwardB == 2'b10) begin
+            RF_RD2_EX_MEM <= alu_out;
+        end
+        else if(forwardB == 2'b01) begin
+            RF_RD2_EX_MEM <= RF_WD_MEM_WB;
+        end
     end
     //pc_EX_MEM
     always @(posedge CLK) begin
@@ -382,6 +397,7 @@ module RISCV_TOP (
     //data memory connection
     assign D_MEM_ADDR = alu_out & 16'h3FFF;
     assign D_MEM_DOUT = RF_RD2_EX_MEM;
+    assign D_MEM_BE = memByte_EX_MEM;
     assign D_MEM_WEN = ~memWrite_EX_MEM;
     //instruction reg
     always @(posedge CLK) begin

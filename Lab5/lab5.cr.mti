@@ -5,13 +5,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	BranchComp
 
-} {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_inst.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TB_RISCV
-
-Top level modules:
-	TB_RISCV
-
 } {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/Mem_Model.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/Mem_Model.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module SP_SRAM
@@ -32,6 +25,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	AluUnit
+
+} {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/ForwardUnit.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/ForwardUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ForwardUnit
+
+Top level modules:
+	ForwardUnit
 
 } {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/ImmGen.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/ImmGen.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -54,10 +54,9 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	DetectionUnit
 
-} {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v {2 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v
+} {} {}} C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v {1 {vlog -work work -stats=none C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module BTB
-** Warning: C:/Users/W24937/Desktop/modelsim_project/Lab5/template/BTB.v(49): (vlog-2182) 'btb' might be read before written in always_comb or always @* block.
 
 Top level modules:
 	BTB

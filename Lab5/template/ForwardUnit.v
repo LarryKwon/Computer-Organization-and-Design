@@ -18,6 +18,30 @@ module ForwardUnit(
 
     always @(*) begin
         if(RSTn == 1) begin
+            //forwardA값 설정
+            if(regWrite_MEM == 1 & RD_MEM != 0 & RD_MEM == RS1_EX) begin
+                forwardA_reg = 2'b10;         
+            end
+            else if(regWrite_WB == 1 & RD_WB != 0 & ~(regWrite_MEM ==1 & RD_MEM != 0 & RD_MEM == RS1_EX) & RD_WB == RS1_EX) begin
+                forwardA_reg = 2'b01;
+            end
+            else begin
+                forwardA_reg = 2'b00;
+            end
+            //forwardB값 설정
+            if(regWrite_MEM == 1 & RD_MEM != 0 & RD_MEM == RS2_EX) begin
+                forwardB_reg = 2'b10;         
+            end
+            else if(regWrite_WB == 1 & RD_WB != 0 & ~(regWrite_MEM == 1 & RD_MEM != 0 & RD_MEM == RS2_EX) & RD_WB == RS2_EX) begin
+                forwardB_reg = 2'b01;
+            end
+            else begin
+                forwardB_reg = 2'b00;
+            end
+
+
+
+            /*
             if(regWrite_MEM == 1 & RD_MEM != 0) begin
                 if(RD_MEM == RS1_EX) begin
                     forwardA_reg = 2'b10;
@@ -50,6 +74,7 @@ module ForwardUnit(
                 forwardA_reg = 2'b00;
                 forwardB_reg = 2'b00;
             end
+            */
         end
     end
     

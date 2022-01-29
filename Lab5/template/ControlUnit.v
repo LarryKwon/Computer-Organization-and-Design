@@ -22,11 +22,11 @@ module ControlUnit(
 
     reg[6:0] opcode_EX;
     reg[2:0] func3_EX;
-    reg[2:0] func7_EX;
+    reg[6:0] func7_EX;
 
     reg[6:0] opcode_ID;
     reg[2:0] func3_ID;
-    reg[2:0] func7_ID;
+    reg[6:0] func7_ID;
 
     //control
     reg[6:0] op_LUI;
@@ -45,7 +45,7 @@ module ControlUnit(
     reg regWrite_reg;
     reg memWrite_reg;
     reg memRead_reg;
-    reg memByte_reg;
+    reg[3:0] memByte_reg;
     reg is_sign_reg;
     reg ASel_reg;
     reg BSel_reg;
@@ -58,6 +58,7 @@ module ControlUnit(
     assign imm_control = imm_control_reg;
     assign regWrite = regWrite_reg;
     assign memWrite = memWrite_reg;
+    assign memRead = memRead_reg;
     assign memByte = memByte_reg;
     assign is_sign = is_sign_reg;
     assign ASel = ASel_reg;
