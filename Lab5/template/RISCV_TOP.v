@@ -276,7 +276,9 @@ module RISCV_TOP (
     end
     //pc
     always @(posedge CLK) begin
-        pc_IF_ID <= pc;
+        if(pcWrite == 1) begin
+            pc_IF_ID <= pc;
+        end
     end
 	//isBubble_IF_ID
 	always @(posedge CLK) begin
