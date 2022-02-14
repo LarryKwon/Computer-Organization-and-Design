@@ -106,6 +106,8 @@ module RISCV_TOP (
     reg memRead_EX_MEM;
     reg [3:0] memByte_EX_MEM;
     reg [1:0] wbSel_EX_MEM;
+    reg D_MEM_WEN_reg;
+    assign D_MEM_WEN = D_MEM_WEN_reg;
     //WB
     reg regWrite_EX_MEM;
     reg isTaken_EX_MEM;
@@ -133,7 +135,7 @@ module RISCV_TOP (
     assign pc_IF_ID_WE = pcWrite | pc_ID_EX_WE | pc_EX_MEM_WE;  
 
 
-    //Cache Control Signal
+    //Cache
     wire hit;
     //wire IF_ID_WE_c;
     wire ID_EX_WE;
@@ -141,6 +143,8 @@ module RISCV_TOP (
     wire pc_ID_EX_WE;
     wire pc_EX_MEM_WE;
     wire isNop_MEM_WB;
+    wire[31:0] DATA;
+    reg memWrite_EX_MEM_c;
 
     //forwardUnit
     wire [1:0] forwardA;
@@ -269,14 +273,18 @@ module RISCV_TOP (
         .RSTn           (RSTn),
         .CLK            (CLK),
         .INST_EX_MEM    (INST_EX_MEM),
-        .ADDR           (alu_out),
+        .ADDR           (alu_out & 16'h3FFF),
+        .D_MEM_DI       (D_MEM_DI),
         .hit            (hit),
         .IF_ID_WE       (IF_ID_WE_c),
         .ID_EX_WE       (ID_EX_WE),
         .EX_MEM_WE      (EX_MEM_WE),
         .pc_ID_EX_WE    (pc_ID_EX_WE),
         .pc_EX_MEM_WE   (pc_EX_MEM_WE),
-        .isNop_MEM_WB   (isNop_MEM_WB)
+        .isNop_MEM_WB   (isNop_MEM_WB),
+        .memWrite_EX_MEM (memWrite_EX_MEM_c),
+        .D_MEM_ADDR     (D_MEM_ADDR),
+        .DATA           (DATA)
 
     );
 
@@ -436,10 +444,23 @@ module RISCV_TOP (
 
     /*MEM datapath*/
     //data memory connection
-    assign D_MEM_ADDR = alu_out & 16'h3FFF;
     assign D_MEM_DOUT = RF_RD2_EX_MEM;
     assign D_MEM_BE = memByte_EX_MEM;
-    assign D_MEM_WEN = ~memWrite_EX_MEM;
+
+    always@(*) begin
+        if(memWrite_EX_MEM == 1) begin
+            if(memWrite_EX_MEM_c == 1) begin
+                D_MEM_WEN_reg = ~memWrite_EX_MEM_c;
+            end
+            else begin
+                D_MEM_WEN_reg = 1;
+            end
+        end
+        else begin
+            D_MEM_WEN_reg = ~memWrite_EX_MEM;
+        end
+    end
+
     //instruction reg
     always @(posedge CLK) begin
         if(isNop_MEM_WB) begin
@@ -455,7 +476,7 @@ module RISCV_TOP (
             RF_WD_MEM_WB <= alu_out; 
         end
         else if(wbSel_EX_MEM == 2'b01) begin
-            RF_WD_MEM_WB <= D_MEM_DI;
+            RF_WD_MEM_WB <= DATA;
         end
         else if(wbSel_EX_MEM == 2'b10) begin
             RF_WD_MEM_WB <= pc_EX_MEM + 4;
