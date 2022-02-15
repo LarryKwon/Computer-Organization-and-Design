@@ -275,7 +275,7 @@ module RISCV_TOP (
         .INST_EX_MEM    (INST_EX_MEM),
         .ADDR           (alu_out & 16'h3FFF),
         .D_MEM_DI       (D_MEM_DI),
-        .W_DATA         ()
+        .W_DATA         (RF_RD2_EX_MEM),
         .hit            (hit),
         .IF_ID_WE       (IF_ID_WE_c),
         .ID_EX_WE       (ID_EX_WE),
