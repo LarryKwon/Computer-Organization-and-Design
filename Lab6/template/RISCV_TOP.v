@@ -143,7 +143,7 @@ module RISCV_TOP (
     wire pc_ID_EX_WE;
     wire pc_EX_MEM_WE;
     wire isNop_MEM_WB;
-    wire[31:0] DATA;
+    wire[31:0] R_DATA;
     reg memWrite_EX_MEM_c;
 
     //forwardUnit
@@ -275,6 +275,7 @@ module RISCV_TOP (
         .INST_EX_MEM    (INST_EX_MEM),
         .ADDR           (alu_out & 16'h3FFF),
         .D_MEM_DI       (D_MEM_DI),
+        .W_DATA         ()
         .hit            (hit),
         .IF_ID_WE       (IF_ID_WE_c),
         .ID_EX_WE       (ID_EX_WE),
@@ -284,7 +285,7 @@ module RISCV_TOP (
         .isNop_MEM_WB   (isNop_MEM_WB),
         .memWrite_EX_MEM (memWrite_EX_MEM_c),
         .D_MEM_ADDR     (D_MEM_ADDR),
-        .DATA           (DATA)
+        .R_DATA           (R_DATA)
 
     );
 
@@ -476,7 +477,7 @@ module RISCV_TOP (
             RF_WD_MEM_WB <= alu_out; 
         end
         else if(wbSel_EX_MEM == 2'b01) begin
-            RF_WD_MEM_WB <= DATA;
+            RF_WD_MEM_WB <= R_DATA;
         end
         else if(wbSel_EX_MEM == 2'b10) begin
             RF_WD_MEM_WB <= pc_EX_MEM + 4;
