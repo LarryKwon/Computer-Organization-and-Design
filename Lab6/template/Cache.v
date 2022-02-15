@@ -249,4 +249,20 @@ module Cache(
         end
     end
 
+    //else
+    always @(*) begin
+        if(opcode != op_Ltype | opcode != op_Stype) begin
+            D_MEM_ADDR_reg = ADDR_reg;
+            R_DATA_reg = D_MEM_DI;
+
+            IF_ID_WE_reg = 1;
+            ID_EX_WE_reg = 1;
+            EX_MEM_WE_reg = 1;
+            pc_ID_EX_WE_reg = 1;
+            pc_EX_MEM_WE_reg = 1;
+            isNop_MEM_WB_reg = 0;
+            memWrite_EX_MEM_reg = 0; 
+        end
+    end
+
 endmodule

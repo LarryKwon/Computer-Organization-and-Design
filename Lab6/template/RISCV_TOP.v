@@ -125,19 +125,16 @@ module RISCV_TOP (
 	assign isNop_ID_EX = isNop_ID_EX_c | isNop_ID_EX_d;
     
     wire IF_ID_WE_d;
-    wire IF_ID_WE_c;
     wire IF_ID_WE;
-    assign IF_ID_WE = IF_ID_WE_d | IF_ID_WE_c;
     wire pcWrite;
     wire pc_WE;
-    assign pc_WE = pcWrite | pc_ID_EX_WE | pc_EX_MEM_WE;
     wire pc_IF_ID_WE;
-    assign pc_IF_ID_WE = pcWrite | pc_ID_EX_WE | pc_EX_MEM_WE;  
+     
 
 
     //Cache
     wire hit;
-    //wire IF_ID_WE_c;
+    wire IF_ID_WE_c;
     wire ID_EX_WE;
     wire EX_MEM_WE;
     wire pc_ID_EX_WE;
@@ -145,6 +142,11 @@ module RISCV_TOP (
     wire isNop_MEM_WB;
     wire[31:0] R_DATA;
     reg memWrite_EX_MEM_c;
+
+    assign IF_ID_WE = IF_ID_WE_d | IF_ID_WE_c;
+    assign pc_WE = pcWrite | pc_ID_EX_WE | pc_EX_MEM_WE;
+    assign pc_IF_ID_WE = pcWrite | pc_ID_EX_WE | pc_EX_MEM_WE; 
+
 
     //forwardUnit
     wire [1:0] forwardA;
