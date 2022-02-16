@@ -6,6 +6,7 @@ module BTB(
     input wire[11:0] pc,
     input wire isTaken,
     input wire[31:0] updatedAddr,
+    input wire ID_EX_WE,
     output wire[11:0] nextPc,
     output wire misPredict
 );
@@ -26,47 +27,50 @@ module BTB(
     
 
     //실제 table
-    reg [13:0] btb [4095:0];
+    reg [14:0] btb [4095:0];
     reg [14:0]i;
     initial begin
         for(i=0; i<4096; i=i+1) begin
            btb[i] = i + 4; 
         end
+        nextPc_reg <= 0;
     end
 
     //define synchronous write 
     always @(posedge CLK) begin
         //2-bit saturation update
         if(RSTn == 1) begin
-            if(opcode == 7'b1100011 | opcode == 7'b1101111 | opcode == 7'b1100111) begin   
-                if(isTaken != predTaken_EX) begin
-                    if(isTaken == 1) begin
-                        btb[pc_ID_EX][13:12] <= btb[pc_ID_EX][13:12] +1 ;
+            if(ID_EX_WE) begin
+                if(opcode == 7'b1100011 | opcode == 7'b1101111 | opcode == 7'b1100111) begin   
+                    if(isTaken != predTaken_EX) begin
+                        if(isTaken == 1) begin
+                            btb[pc_ID_EX][13:12] <= btb[pc_ID_EX][13:12] +1 ;
+                        end
+                        else begin
+                            btb[pc_ID_EX][13:12] <= btb[pc_ID_EX][13:12] -1 ;
+                        end
                     end
                     else begin
-                        btb[pc_ID_EX][13:12] <= btb[pc_ID_EX][13:12] -1 ;
-                    end
-                end
-                else begin
-                    if(isTaken == 1) begin
-                        if(btb[pc_ID_EX][13:12] == 2'b10) begin
-                            btb[pc_ID_EX][13:12] <= btb[pc_ID_EX][13:12] +1;
-                        end 
-                    end
-                    else begin
-                        if(btb[pc_ID_EX][13:12] == 2'b01) begin
-                            btb[pc_ID_EX][13:12] <= btb[pc_ID_EX][13:12] -1;
-                        end 
+                        if(isTaken == 1) begin
+                            if(btb[pc_ID_EX][13:12] == 2'b10) begin
+                                btb[pc_ID_EX][13:12] <= btb[pc_ID_EX][13:12] +1;
+                            end 
+                        end
+                        else begin
+                            if(btb[pc_ID_EX][13:12] == 2'b01) begin
+                                btb[pc_ID_EX][13:12] <= btb[pc_ID_EX][13:12] -1;
+                            end 
+                        end
                     end
                 end
             end
         end
     end
 
-    always @(negedge CLK ) begin
+    always @(negedge CLK) begin
         if(RSTn == 1) begin
             //btb update의 target update
-            if(opcode == 7'b1100011 | opcode == 7'b1101111 | opcode == 7'b1100111) begin
+            if((opcode == 7'b1100011 | opcode == 7'b1101111 | opcode == 7'b1100111) & btb[pc_ID_EX][14] == 0) begin
                 btb[pc_ID_EX][11:0] <= updatedAddr[11:0];
                 //$display("updatedAddr %d", btb[pc_ID_EX][11:0]);
             end

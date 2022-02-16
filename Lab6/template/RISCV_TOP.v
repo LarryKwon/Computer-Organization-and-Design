@@ -141,11 +141,11 @@ module RISCV_TOP (
     wire pc_EX_MEM_WE;
     wire isNop_MEM_WB;
     wire[31:0] R_DATA;
-    reg memWrite_EX_MEM_c;
+    wire memWrite_EX_MEM_c;
 
-    assign IF_ID_WE = IF_ID_WE_d | IF_ID_WE_c;
-    assign pc_WE = pcWrite | pc_ID_EX_WE | pc_EX_MEM_WE;
-    assign pc_IF_ID_WE = pcWrite | pc_ID_EX_WE | pc_EX_MEM_WE; 
+    assign IF_ID_WE = IF_ID_WE_d & IF_ID_WE_c;
+    assign pc_WE = pcWrite & pc_ID_EX_WE & pc_EX_MEM_WE;
+    assign pc_IF_ID_WE = pcWrite & pc_ID_EX_WE & pc_EX_MEM_WE; 
 
 
     //forwardUnit
@@ -249,12 +249,14 @@ module RISCV_TOP (
 
     ForwardUnit forward_unit(
         .RSTn           (RSTn),
+        .CLK            (CLK),
 		.RS1_EX			(INST_ID_EX[19:15]),
         .RS2_EX         (INST_ID_EX[24:20]),
         .RD_MEM         (INST_EX_MEM[11:7]),
         .RD_WB          (INST_MEM_WB[11:7]),
         .regWrite_MEM   (regWrite_EX_MEM),
         .regWrite_WB    (regWrite_MEM_WB),
+        .ID_EX_WE       (ID_EX_WE),
 		.forwardA		(forwardA),
 		.forwardB		(forwardB)
 	);
@@ -267,6 +269,7 @@ module RISCV_TOP (
         .pc             (pc),
         .isTaken        (isTaken),
         .updatedAddr    (alu_result),
+        .ID_EX_WE       (ID_EX_WE),
         .nextPc    		(nextPc),
         .misPredict     (misPredict)
     );
@@ -326,7 +329,9 @@ module RISCV_TOP (
     end
 	//isBubble_IF_ID
 	always @(posedge CLK) begin
-		isBubble_IF_ID <=  isNop_IF_ID;
+        if(IF_ID_WE) begin
+		    isBubble_IF_ID <=  isNop_IF_ID;
+        end
 	end
 
 
@@ -338,8 +343,10 @@ module RISCV_TOP (
     // ID/EX register
     // RF_RD1, RF_RD2
 	always @(posedge CLK) begin
-		RF_RD1_ID_EX <= RF_RD1;
-		RF_RD2_ID_EX <= RF_RD2;
+        if(ID_EX_WE) begin
+            RF_RD1_ID_EX <= RF_RD1;
+            RF_RD2_ID_EX <= RF_RD2;
+        end
 	end
     //pc_ID_EX
     always @(posedge CLK) begin
@@ -360,63 +367,69 @@ module RISCV_TOP (
     end
     //control signal
     always @(posedge CLK) begin
+        if(ID_EX_WE) begin
+            //@Todo: isNop_ID_EX일 때, 컨트롤 시그널 잘 조절하기
+            if(isNop_ID_EX) begin
+                regWrite_ID_EX <= 0;
+                wbSel_ID_EX <= 2'b00;
+                memWrite_ID_EX <= 0;
+                memRead_ID_EX <= 0;
+                memByte_ID_EX <= memByte;
 
-		//@Todo: isNop_ID_EX일 때, 컨트롤 시그널 잘 조절하기
-        if(isNop_ID_EX) begin
-            regWrite_ID_EX <= 0;
-            wbSel_ID_EX <= 2'b00;
-            memWrite_ID_EX <= 0;
-            memRead_ID_EX <= 0;
-            memByte_ID_EX <= memByte;
-
-            alu_control_ID_EX <= alu_control;
-            is_sign_ID_EX <= is_sign;
-            imm_control_ID_EX <= imm_control;
-            ASel_ID_EX <= ASel;
-            BSel_ID_EX <= BSel;
-        end
-        else begin
-            regWrite_ID_EX <= regWrite;
-            wbSel_ID_EX <= wbSel;
-            memWrite_ID_EX <= memWrite;
-            memRead_ID_EX <= memRead;
-            memByte_ID_EX <= memByte;
-            
-            alu_control_ID_EX <= alu_control;
-            is_sign_ID_EX <= is_sign;
-            imm_control_ID_EX <= imm_control;
-            ASel_ID_EX <= ASel;
-            BSel_ID_EX <= BSel;
+                alu_control_ID_EX <= alu_control;
+                is_sign_ID_EX <= is_sign;
+                imm_control_ID_EX <= imm_control;
+                ASel_ID_EX <= ASel;
+                BSel_ID_EX <= BSel;
+            end
+            else begin
+                regWrite_ID_EX <= regWrite;
+                wbSel_ID_EX <= wbSel;
+                memWrite_ID_EX <= memWrite;
+                memRead_ID_EX <= memRead;
+                memByte_ID_EX <= memByte;
+                
+                alu_control_ID_EX <= alu_control;
+                is_sign_ID_EX <= is_sign;
+                imm_control_ID_EX <= imm_control;
+                ASel_ID_EX <= ASel;
+                BSel_ID_EX <= BSel;
+            end
         end
     end
 	//isBubble
     //isNop_ID_EX, 일 때 isBubble값을 1로 바꾸기, 아니면 0
 	always @(posedge CLK) begin
-		if(isNop_ID_EX) begin
-			isBubble_ID_EX <= isNop_ID_EX;
-		end
-		else begin
-			isBubble_ID_EX <= isBubble_IF_ID;	
-		end
+        if(ID_EX_WE) begin
+            if(isNop_ID_EX) begin
+                isBubble_ID_EX <= isNop_ID_EX;
+            end
+            else begin
+                isBubble_ID_EX <= isBubble_IF_ID;	
+            end
+        end
 	end
     
 
     /*EX datapath*/
     //alu_out
     always @(posedge CLK) begin
-        alu_out <= alu_result;
+        if(EX_MEM_WE) begin
+            alu_out <= alu_result;
+        end
     end
     //RF_RD2_EX_MEM
     always @(posedge CLK) begin
-
-        if(forwardB == 2'b00) begin
-            RF_RD2_EX_MEM <= RF_RD2_ID_EX; 
-        end
-        else if(forwardB == 2'b10) begin
-            RF_RD2_EX_MEM <= alu_out;
-        end
-        else if(forwardB == 2'b01) begin
-            RF_RD2_EX_MEM <= RF_WD_MEM_WB;
+        if(EX_MEM_WE) begin
+            if(forwardB == 2'b00) begin
+                RF_RD2_EX_MEM <= RF_RD2_ID_EX; 
+            end
+            else if(forwardB == 2'b10) begin
+                RF_RD2_EX_MEM <= alu_out;
+            end
+            else if(forwardB == 2'b01) begin
+                RF_RD2_EX_MEM <= RF_WD_MEM_WB;
+            end
         end
     end
     //pc_EX_MEM
@@ -433,16 +446,20 @@ module RISCV_TOP (
     end
     //control signal
     always @(posedge CLK) begin
-        regWrite_EX_MEM <= regWrite_ID_EX;
-        wbSel_EX_MEM <= wbSel_ID_EX ;
-        memWrite_EX_MEM <= memWrite_ID_EX;
-        memRead_EX_MEM <= memRead_ID_EX;
-        memByte_EX_MEM <= memByte_ID_EX;
-        isTaken_EX_MEM <= isTaken;
+        if(EX_MEM_WE == 1) begin
+            regWrite_EX_MEM <= regWrite_ID_EX;
+            wbSel_EX_MEM <= wbSel_ID_EX ;
+            memWrite_EX_MEM <= memWrite_ID_EX;
+            memRead_EX_MEM <= memRead_ID_EX;
+            memByte_EX_MEM <= memByte_ID_EX;
+            isTaken_EX_MEM <= isTaken;
+        end
     end
 	//isBubble
 	always @(posedge CLK) begin
-		isBubble_EX_MEM <= isBubble_ID_EX;
+        if(EX_MEM_WE) begin
+		    isBubble_EX_MEM <= isBubble_ID_EX;
+        end
 	end
 
     /*MEM datapath*/
@@ -475,26 +492,22 @@ module RISCV_TOP (
     end
 
     always @(posedge CLK) begin
-        if(wbSel_EX_MEM == 2'b00) begin
-            RF_WD_MEM_WB <= alu_out; 
-        end
-        else if(wbSel_EX_MEM == 2'b01) begin
-            RF_WD_MEM_WB <= R_DATA;
-        end
-        else if(wbSel_EX_MEM == 2'b10) begin
-            RF_WD_MEM_WB <= pc_EX_MEM + 4;
+        if(isNop_MEM_WB == 0) begin
+            if(wbSel_EX_MEM == 2'b00) begin
+                RF_WD_MEM_WB <= alu_out; 
+            end
+            else if(wbSel_EX_MEM == 2'b01) begin
+                RF_WD_MEM_WB <= R_DATA;
+            end
+            else if(wbSel_EX_MEM == 2'b10) begin
+                RF_WD_MEM_WB <= pc_EX_MEM + 4;
+            end
         end
     end
     //control signal
     always @(posedge CLK) begin
-        if(isNop_MEM_WB) begin
-           regWrite_MEM_WB <= 0;
-           isTaken_MEM_WB <= isTaken_EX_MEM;
-        end
-        else begin
-            regWrite_MEM_WB <= regWrite_EX_MEM;
-            isTaken_MEM_WB <= isTaken_EX_MEM;
-        end
+        regWrite_MEM_WB <= regWrite_EX_MEM;
+        isTaken_MEM_WB <= isTaken_EX_MEM;
     end
 	//isBubble
 	always @(posedge CLK) begin
