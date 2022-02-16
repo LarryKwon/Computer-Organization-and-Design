@@ -64,7 +64,7 @@ module TB_RISCV ();
 
 	//I-Memory
 	SP_SRAM #(
-		.ROMDATA ("sort.hex"), //Initialize I-Memory
+		.ROMDATA ("C:\\Users\\W24880\\Desktop\\modelsim_project\\Lab6\\testcase\\hex\\sort.hex"), //Initialize I-Memory
 		.AWIDTH  (10),
 		.SIZE    (1024)
 	) i_mem1 (

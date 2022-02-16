@@ -115,20 +115,20 @@ module Cache(
             if(opcode == op_Ltype & hit_reg == 1) begin
                 //R_DATA
                 if(block_offset == 2'b00) begin
-                    $display("00, loaded data: %0x , %0x",cache[idx][31:0], INST_EX_MEM );
+                    // $display("00, loaded data: %0x , %0x",cache[idx][31:0], INST_EX_MEM );
                     R_DATA_reg = cache[idx][31:0];
                 end
                 else if(block_offset == 2'b01) begin
-                    $display("01, loaded data: %0x, %0x",cache[idx][63:32], INST_EX_MEM );
+                    // $display("01, loaded data: %0x, %0x",cache[idx][63:32], INST_EX_MEM );
                     R_DATA_reg = cache[idx][63:32];
                 end
                 else if(block_offset == 2'b10) begin
-                    $display("10, loaded data: %0x, %0x",cache[idx][95:64], INST_EX_MEM );
+                    // $display("10, loaded data: %0x, %0x",cache[idx][95:64], INST_EX_MEM );
                     R_DATA_reg = cache[idx][95:64];
                     
                 end
-                else begin
-                    $display("11, loaded data: %0x, %0x",cache[idx][127:96], INST_EX_MEM );
+                else if(block_offset == 2'b11)begin
+                    // $display("11, loaded data: %0x, %0x",cache[idx][127:96], INST_EX_MEM );
                     R_DATA_reg = cache[idx][127:96];
                 end
 
@@ -194,19 +194,22 @@ module Cache(
             if(opcode == op_Stype & hit_reg == 1) begin
                 if(block_offset == 2'b00) begin
                     cache[idx][31:0] = W_DATA;
-                    $display("00, writing data: %0x, %0x",cache[idx][31:0] , INST_EX_MEM );
+                    // $display("00, writing data: %0x, %0x",cache[idx][31:0] , INST_EX_MEM );
                 end
                 else if(block_offset == 2'b01) begin
                     cache[idx][63:32] = W_DATA;
-                    $display("01, writing data: %0x, %0x",cache[idx][63:32], INST_EX_MEM );
+                    // $display("01, writing data: %0x, %0x",cache[idx][63:32], INST_EX_MEM );
                 end
                 else if(block_offset == 2'b10) begin
                     cache[idx][95:64] = W_DATA;
-                    $display("10, writing data: %0x, %0x",cache[idx][95:64], INST_EX_MEM );
+                    // $display("10, writing data: %0x, %0x",cache[idx][95:64], INST_EX_MEM );
                 end
-                else begin
+                else if(block_offset == 2'b11)begin
+                    // $display("11, writing data: %0x", W_DATA);
+                    // $display("11, writing data: %0x, %0x", W_DATA, INST_EX_MEM);
+                    //INST_reg = INST_EX_MEM;
                     cache[idx][127:96] = W_DATA;
-                    $display("11, writing data: %0x, %0x",cache[idx][127:96] , INST_EX_MEM);
+                    // $display("11, writing data: %0x, %0x",cache[idx][127:96] , INST_EX_MEM);
                 end
                 //D_MEM에 쓰기
                 D_MEM_ADDR_reg = ADDR_reg;
@@ -247,19 +250,17 @@ module Cache(
         if(RSTn == 1) begin
             if(opcode == op_Stype & hit_reg == 0) begin
                 //돌면서 캐시 업데이트
-                if(block_offset_temp == 2'b00 & block_offset_temp != block_offset) begin
+                if(block_offset_temp == 2'b00  ) begin
                     cache[idx][31:0] <= D_MEM_DI;
                 end
-                else if(block_offset_temp == 2'b01 & block_offset_temp != block_offset) begin
+                else if(block_offset_temp == 2'b01 ) begin
                     cache[idx][63:32] <= D_MEM_DI;
                 end 
-                else if(block_offset_temp == 2'b10 & block_offset_temp != block_offset) begin
+                else if(block_offset_temp == 2'b10 ) begin
                     cache[idx][95:64] <= D_MEM_DI;
                 end
                 else if(block_offset_temp == 2'b11) begin
-                    if(block_offset_temp != block_offset) begin
-                        cache[idx][127:96] <= D_MEM_DI;
-                    end
+                    cache[idx][127:96] <= D_MEM_DI;
                     cache[idx][133:129] <= tag;
                     cache[idx][128] <= 1;
                 end
@@ -274,7 +275,7 @@ module Cache(
             if(opcode != op_Ltype & opcode != op_Stype) begin
                 D_MEM_ADDR_reg = ADDR_reg;
                 R_DATA_reg = D_MEM_DI;
-
+                hit_reg = 0;
                 IF_ID_WE_reg = 1;
                 ID_EX_WE_reg = 1;
                 EX_MEM_WE_reg = 1;
