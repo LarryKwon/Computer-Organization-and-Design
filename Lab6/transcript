@@ -409,12 +409,10 @@ run -all
 #    Time: 1235 ns  Iteration: 1  Instance: /TB_RISCV
 # 1
 # Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab6/testbench/TB_RISCV_forloop.v line 166
- fef42623
-# write data: 1, eec
-# 11, loaded data: 1, fec42703
-# 00, loaded data: 1 , fec42783
-# 11, loaded data: 1, fec42783
-# 01, loaded data: x, fec42703
+# End time: 23:48:12 on Feb 16,2022, Elapsed time: 0:55:33
+# Errors: 0, Warnings: 1
+# Closing project C:/Users/W24880/Desktop/modelsim_project/Lab6/Lab6.mpf
+
 # 11, loaded data: 1, fec42703
 # 11, writing data: 1, fee7a423
 # write data: 1, edc
@@ -866,3 +864,32 @@ run -all
 #    Time: 715 ns  Iteration: 1  Instance: /TB_RISCV
 # 1
 # Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab6/testbench/TB_RISCV_sort.v line 184
+vsim -gui work.AluUnit work.BranchComp work.BTB work.Cache work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
+# End time: 23:40:06 on Feb 16,2022, Elapsed time: 0:35:00
+# Errors: 0, Warnings: 1
+# vsim -gui work.AluUnit work.BranchComp work.BTB work.Cache work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
+# Start time: 23:40:06 on Feb 16,2022
+# Loading work.AluUnit
+# Loading work.BranchComp
+# Loading work.BTB
+# Loading work.Cache
+# Loading work.ControlUnit
+# Loading work.DetectionUnit
+# Loading work.ForwardUnit
+# Loading work.ImmGen
+# Loading work.REG_FILE
+# Loading work.RISCV_CLKRST
+# Loading work.RISCV_TOP
+# Loading work.SP_SRAM
+# Loading work.TB_RISCV
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
+add wave -position insertpoint sim:/TB_RISCV/riscv_top1/cache/*
+run -all
+# Test #   11 has been failed!
+# output_port = 0x1 (Ans : 0x2)
+# ** Note: $finish    : C:/Users/W24880/Desktop/modelsim_project/Lab6/testbench/TB_RISCV_sort.v(184)
+#    Time: 715 ns  Iteration: 1  Instance: /TB_RISCV
+# 1
+# Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab6/testbench/TB_RISCV_sort.v line 184
+# End time: 23:58:02 on Feb 16,2022, Elapsed time: 0:17:56
+# Errors: 0, Warnings: 1

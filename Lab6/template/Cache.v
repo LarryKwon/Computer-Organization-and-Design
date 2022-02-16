@@ -193,21 +193,24 @@ module Cache(
             // update 하기
             if(opcode == op_Stype & hit_reg == 1) begin
                 if(block_offset == 2'b00) begin
+                    INST_reg = INST_EX_MEM;
                     cache[idx][31:0] = W_DATA;
                     // $display("00, writing data: %0x, %0x",cache[idx][31:0] , INST_EX_MEM );
                 end
                 else if(block_offset == 2'b01) begin
+                    INST_reg = INST_EX_MEM;
                     cache[idx][63:32] = W_DATA;
                     // $display("01, writing data: %0x, %0x",cache[idx][63:32], INST_EX_MEM );
                 end
                 else if(block_offset == 2'b10) begin
+                    INST_reg = INST_EX_MEM;
                     cache[idx][95:64] = W_DATA;
                     // $display("10, writing data: %0x, %0x",cache[idx][95:64], INST_EX_MEM );
                 end
                 else if(block_offset == 2'b11)begin
                     // $display("11, writing data: %0x", W_DATA);
                     // $display("11, writing data: %0x, %0x", W_DATA, INST_EX_MEM);
-                    //INST_reg = INST_EX_MEM;
+                    INST_reg = INST_EX_MEM;
                     cache[idx][127:96] = W_DATA;
                     // $display("11, writing data: %0x, %0x",cache[idx][127:96] , INST_EX_MEM);
                 end

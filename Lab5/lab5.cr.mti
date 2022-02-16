@@ -54,19 +54,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	BranchComp
 
+} {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_sort.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_sort.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_RISCV
+
+Top level modules:
+	TB_RISCV
+
 } {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab5/template/DetectionUnit.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab5/template/DetectionUnit.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module DetectionUnit
 
 Top level modules:
 	DetectionUnit
-
-} {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_forloop.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_forloop.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TB_RISCV
-
-Top level modules:
-	TB_RISCV
 
 } {} {}} C:/Users/W24880/Desktop/modelsim_project/Lab5/template/BTB.v {1 {vlog -work work -stats=none C:/Users/W24880/Desktop/modelsim_project/Lab5/template/BTB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
