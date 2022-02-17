@@ -98,72 +98,111 @@ module Cache(
             if(opcode ==  op_Ltype | opcode == op_Stype) begin
                 if(tag != cache[idx][133:129] | valid == 0) begin
                     hit_reg = 0;
+                    if(opcode == op_Ltype) begin
+                        // D_MEM_ADDR 설정
+                        D_MEM_ADDR_reg = {ADDR_reg[11:4], block_offset_temp, ADDR_reg[1:0]};
+                        
+                        //control signal
+                        IF_ID_WE_reg = 0; // stall
+                        ID_EX_WE_reg = 0; // stall
+                        EX_MEM_WE_reg = 0; // stall
+                        pc_ID_EX_WE_reg = 0; // stall
+                        pc_EX_MEM_WE_reg = 0; // stall
+                        isNop_MEM_WB_reg = 1; // WB 단계 bubble
+                        memWrite_EX_MEM_reg = 0; // 쓰지 않기                       
+                    end
+                    else if(opcode == op_Stype) begin
+                        memWrite_EX_MEM_reg = 0;
+                        IF_ID_WE_reg = 0; // stall
+                        ID_EX_WE_reg = 0; // stall
+                        EX_MEM_WE_reg = 0; // stall
+                        pc_ID_EX_WE_reg = 0; // stall
+                        pc_EX_MEM_WE_reg = 0; // stall
+                        isNop_MEM_WB_reg = 1; // WB 단계 bubble
+
+                        //D_MEM_ADDR 설정
+                        D_MEM_ADDR_reg = {ADDR_reg[11:4], block_offset_temp, ADDR_reg[1:0]};
+                    end
                 end
                 else begin
                     hit_reg = 1;
+                    if(opcode == op_Ltype) begin
+                        //control signal
+                        IF_ID_WE_reg = 1;
+                        ID_EX_WE_reg = 1;
+                        EX_MEM_WE_reg = 1;
+                        pc_ID_EX_WE_reg = 1;
+                        pc_EX_MEM_WE_reg = 1;
+                        isNop_MEM_WB_reg = 0;
+                        memWrite_EX_MEM_reg = 0;
+                    end
+                    else if(opcode == op_Stype) begin
+                        //D_MEM에 쓰기
+                        D_MEM_ADDR_reg = ADDR_reg;
+                    
+                        //control signal
+                        IF_ID_WE_reg = 1;
+                        ID_EX_WE_reg = 1;
+                        EX_MEM_WE_reg = 1;
+                        pc_ID_EX_WE_reg = 1;
+                        pc_EX_MEM_WE_reg = 1;
+                        isNop_MEM_WB_reg = 0;
+                        memWrite_EX_MEM_reg = 1; // 쓰기
+                    end
                 end
             end
             else begin
                 hit_reg = 1;
-            end
-        end
-    end
-    
-    //load hit
-    always @(*) begin
-        if(RSTn == 1) begin    
-            if(opcode == op_Ltype & hit_reg == 1) begin
-                //R_DATA
-                if(block_offset == 2'b00) begin
-                    // $display("00, loaded data: %0x , %0x",cache[idx][31:0], INST_EX_MEM );
-                    R_DATA_reg = cache[idx][31:0];
-                end
-                else if(block_offset == 2'b01) begin
-                    // $display("01, loaded data: %0x, %0x",cache[idx][63:32], INST_EX_MEM );
-                    R_DATA_reg = cache[idx][63:32];
-                end
-                else if(block_offset == 2'b10) begin
-                    // $display("10, loaded data: %0x, %0x",cache[idx][95:64], INST_EX_MEM );
-                    R_DATA_reg = cache[idx][95:64];
-                    
-                end
-                else if(block_offset == 2'b11)begin
-                    // $display("11, loaded data: %0x, %0x",cache[idx][127:96], INST_EX_MEM );
-                    R_DATA_reg = cache[idx][127:96];
-                end
-
-                //control signal
+                D_MEM_ADDR_reg = ADDR_reg;
+                R_DATA_reg = D_MEM_DI;
+                hit_reg = 0;
                 IF_ID_WE_reg = 1;
                 ID_EX_WE_reg = 1;
                 EX_MEM_WE_reg = 1;
                 pc_ID_EX_WE_reg = 1;
                 pc_EX_MEM_WE_reg = 1;
                 isNop_MEM_WB_reg = 0;
-                memWrite_EX_MEM_reg = 0;
+                memWrite_EX_MEM_reg = 0; 
+            end
+        end
+    end
+    
+    //load hit
+    always @(negedge CLK) begin
+        if(RSTn == 1) begin    
+            if(opcode == op_Ltype & hit_reg == 1) begin
+                //R_DATA
+                if(block_offset == 2'b00) begin
+                    // $display("00, loaded data: %0x , %0x",cache[idx][31:0], INST_EX_MEM );
+                    R_DATA_reg <= cache[idx][31:0];
+                end
+                else if(block_offset == 2'b01) begin
+                    // $display("01, loaded data: %0x, %0x",cache[idx][63:32], INST_EX_MEM );
+                    R_DATA_reg <= cache[idx][63:32];
+                end
+                else if(block_offset == 2'b10) begin
+                    // $display("10, loaded data: %0x, %0x",cache[idx][95:64], INST_EX_MEM );
+                    R_DATA_reg <= cache[idx][95:64];
+                    
+                end
+                else if(block_offset == 2'b11)begin
+                    // $display("11, loaded data: %0x, %0x",cache[idx][127:96], INST_EX_MEM );
+                    R_DATA_reg <= cache[idx][127:96];
+                end
             end
         end
     end
 
     //load miss
-    always @(*) begin
-        if(RSTn == 1) begin
-            if(opcode == op_Ltype & hit_reg == 0) begin
-                // D_MEM_ADDR 설정
-                D_MEM_ADDR_reg = {ADDR_reg[11:4], block_offset_temp, ADDR_reg[1:0]};
-                
-                //control signal
-                IF_ID_WE_reg = 0; // stall
-                ID_EX_WE_reg = 0; // stall
-                EX_MEM_WE_reg = 0; // stall
-                pc_ID_EX_WE_reg = 0; // stall
-                pc_EX_MEM_WE_reg = 0; // stall
-                isNop_MEM_WB_reg = 1; // WB 단계 bubble
-                memWrite_EX_MEM_reg = 0; // 쓰지 않기
-            end
-        end
-    end
+    // always @(*) begin
+    //     if(RSTn == 1) begin
+    //         if(opcode == op_Ltype & hit_reg == 0) begin
 
-    always @(negedge CLK) begin
+    //         end
+    //     end
+    // end
+
+    always @(posedge CLK) begin
         if(RSTn == 1) begin
             if(opcode == op_Ltype & hit_reg == 0) begin
                 //update 하기
@@ -188,66 +227,55 @@ module Cache(
             
     
     //store hit
-    always @(*) begin
+    always @(negedge CLK) begin
         if(RSTn == 1) begin
             // update 하기
             if(opcode == op_Stype & hit_reg == 1) begin
                 if(block_offset == 2'b00) begin
-                    INST_reg = INST_EX_MEM;
-                    cache[idx][31:0] = W_DATA;
+                    INST_reg <= INST_EX_MEM;
+                    cache[idx][31:0] <= W_DATA;
                     // $display("00, writing data: %0x, %0x",cache[idx][31:0] , INST_EX_MEM );
                 end
                 else if(block_offset == 2'b01) begin
-                    INST_reg = INST_EX_MEM;
-                    cache[idx][63:32] = W_DATA;
+                    INST_reg <= INST_EX_MEM;
+                    cache[idx][63:32] <= W_DATA;
                     // $display("01, writing data: %0x, %0x",cache[idx][63:32], INST_EX_MEM );
                 end
                 else if(block_offset == 2'b10) begin
-                    INST_reg = INST_EX_MEM;
-                    cache[idx][95:64] = W_DATA;
+                    INST_reg <= INST_EX_MEM;
+                    cache[idx][95:64] <= W_DATA;
                     // $display("10, writing data: %0x, %0x",cache[idx][95:64], INST_EX_MEM );
                 end
                 else if(block_offset == 2'b11)begin
                     // $display("11, writing data: %0x", W_DATA);
                     // $display("11, writing data: %0x, %0x", W_DATA, INST_EX_MEM);
-                    INST_reg = INST_EX_MEM;
-                    cache[idx][127:96] = W_DATA;
+                    INST_reg <= INST_EX_MEM;
+                    cache[idx][127:96] <= W_DATA;
                     // $display("11, writing data: %0x, %0x",cache[idx][127:96] , INST_EX_MEM);
                 end
-                //D_MEM에 쓰기
-                D_MEM_ADDR_reg = ADDR_reg;
-            
-                //control signal
-                IF_ID_WE_reg = 1;
-                ID_EX_WE_reg = 1;
-                EX_MEM_WE_reg = 1;
-                pc_ID_EX_WE_reg = 1;
-                pc_EX_MEM_WE_reg = 1;
-                isNop_MEM_WB_reg = 0;
-                memWrite_EX_MEM_reg = 1; // 쓰기
             end
         end
     end
 
     //store miss
-    always @(*) begin
-        if(RSTn == 1) begin
-            if(opcode == op_Stype & hit_reg == 0) begin
-                //control signal
-                //memWrite
-                memWrite_EX_MEM_reg = 0;
-                IF_ID_WE_reg = 0; // stall
-                ID_EX_WE_reg = 0; // stall
-                EX_MEM_WE_reg = 0; // stall
-                pc_ID_EX_WE_reg = 0; // stall
-                pc_EX_MEM_WE_reg = 0; // stall
-                isNop_MEM_WB_reg = 1; // WB 단계 bubble
+    // always @(*) begin
+    //     if(RSTn == 1) begin
+    //         if(opcode == op_Stype & hit_reg == 0) begin
+    //             //control signal
+    //             //memWrite
+    //             memWrite_EX_MEM_reg = 0;
+    //             IF_ID_WE_reg = 0; // stall
+    //             ID_EX_WE_reg = 0; // stall
+    //             EX_MEM_WE_reg = 0; // stall
+    //             pc_ID_EX_WE_reg = 0; // stall
+    //             pc_EX_MEM_WE_reg = 0; // stall
+    //             isNop_MEM_WB_reg = 1; // WB 단계 bubble
 
-                //D_MEM_ADDR 설정
-                D_MEM_ADDR_reg = {ADDR_reg[11:4], block_offset_temp, ADDR_reg[1:0]};
-            end
-        end
-    end
+    //             //D_MEM_ADDR 설정
+    //             D_MEM_ADDR_reg = {ADDR_reg[11:4], block_offset_temp, ADDR_reg[1:0]};
+    //         end
+    //     end
+    // end
 
     always @(posedge CLK) begin
         if(RSTn == 1) begin
@@ -273,21 +301,21 @@ module Cache(
     end
 
     //else
-    always @(*) begin
-        if(RSTn == 1) begin
-            if(opcode != op_Ltype & opcode != op_Stype) begin
-                D_MEM_ADDR_reg = ADDR_reg;
-                R_DATA_reg = D_MEM_DI;
-                hit_reg = 0;
-                IF_ID_WE_reg = 1;
-                ID_EX_WE_reg = 1;
-                EX_MEM_WE_reg = 1;
-                pc_ID_EX_WE_reg = 1;
-                pc_EX_MEM_WE_reg = 1;
-                isNop_MEM_WB_reg = 0;
-                memWrite_EX_MEM_reg = 0; 
-            end
-        end
-    end
+    // always @(*) begin
+    //     if(RSTn == 1) begin
+    //         if(opcode != op_Ltype & opcode != op_Stype) begin
+    //             D_MEM_ADDR_reg = ADDR_reg;
+    //             R_DATA_reg = D_MEM_DI;
+    //             hit_reg = 0;
+    //             IF_ID_WE_reg = 1;
+    //             ID_EX_WE_reg = 1;
+    //             EX_MEM_WE_reg = 1;
+    //             pc_ID_EX_WE_reg = 1;
+    //             pc_EX_MEM_WE_reg = 1;
+    //             isNop_MEM_WB_reg = 0;
+    //             memWrite_EX_MEM_reg = 0; 
+    //         end
+    //     end
+    // end
 
 endmodule

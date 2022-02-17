@@ -1,19 +1,6 @@
-# Compile of AluUnit.v was successful.
-# Compile of BranchComp.v was successful.
-# Compile of BTB.v was successful.
-# Compile of ControlUnit.v was successful.
-# Compile of DetectionUnit.v was successful.
-# Compile of ForwardUnit.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of Mem_Model.v was successful.
-# Compile of REG_FILE.v was successful.
-# Compile of RISCV_CLKRST.v was successful.
-# Compile of RISCV_TOP.v was successful.
-# Compile of TB_RISCV_sort.v was successful.
-# 12 compiles, 0 failed with no errors.
 vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV
 # vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionUnit work.ForwardUnit work.ImmGen work.REG_FILE work.RISCV_CLKRST work.RISCV_TOP work.SP_SRAM work.TB_RISCV 
-# Start time: 23:48:46 on Feb 16,2022
+# Start time: 18:12:54 on Feb 17,2022
 # Loading work.AluUnit
 # Loading work.BranchComp
 # Loading work.BTB
@@ -27,7 +14,6 @@ vsim -gui work.AluUnit work.BranchComp work.BTB work.ControlUnit work.DetectionU
 # Loading work.SP_SRAM
 # Loading work.TB_RISCV
 add wave -position insertpoint sim:/TB_RISCV/riscv_top1/*
-add wave -position insertpoint sim:/TB_RISCV/riscv_top1/alu_unit/*
 run -all
 # Test #    1 has been passed
 # Test #    2 has been passed
@@ -75,5 +61,3 @@ run -all
 #    Time: 134465 ns  Iteration: 1  Instance: /TB_RISCV
 # 1
 # Break in Module TB_RISCV at C:/Users/W24880/Desktop/modelsim_project/Lab5/testbench/TB_RISCV_sort.v line 193
-# End time: 23:58:06 on Feb 16,2022, Elapsed time: 0:09:20
-# Errors: 0, Warnings: 4

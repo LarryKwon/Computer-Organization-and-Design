@@ -72,6 +72,7 @@ module BTB(
             //btb update의 target update
             if((opcode == 7'b1100011 | opcode == 7'b1101111 | opcode == 7'b1100111) & btb[pc_ID_EX][14] == 0) begin
                 btb[pc_ID_EX][11:0] <= updatedAddr[11:0];
+                btb[pc_ID_EX][14] <= 1;
                 //$display("updatedAddr %d", btb[pc_ID_EX][11:0]);
             end
         end
